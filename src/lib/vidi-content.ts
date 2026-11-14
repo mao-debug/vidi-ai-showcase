@@ -10,12 +10,23 @@ export const site = {
   domain: "vidiai.us",
 };
 
-export const nav = [
-  { label: "Problem", href: "#problem" },
-  { label: "Demo", href: "#demo" },
-  { label: "How it works", href: "#how-it-works" },
-  { label: "Next steps", href: "#next-steps" },
-];
+// Add a project image/video URL or a path in /public here when available.
+// Video should also have a caption track and transcript before presentation.
+export type PresentationMedia = {
+  src: string;
+  kind: "image" | "video";
+  alt: string;
+  caption: string;
+  captionsSrc?: string;
+  transcript?: string;
+};
+
+export const presentationMedia: Record<string, PresentationMedia> = {
+  prototype: { src: "", kind: "image", alt: "Our Vidi AI glasses prototype", caption: "The Vidi AI prototype" },
+  walk: { src: "", kind: "video", alt: "Two-zone distance sensor bench test", caption: "Distance sensing · Bench test" },
+  scene: { src: "", kind: "video", alt: "Vidi AI camera and voice workflow", caption: "Camera and voice · In integration" },
+  chess: { src: "", kind: "image", alt: "Activity-aware assistance concept", caption: "Activity awareness · Future scenario" },
+};
 
 export const problem = {
   headline: "What’s in front of me?",
