@@ -5,6 +5,7 @@
  */
 
 import architectureDiagram from "@/assets/sensor-fusion-detection.png.asset.json";
+import caneBlindSpot from "@/assets/cane-blind-spot.mp4.asset.json";
 import headshotCard1 from "@/assets/team-headshot-card1.png.asset.json";
 import headshotCard2 from "@/assets/team-headshot-card2.png.asset.json";
 import headshotCard3 from "@/assets/team-headshot-card3.png.asset.json";
