@@ -14,3 +14,7 @@
 - [x] Remove "AI" next to VIDI in the top banner.
 - [x] Rename every "Vidi AI" on the site to "Vidi" (page title, banner, footer, captions, alt text, meta).
 - [x] Say "Raspberry Pi 5" in the Vision & voice path; set the opening line to "Envision the Future, Empower the Execution."
+
+# Team links and headshots
+- [x] Add LinkedIn links for members 2, 3, 4, 5 and fill all five headshots from the uploaded photos.
+- [ ] Member 1's LinkedIn link still missing; name and roles for cards 1 and 3 to confirm.
