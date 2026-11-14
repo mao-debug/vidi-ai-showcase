@@ -199,7 +199,7 @@ h3 { font-family: var(--font-display); font-size: 38px; font-weight: 400; line-h
  --glass-surface: color-mix(in oklch, var(--pearl) 72%, transparent);
  --glass-edge: color-mix(in oklch, var(--pearl) 90%, transparent);
  --glass-shadow: 0 12px 40px color-mix(in oklch, var(--cinema) 10%, transparent), inset 0 1px 0 var(--pearl), inset 0 -1px 0 color-mix(in oklch, var(--indigo) 10%, transparent);
- --problem-field: linear-gradient(135deg, oklch(.30 .075 250) 0%, oklch(.42 .125 262) 46%, oklch(.56 .115 232) 100%);
+ --problem-field: linear-gradient(135deg, var(--pearl) 20%, var(--glacier) 78%, var(--lilac));
  --prototype-field: linear-gradient(145deg, var(--ivory), var(--lilac) 70%, var(--glacier));
  --demo-field: linear-gradient(150deg, var(--glacier), var(--pearl) 55%, var(--ivory));
  --control-field: linear-gradient(130deg, var(--lilac), var(--glacier) 65%, var(--pearl));
@@ -346,19 +346,3 @@ h2 { font-size: 68px; max-width: 1000px; }
 /* Small text box above the problem section: chapter marker. */
 .section-marker { display: inline-flex; align-items: center; gap: 9px; padding: 9px 18px; margin: 0 0 30px; border: 1px solid var(--glass-edge); border-radius: 999px; background: var(--glass-surface); box-shadow: var(--glass-shadow); backdrop-filter: blur(24px) saturate(150%); font-size: 13px; letter-spacing: .06em; color: var(--foreground); }
 @media (max-width: 760px) { .section-marker { padding: 7px 14px; font-size: 11px; margin-bottom: 22px; } }
-
-/* Problem section on a blue field: light text, readable on a projector. */
-.problem-section { color: var(--cinema-text); }
-.problem-section h2 { color: var(--cinema-text); }
-.problem-section .chapter-label { color: var(--glacier); }
-.problem-section .chapter-line { background: color-mix(in oklch, var(--glacier) 45%, transparent); }
-.problem-section .section-marker { color: var(--cinema-text); background: color-mix(in oklch, var(--cinema) 34%, transparent); border-color: color-mix(in oklch, var(--glacier) 42%, transparent); box-shadow: 0 10px 30px color-mix(in oklch, var(--cinema) 26%, transparent), inset 0 1px 0 color-mix(in oklch, var(--glacier) 30%, transparent); }
-.problem-section .problem-captions p { color: var(--cinema-text); border-top-color: color-mix(in oklch, var(--glacier) 34%, transparent); }
-.problem-section .problem-captions span { color: var(--glacier); }
-.problem-section .media-empty { background: linear-gradient(145deg, color-mix(in oklch, var(--pearl) 92%, transparent), color-mix(in oklch, var(--glacier) 88%, transparent)); border-color: color-mix(in oklch, var(--glacier) 55%, transparent); }
-.problem-section .media-caption { color: var(--glacier); }
-.problem-section .media-caption > span:last-child { color: var(--glacier); }
-.problem-section .section-marker { color: var(--pearl); background: color-mix(in oklch, var(--cinema) 46%, transparent); border-color: color-mix(in oklch, var(--glacier) 55%, transparent); font-weight: 500; }
-.problem-section .chapter-label { color: var(--pearl); }
-.problem-section .problem-captions span { color: color-mix(in oklch, var(--pearl) 88%, var(--glacier)); }
-.problem-section .media-caption, .problem-section .media-caption > span:last-child { color: var(--pearl); }
