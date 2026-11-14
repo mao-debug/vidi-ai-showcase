@@ -62,5 +62,5 @@
 - [x] Problem section: video moved up so its top lines up with the top of the 01/02/03 list.
 
 # Solution section video + bottom-left text box
-- [ ] Solution section: restore the clip to the size it had before it ran full section width.
-- [ ] Solution section: add a text box in the bottom left, beside the clip.
+- [x] Solution section: restore the clip to the size it had before it ran full section width (bottom-right, 210px tall).
+- [x] Solution section: add a text box in the bottom left, beside the clip.
