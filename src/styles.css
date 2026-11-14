@@ -367,3 +367,10 @@ h2 { font-size: 68px; max-width: 1000px; }
 .prototype-main .actual-media { flex: 1 1 auto; width: 100%; height: auto; min-height: 470px; object-fit: contain; }
 @media (max-width: 1000px) { .prototype-images .prototype-bottom-media .media-empty, .prototype-images .prototype-bottom-media .actual-media { height: 180px; } }
 @media (max-width: 760px) { .prototype-detail { gap: 20px; }.prototype-images .prototype-bottom-media .media-empty, .prototype-images .prototype-bottom-media .actual-media { height: auto; aspect-ratio: 1.6; } }
+
+/* Smaller explanatory bubble under each problem bullet. */
+.problem-caption-body { display: flex; flex-direction: column; gap: 10px; min-width: 0; }
+.problem-caption-body strong { font-weight: inherit; }
+.problem-caption-body small { font-size: 15px; line-height: 1.55; color: var(--muted-foreground); background: var(--glass-surface); border: 1px solid var(--glass-edge); border-radius: 14px; padding: 10px 14px; backdrop-filter: blur(18px) saturate(140%); }
+@media (max-width: 1000px) { .problem-caption-body small { font-size: 14px; } }
+@media (max-width: 760px) { .problem-caption-body small { font-size: 13px; padding: 9px 12px; } }
