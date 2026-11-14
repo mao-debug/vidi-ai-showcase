@@ -179,3 +179,9 @@ h3 { font-family: var(--font-display); font-size: 38px; font-weight: 400; line-h
 }
 @media (max-width: 430px) { .glass-header { gap: 3px; }.glass-header nav { gap: 12px; width: 100%; justify-content: space-between; }.hero-copy { bottom: 84px; padding: 16px; }.hero-stage { min-height: 620px; }.hero-copy h1 { font-size: 62px; }.hero-copy h1 span { font-size: 48px; }h2 { font-size: 41px; }.media-caption { flex-direction: column; gap: 3px; }.hero-footer > span { max-width: 190px; }.activity-cues p { font-size: 27px; } }
 @media (prefers-reduced-motion: reduce) { *,*::before,*::after { animation: none !important; transition: none !important; }.hero-journey { height: 92svh; }.hero-stage { position: relative; }.caesar-image { transform: none !important; }.lens-dissolve { display: none; }.hero-copy,.hero-footer { opacity: 1 !important; }.presentation-motion [data-reveal] { opacity: 1; transform: none; } }
+/* Mobile title is a full-width editorial band, not a floating panel. */
+@media (max-width: 760px) {
+ .hero-copy { left: 0; right: 0; bottom: 78px; max-width: none; border: 0; border-radius: 0; background: var(--glass-surface); padding: 20px; }
+ .hero-copy h1 { display: inline-block; margin-right: 24px; }
+ .hero-meaning { display: inline-block; }
+}
