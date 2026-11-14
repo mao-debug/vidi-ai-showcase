@@ -339,7 +339,7 @@ h2 { font-size: 68px; max-width: 1000px; }
 @media (max-width: 1000px) { .team-name { font-size: 21px; } }
 @media (max-width: 760px) { .team-section { padding: 64px 20px; }.team-cards { gap: 10px; }.team-card { padding: 12px; border-radius: 22px; gap: 9px; }.team-name { font-size: 15px; }.team-role { font-size: 11px; }.team-link { align-self: stretch; justify-content: center; padding: 7px 6px; font-size: 11px; gap: 5px; } }
 
-/* Real system-architecture diagram: a dark screen centered in the light section. */
+/* Real system-architecture diagram blends into the light section. */
 /* How It Works: diagram on the left, a matching text box on the right. */
 .hardware-split { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; align-items: stretch; margin-top: 46px; }
 .hardware-split .architecture-figure { margin: 0; max-width: none; }
@@ -348,9 +348,9 @@ h2 { font-size: 68px; max-width: 1000px; }
 .hardware-side { height: 100%; }
 @media (max-width: 900px) { .hardware-split { grid-template-columns: 1fr; gap: 24px; } }
 @media (max-width: 760px) { .hardware-split { margin-top: 32px; } }
-.architecture-figure { margin: 46px auto 0; max-width: 660px; padding: 16px; border: 1px solid var(--glass-edge); border-radius: 34px; background: var(--cinema); box-shadow: var(--glass-shadow); }
+.architecture-figure { margin: 46px auto 0; max-width: 660px; padding: 16px; border: 1px solid var(--glass-edge); border-radius: 34px; background: transparent; box-shadow: var(--glass-shadow); }
 .architecture-figure .actual-media { aspect-ratio: 1920 / 1241; object-fit: contain; background: transparent; border: 0; border-radius: 20px; }
-.architecture-figure .media-caption { color: var(--cinema-muted); }
+.architecture-figure .media-caption { color: var(--muted-foreground); }
 @media (max-width: 760px) { .architecture-figure { margin-top: 32px; padding: 10px 10px 16px; border-radius: 24px; }.architecture-figure .actual-media { border-radius: 14px; }.architecture-figure .media-caption { flex-direction: column; gap: 5px; font-size: 11px; margin-top: 10px; } }
 
 
