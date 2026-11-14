@@ -36,7 +36,7 @@ function Index() {
         <div className="problem-split">
           <div className="problem-text">
             <div className="problem-heading" data-reveal><Chapter n="I">The problem</Chapter><h2 id="problem-title">{copy.problem.title}</h2></div>
-            <div className="problem-captions">{copy.problem.captions.map((caption, i) => <p key={caption} data-reveal><span>0{i + 1}</span>{caption}</p>)}</div>
+            <div className="problem-captions">{copy.problem.captions.map((caption, i) => <p key={caption} data-reveal><span>0{i + 1}</span><span className="problem-caption-body"><strong>{caption}</strong><small>{copy.problem.details[i]}</small></span></p>)}</div>
           </div>
           <div className="problem-visual" data-reveal><PresentationMedia slot="problem" /></div>
         </div>
