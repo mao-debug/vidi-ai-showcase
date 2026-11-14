@@ -51,10 +51,10 @@ export type TeamMember = {
 
 export const teamMembers: TeamMember[] = [
   { name: "Team member one", role: "Role or focus", headshot: "", linkedin: "" },
-  { name: "Team member two", role: "Role or focus", headshot: "", linkedin: "" },
+  { name: "Simao Andrade", role: "Role or focus", headshot: "", linkedin: "https://www.linkedin.com/in/andradesimao/" },
   { name: "Team member three", role: "Role or focus", headshot: "", linkedin: "" },
-  { name: "Team member four", role: "Role or focus", headshot: "", linkedin: "" },
-  { name: "Team member five", role: "Role or focus", headshot: "", linkedin: "" },
+  { name: "Walter Medina Rodrigues", role: "Role or focus", headshot: "", linkedin: "https://www.linkedin.com/in/walter-medina-rodrigues/" },
+  { name: "Abraham Kifle", role: "Role or focus", headshot: "", linkedin: "https://www.linkedin.com/in/abrahamk432/" },
 ];
 
 export const presentation = {
