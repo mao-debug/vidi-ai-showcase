@@ -44,7 +44,7 @@ export const presentationMedia: Record<string, PresentationMedia> = {
   },
 };
 
-// Editable team roster: five people, one headshot slot and one LinkedIn link each.
+// Editable team roster: one headshot slot and one LinkedIn link per member.
 // headshot: a photo in src/assets imported at the top of this file, or a full https photo URL.
 // linkedin: the full profile URL, e.g. https://www.linkedin.com/in/username
 export type TeamMember = {
@@ -60,6 +60,8 @@ export const teamMembers: TeamMember[] = [
   { name: "Stephen Bate", role: "Role or focus", headshot: headshotCard3.url, linkedin: "https://www.linkedin.com/in/stephen-bate1/" },
   { name: "Walter Medina Rodrigues", role: "Role or focus", headshot: headshotCard4.url, linkedin: "https://www.linkedin.com/in/walter-medina-rodrigues/" },
   { name: "Abraham Kifle", role: "Role or focus", headshot: headshotCard5.url, linkedin: "https://www.linkedin.com/in/abrahamk432/" },
+  { name: "Team member six", role: "Role or focus", headshot: "", linkedin: "" },
+  { name: "Team member seven", role: "Role or focus", headshot: "", linkedin: "" },
 ];
 
 export const presentation = {
@@ -70,7 +72,7 @@ export const presentation = {
   demo: { title: "“I’m about to walk.”", status: "Distance sensors · Bench-tested", sceneTitle: "“What’s in front of me?”", sceneStatus: "In integration", sceneNote: "Camera → spoken response. “Which side is the chair on?”", supplement: "A supplement to existing mobility aids. Not a replacement." },
   hardware: { title: "Two ways to sense the scene.", paths: [{ label: "Distance", steps: ["Ultrasonic sensors", "ESP32", "Left / right distance readings"] }, { label: "Vision & voice", steps: ["IMX708 camera", "Raspberry Pi 5", "Gemini online", "Bluetooth headset"] }], status: "Sensors bench-tested. The Pi detects the camera.", note: "One camera. Two distance sensors. Gemini requires internet." },
   next: { title: "How does the wearer\nstay in control?", subtitle: "Start. Redirect. Stop.", cueStatus: "Future control examples", cues: ["“I’m about to walk.”", "“I’m about to play.”", "“Stop.”"], future: "Future ideas: chess, banknote identification, clothing choices, and possible eye tracking.", access: "Eye tracking depends on individual access needs.", milestone: "Next: test whether wearers can reliably start, redirect, and stop assistance." },
-  team: { title: "Meet the team.", subtitle: "The five people behind Vidi.", status: "Roles ready to add", members: teamMembers },
+  team: { title: "Meet the team.", subtitle: "The seven people behind Vidi.", status: "Two headshots and LinkedIn links ready to add", members: teamMembers },
 };
 
 export const problem = {
