@@ -27,7 +27,7 @@
 # Prototype photo + team back to five
 - [x] Put the uploaded smart-glasses multi-view photo into the "The Vidi prototype" image slot.
 - [x] Team has only five members: remove the two extra cards and restore five-person copy.
-- [ ] Close-up photo for the small panel beside the prototype photo.
+- [x] Close-up photo for the small panel beside the prototype photo. (Closed: that panel is now a text box, so no photo is needed.)
 # Team majors + one row
 - [x] Replace role lines with majors: Marcos CS, Simao EE, Stephen BME, Walter Accounting, Abraham Managerial Economics.
 - [x] Team section: all five cards in one row.
@@ -39,3 +39,8 @@
 - [x] Problem section: revert the temporary blue field back to the template's original pastel gradient; text verified dark and readable.
 - [x] Problem section: bullets read "Outdated Technology", "Not Enough Sensory Information", "No Warnings of Overhead Hazards".
 - [x] Problem section: put the uploaded cane blind-spot video in the picture box, with a still preview before play.
+
+# Section II: Our Solution
+- [x] Section II chapter label reads "Our Solution" instead of "The prototype".
+- [x] Replace the right image box with a text panel the same size, filled from vidi-content.
+- [ ] Confirm the wording of the new text panel with the team, and decide whether the top nav pill should also change from "Prototype".
