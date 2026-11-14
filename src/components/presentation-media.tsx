@@ -1,10 +1,10 @@
-import { Camera, AudioLines, Scan, Glasses, MoveUpRight } from "lucide-react";
+import { Camera, AudioLines, Scan, Glasses, MoveUpRight, Image } from "lucide-react";
 import { presentationMedia } from "@/lib/vidi-content";
 
 export function PresentationMedia({ slot }: { slot: string }) {
   const media = presentationMedia[slot];
   if (!media) return null;
-  const Icon = slot === "walk" ? Scan : slot === "scene" ? AudioLines : slot === "chess" ? Camera : Glasses;
+  const Icon = slot === "walk" ? Scan : slot === "scene" ? AudioLines : slot === "detail" ? Camera : slot === "prototype" ? Glasses : Image;
 
   return (
     <figure className={`project-media media-${slot}`}>
@@ -22,10 +22,10 @@ export function PresentationMedia({ slot }: { slot: string }) {
           <div className="media-corner corner-tl" /><div className="media-corner corner-tr" />
           <div className="media-corner corner-bl" /><div className="media-corner corner-br" />
           {slot === "prototype" ? <PrototypeDiagram /> : <Icon className="media-icon" strokeWidth={1} aria-hidden="true" />}
-          <div className="media-reservation"><span className="media-dot" />{slot === "prototype" ? "Prototype photo / film" : "Project visual / demo"}<MoveUpRight size={16} aria-hidden="true" /></div>
+          <div className="media-reservation"><span className="media-dot" />{slot === "prototype" ? "Actual glasses photo" : slot === "detail" ? "Camera & sensor close-up" : slot === "walk" ? "Actual demo footage / stills" : slot === "comparison" ? "Comparison visual" : "Actual project visual"}<MoveUpRight size={16} aria-hidden="true" /></div>
         </div>
       )}
-      <figcaption className="media-caption"><span>{media.caption}</span><span>{media.src ? "Vidi AI" : "Reserved for actual project media"}</span></figcaption>
+      <figcaption className="media-caption"><span>{media.caption}</span><span>{media.src ? "Vidi AI" : "Placeholder · awaiting your media"}</span></figcaption>
       {media.kind === "video" && media.src && media.transcript && <details className="mt-4 text-muted-foreground"><summary>Demo transcript</summary><p className="mt-3">{media.transcript}</p></details>}
     </figure>
   );

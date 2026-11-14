@@ -1,85 +1,65 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { ArrowDown, ArrowDownRight, Radar, Eye, Headphones, Hand, Mic, ScanEye } from "lucide-react";
-import { site, problem, intro, demoMoments, hardware, control, footer } from "@/lib/vidi-content";
+import { ArrowDown, ArrowUpRight, Radar, Eye, Headphones, MoveUpRight } from "lucide-react";
+import { site, presentation as copy, footer } from "@/lib/vidi-content";
 import { PresentationMedia } from "@/components/presentation-media";
 import { usePresentationMotion } from "@/hooks/use-presentation-motion";
+import caesarImage from "@/assets/caesar-glasses-concept.jpg";
 
 export const Route = createFileRoute("/")({
-  head: () => ({
-    meta: [
-      { title: "Vidi AI — Visual information, on your terms" },
-      { name: "description", content: "Vidi AI: a wearable assistive-technology prototype. Explore the problem, our prototype, three demo moments, and the next steps in one continuous presentation." },
-      { property: "og:title", content: "Vidi AI — Visual information, on your terms" },
-      { property: "og:description", content: "A wearable prototype that turns what a camera sees into information the wearer can use. The Vidi AI final presentation." },
-      { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary_large_image" },
-    ],
-  }),
-  component: Index,
+  head: () => ({ meta: [
+    { title: "VIDI AI — A new perspective on independence" },
+    { name: "description", content: "Vidi means ‘I saw.’ Meet Vidi AI, our wearable assistive-technology prototype: distance sensing, visual questions, and wearer control." },
+    { property: "og:title", content: "VIDI AI — A new perspective on independence" },
+    { property: "og:description", content: "From a new perspective to a wearable possibility. The Vidi AI live prototype presentation." },
+    { property: "og:type", content: "website" }, { name: "twitter:card", content: "summary_large_image" },
+  ] }), component: Index,
 });
-
-function Chapter({ number, children }: { number: string; children: React.ReactNode }) {
-  return <div className="chapter-label"><span>{number}</span><span className="chapter-line" /><span>{children}</span></div>;
+function Chapter({ n, children }: { n: string; children: React.ReactNode }) {
+  return <p className="chapter-label"><span>{n}</span><span className="chapter-line" />{children}</p>;
 }
-
 function Index() {
   usePresentationMotion();
-  return (
-    <div className="presentation" id="top">
-      <a href="#main" className="skip-link">Skip to main content</a>
-      <div className="reading-progress" aria-hidden="true" />
-      <header className="presentation-header">
-        <span className="wordmark"><span className="brand-symbol" aria-hidden="true">v.</span>{site.name}</span>
-        <span className="header-note">A wearable perspective<span className="media-dot" /></span>
-      </header>
-      <main id="main">
-        <section id="problem" className="opening section-shell" aria-labelledby="problem-heading">
-          <div className="opening-content">
-            <Chapter number="01">The problem</Chapter>
-            <h1 id="problem-heading" className="opening-title"><span>What’s in</span><span>front of <em>me?</em></span></h1>
-            <p className="opening-intro">Getting timely visual information can take extra steps. Checking an obstacle at head height. Identifying a bill. Choosing what to wear.</p>
-            <div className="opening-bottom"><span>{site.name}<br /><span className="text-muted-foreground">Visual information, on your terms.</span></span><ArrowDown size={28} strokeWidth={1} aria-hidden="true" /></div>
-          </div>
-          <div className="perspective-field" aria-hidden="true"><div className="perspective-plane plane-one" /><div className="perspective-plane plane-two" /><div className="perspective-plane plane-three" /><span className="field-cross cross-one">+</span><span className="field-cross cross-two">+</span><div className="field-caption">A different way to see.</div></div>
-        </section>
-
-        <section className="context-section section-shell" aria-label="Our design goal">
-          <div className="context-copy" data-reveal><p>{problem.paragraphs[1]}</p><span className="small-label">The opportunity</span></div>
-          <div className="goal-statement" data-reveal><ArrowDownRight className="goal-arrow" strokeWidth={1} aria-hidden="true" /><h2>Everyday visual information.<br /><span className="text-primary">A wearable interface.</span><br />The user in control.</h2><p>Increasing autonomy, while respecting the value of existing tools and human assistance.</p></div>
-        </section>
-
-        <section className="prototype-section section-shell" aria-labelledby="intro-heading">
-          <div className="section-heading" data-reveal><Chapter number="02">Meet the prototype</Chapter><h2 id="intro-heading" className="brand-title">{site.name}<span className="text-primary">.</span></h2><p className="section-deck">{site.tagline}</p><p className="body-copy">{intro.nameExplanation}</p></div>
-          <div data-reveal className="prototype-visual"><PresentationMedia slot="prototype" /></div>
-          <div className="prototype-specs" data-reveal><span><Radar size={20} aria-hidden="true" />Two distance zones</span><span><Eye size={20} aria-hidden="true" />One camera</span><span><Headphones size={20} aria-hidden="true" />Spoken information</span></div>
-        </section>
-
-        <section id="demo" className="demo-section" aria-labelledby="demo-heading">
-          <div className="section-shell demo-heading" data-reveal><Chapter number="03">Three moments</Chapter><h2 id="demo-heading" className="section-title">Different moments.<br /><span className="text-primary">One perspective.</span></h2></div>
-          {demoMoments.map((moment, index) => (
-            <article className={`demo-moment moment-${moment.id}`} key={moment.id} aria-labelledby={`heading-${moment.id}`}>
-              <div className="section-shell moment-grid">
-                <div className="moment-copy" data-reveal><span className="moment-number" aria-hidden="true">0{index + 1}</span><p className="moment-status"><span className="media-dot" />{moment.status}</p><h3 id={`heading-${moment.id}`}>{moment.cue}</h3><p className="moment-subtitle">{moment.title}</p><p className="body-copy">{moment.body}</p></div>
-                <div className="moment-visual" data-reveal><PresentationMedia slot={moment.id} /></div>
-              </div>
-            </article>
-          ))}
-        </section>
-
-        <section id="how-it-works" className="hardware-section section-shell" aria-labelledby="hardware-heading">
-          <div data-reveal><Chapter number="04">Behind the frame</Chapter><h2 id="hardware-heading" className="section-title">Two paths.<br /><span className="text-primary">One wearable.</span></h2></div>
-          <div className="hardware-paths">{hardware.paths.map((path, index) => <div className="hardware-path" data-reveal key={path.label}><div className="path-title">{index === 0 ? <Radar aria-hidden="true" /> : <Eye aria-hidden="true" />}<h3>{path.label}</h3></div><ol>{path.steps.map((step, i) => <li key={step}><span className="path-node" aria-hidden="true">0{i + 1}</span><span>{step}</span></li>)}</ol></div>)}</div>
-          <div className="hardware-notes" data-reveal><p className="text-primary">{hardware.status}</p><p>{hardware.stereoscopic}</p></div>
-        </section>
-
-        <section id="next-steps" className="control-section section-shell" aria-labelledby="control-heading">
-          <div data-reveal><Chapter number="05">The next question</Chapter><h2 id="control-heading" className="section-title">How does the wearer<br /><span className="text-primary">stay in control?</span></h2><p className="body-copy control-intro">{control.intro}</p></div>
-          <div className="control-grid"><div data-reveal><h3>{control.activityCues.heading}</h3><p className="body-copy">{control.activityCues.body}</p></div><div data-reveal><h3>{control.ideas.heading}</h3><ul className="control-ideas">{control.ideas.items.map((item, i) => { const Icon = [Mic, Hand, ScanEye][i]; return <li key={item}>{Icon && <Icon size={22} aria-hidden="true" />}<span>{item}</span></li>; })}</ul></div></div>
-          <p className="future-note" data-reveal>{control.futureChip}</p>
-          <div className="closing-statement" data-reveal><span className="small-label">Next milestone</span><p>Start.<br /><span>Redirect.</span><br /><em>Stop.</em></p><div className="closing-caption">Test whether wearers can reliably start, redirect, and stop assistance.<ArrowDownRight size={38} strokeWidth={1} aria-hidden="true" /></div></div>
-        </section>
-      </main>
-      <footer className="presentation-footer section-shell"><span className="wordmark">{site.name}<span className="text-primary">.</span></span><p>{footer.team.join(" · ")}</p><span>{site.domain}</span></footer>
-    </div>
-  );
+  return <div className="presentation" id="top">
+    <a href="#problem" className="skip-link">Skip to presentation</a>
+    <div className="reading-progress" aria-hidden="true" />
+    <header className="glass-header"><a href="#top" className="nav-brand" aria-label="Vidi AI, beginning">VIDI <span>AI</span></a><nav aria-label="Presentation sections">{copy.navigation.map(item => <a key={item.href} href={item.href}>{item.label}</a>)}</nav><span className="nav-domain">{site.domain}<ArrowUpRight size={13} aria-hidden="true" /></span></header>
+    <main>
+      <section className="hero-journey" aria-labelledby="hero-title">
+        <div className="hero-stage">
+          <img className="caesar-image" src={caesarImage} width={1536} height={1024} alt="Concept artwork of Julius Caesar in ivory drapery, looking at the audience and holding glasses in a white marble setting. These are concept glasses, not our prototype." fetchPriority="high" />
+          <div className="hero-copy"><p className="hero-kicker">{copy.hero.kicker}</p><h1 id="hero-title">VIDI<br /><span>AI</span></h1><p className="hero-meaning">{copy.hero.meaning}</p><p className="hero-reference"><em>{copy.hero.reference}</em><span>— {copy.hero.attribution}</span></p></div>
+          <div className="hero-footer"><span>{copy.hero.caption}</span><a href="#problem">{copy.hero.scroll}<ArrowDown size={17} aria-hidden="true" /></a></div>
+          <div className="lens-dissolve" aria-hidden="true" />
+        </div>
+      </section>
+      <section id="problem" className="section-shell problem-section" aria-labelledby="problem-title">
+        <div data-reveal><Chapter n="I">The problem</Chapter><h2 id="problem-title">{copy.problem.title}</h2></div>
+        <div className="problem-visual" data-reveal><PresentationMedia slot="problem" /></div>
+        <div className="problem-captions">{copy.problem.captions.map((caption, i) => <p key={caption} data-reveal><span>0{i + 1}</span>{caption}</p>)}</div>
+        <div className="comparison-row" data-reveal><div><h3>{copy.problem.comparisonTitle}</h3><p>{copy.problem.comparison}</p></div><PresentationMedia slot="comparison" /></div>
+      </section>
+      <section id="prototype" className="prototype-section section-shell" aria-labelledby="prototype-title">
+        <div className="section-heading" data-reveal><Chapter n="II">The prototype</Chapter><h2 id="prototype-title">{copy.prototype.title}</h2><p className="section-subtitle">{copy.prototype.subtitle}</p></div>
+        <div className="prototype-images"><div className="prototype-main" data-reveal><PresentationMedia slot="prototype" /></div><div className="prototype-detail" data-reveal><PresentationMedia slot="detail" /></div></div>
+        <div className="prototype-labels" data-reveal>{copy.prototype.labels.map((label, i) => { const Icon = [Eye, Radar, Headphones][i]; return <p key={label}>{Icon && <Icon size={21} strokeWidth={1.3} aria-hidden="true" />}{label}</p>; })}</div>
+      </section>
+      <section id="demo" className="demo-section section-shell" aria-labelledby="demo-title">
+        <div data-reveal><Chapter n="III">The demonstration</Chapter><h2 id="demo-title">{copy.demo.title}</h2><p className="status-label">{copy.demo.status}</p></div>
+        <div className="demo-wide" data-reveal><PresentationMedia slot="walk" /></div><p className="supplement-note">{copy.demo.supplement}</p>
+        <div className="scene-reveal"><div data-reveal><h3>{copy.demo.sceneTitle}</h3><span className="glass-label">{copy.demo.sceneStatus}</span><p>{copy.demo.sceneNote}</p></div><div data-reveal><PresentationMedia slot="scene" /></div></div>
+      </section>
+      <section id="how-it-works" className="hardware-section section-shell" aria-labelledby="hardware-title">
+        <div data-reveal><Chapter n="IV">How it works</Chapter><h2 id="hardware-title">{copy.hardware.title}</h2></div>
+        <div className="hardware-paths">{copy.hardware.paths.map((path, i) => <div className="hardware-path" key={path.label} data-reveal><div className="path-heading">{i === 0 ? <Radar strokeWidth={1.3} aria-hidden="true" /> : <Eye strokeWidth={1.3} aria-hidden="true" />}<h3>{path.label}</h3></div><ol>{path.steps.map((step, j) => <li key={step}><span className="path-index">0{j + 1}</span><span>{step}</span></li>)}</ol></div>)}</div>
+        <div className="hardware-note" data-reveal><p>{copy.hardware.status}</p><p>{copy.hardware.note}</p></div>
+      </section>
+      <section id="next-steps" className="next-section section-shell" aria-labelledby="next-title">
+        <div data-reveal><Chapter n="V">What’s next</Chapter><h2 id="next-title">{copy.next.title}</h2><p className="section-subtitle">{copy.next.subtitle}</p></div>
+        <div className="activity-cues">{copy.next.cues.map((cue, i) => <div data-reveal key={cue}><span>0{i + 1}</span><p>{cue}</p><MoveUpRight size={25} strokeWidth={1} aria-hidden="true" /></div>)}</div>
+        <p className="future-line" data-reveal>{copy.next.future}<br /><span>{copy.next.access}</span></p><p className="milestone" data-reveal>{copy.next.milestone}</p>
+        <div className="final-word" data-reveal><p>On your terms.</p><span>VIDI AI</span></div>
+      </section>
+    </main>
+    <footer className="presentation-footer section-shell"><span>VIDI AI</span><p>{footer.team.join(" · ")}</p><span>{site.domain}</span></footer>
+  </div>;
 }
