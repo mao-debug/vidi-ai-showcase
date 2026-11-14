@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { ArrowDown, ArrowUpRight, Radar, Eye, Headphones, MoveUpRight } from "lucide-react";
+import { ArrowDown, ArrowUpRight, Radar, Eye, Headphones, MoveUpRight, Linkedin } from "lucide-react";
 import { site, presentation as copy, footer } from "@/lib/vidi-content";
-import { PresentationMedia } from "@/components/presentation-media";
+import { PresentationMedia, TeamHeadshot } from "@/components/presentation-media";
 import { usePresentationMotion } from "@/hooks/use-presentation-motion";
 import caesarImage from "@/assets/caesar-cinematic-concept.jpg";
 
@@ -59,7 +59,19 @@ function Index() {
         <p className="milestone" data-reveal>{copy.next.milestone}</p>
         <div className="final-word" data-reveal><p>On your terms.</p><span>VIDI AI</span></div>
       </section>
+      <section id="team" className="team-section section-shell" aria-labelledby="team-title">
+        <div data-reveal><Chapter n="VI">Meet the team</Chapter><h2 id="team-title">{copy.team.title}</h2><p className="section-subtitle">{copy.team.subtitle}</p></div>
+        <p className="control-status" data-reveal>{copy.team.status}</p>
+        <ul className="team-cards">
+          {copy.team.members.map((member) => <li className="team-card" key={member.name} data-reveal>
+            <TeamHeadshot member={member} />
+            <h3 className="team-name">{member.name}</h3>
+            <p className="team-role">{member.role}</p>
+            {member.linkedin ? <a className="team-link" href={member.linkedin} target="_blank" rel="noopener noreferrer">LinkedIn<Linkedin size={15} aria-hidden="true" /></a> : <span className="team-link team-link-empty">LinkedIn link to add</span>}
+          </li>)}
+        </ul>
+      </section>
     </main>
-    <footer className="presentation-footer section-shell"><span>VIDI AI</span><p>{footer.team.join(" · ")}</p><span>{site.domain}</span></footer>
+    <footer className="presentation-footer section-shell"><span>VIDI AI</span><p>{footer.note}</p><span>{site.domain}</span></footer>
   </div>;
 }
