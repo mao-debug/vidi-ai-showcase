@@ -23,3 +23,7 @@
 # Two more team members
 - [x] Make room for two more people: seven cards, second row centered, phone layout unchanged.
 - [ ] Need names, LinkedIn links, photos and roles for members six and seven.
+
+# Prototype photo + team back to five
+- [x] Put the uploaded smart-glasses multi-view photo into the "The Vidi prototype" image slot.
+- [ ] Team has only five members: remove the two extra cards and restore five-person copy.
