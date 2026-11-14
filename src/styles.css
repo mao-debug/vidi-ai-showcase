@@ -374,3 +374,13 @@ h2 { font-size: 68px; max-width: 1000px; }
 .problem-caption-body small { font-size: 15px; line-height: 1.55; color: var(--muted-foreground); background: var(--glass-surface); border: 1px solid var(--glass-edge); border-radius: 14px; padding: 10px 14px; backdrop-filter: blur(18px) saturate(140%); }
 @media (max-width: 1000px) { .problem-caption-body small { font-size: 14px; } }
 @media (max-width: 760px) { .problem-caption-body small { font-size: 13px; padding: 9px 12px; } }
+
+/* Phone fix: stop the one-line problem heading from forcing the column wider than the screen. */
+@media (max-width: 760px) {
+  .problem-split { grid-template-columns: minmax(0, 1fr); }
+  .problem-captions { grid-template-columns: minmax(0, 1fr); }
+  .problem-captions p { min-width: 0; }
+}
+@media (max-width: 620px) {
+  .problem-section h2 { white-space: normal; overflow-wrap: anywhere; font-size: 34px; }
+}
