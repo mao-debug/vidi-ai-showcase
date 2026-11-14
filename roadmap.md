@@ -13,3 +13,4 @@
 - [x] Add the uploaded system-architecture diagram into the "How it works" section.
 - [x] Remove "AI" next to VIDI in the top banner.
 - [x] Rename every "Vidi AI" on the site to "Vidi" (page title, banner, footer, captions, alt text, meta).
+- [x] Say "Raspberry Pi 5" in the Vision & voice path; set the opening line to "Envision the Future, Empower the Execution."
