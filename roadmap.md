@@ -45,3 +45,8 @@
 - [x] Replace the right image box with a text panel the same size, filled from vidi-content.
 - [x] Top nav pill changed from "Prototype" to "Solution"; it still jumps to the same section.
 - [ ] Confirm the wording of the new text panel with the team.
+
+# Section II bubbles + bottom image box
+- [x] Delete the Camera / Distance sensors / Audio bubbles and the caption pill above them.
+- [x] Place an image box on the bottom right, under the text box.
+- [ ] Put the uploaded glasses_avoid_branch.mp4 clip into that new bottom-right box.
