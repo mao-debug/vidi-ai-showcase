@@ -335,7 +335,7 @@ h2 { font-size: 68px; max-width: 1000px; }
 .team-link:hover { color: var(--primary); border-color: color-mix(in oklch, var(--primary) 45%, var(--glass-edge)); }
 .team-link-empty { color: var(--muted-foreground); }
 @media (max-width: 1000px) { .team-name { font-size: 21px; } }
-@media (max-width: 760px) { .team-section { padding: 64px 20px; }.team-cards { gap: 10px; }.team-card { padding: 12px; border-radius: 22px; gap: 9px; }.team-name { font-size: 15px; }.team-role { font-size: 11px; } }
+@media (max-width: 760px) { .team-section { padding: 64px 20px; }.team-cards { gap: 10px; }.team-card { padding: 12px; border-radius: 22px; gap: 9px; }.team-name { font-size: 15px; }.team-role { font-size: 11px; }.team-link { align-self: stretch; justify-content: center; padding: 7px 6px; font-size: 11px; gap: 5px; } }
 
 /* Real system-architecture diagram: a dark screen centered in the light section. */
 .architecture-figure { margin: 46px auto 0; max-width: 660px; padding: 16px; border: 1px solid var(--glass-edge); border-radius: 34px; background: var(--cinema); box-shadow: var(--glass-shadow); }
