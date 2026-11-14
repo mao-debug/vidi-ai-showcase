@@ -4,7 +4,7 @@
  * Replace values freely; do not add fabricated photos, results, or testimonials.
  */
 
-import architectureDiagram from "@/assets/sensor-fusion-detection.png.asset.json";
+import architectureDiagram from "@/assets/system-architecture-diagram.png.asset.json";
 import caneBlindSpot from "@/assets/cane-blind-spot.mp4.asset.json";
 import caneBlindSpotPoster from "@/assets/cane-blind-spot-poster.jpg.asset.json";
 import glassesAvoidBranch from "@/assets/glasses-avoid-branch.mp4.asset.json";
@@ -57,7 +57,7 @@ export const presentationMedia: Record<string, PresentationMedia> = {
   architecture: {
     src: architectureDiagram.url,
     kind: "image",
-    alt: "System architecture diagram: HC-SR04 left sensor and HC-SR04 right sensor both feed the ESP32, which handles timing, filtering and measurements, then sends USB JSON readings at 115200 baud to the Raspberry Pi 5 running AI, sensor fusion and hazard detection.",
+    alt: "System architecture diagram: HC-SR04 #1, the left ultrasonic distance sensor, and HC-SR04 #2, the right ultrasonic distance sensor, both feed the ESP32 microcontroller for timing, filtering and measurements, which sends USB, JSON at 115200 baud to the Raspberry Pi 5 main computer running AI, sensor fusion and speech output.",
     caption: "System architecture · Sensors → ESP32 → Raspberry Pi 5",
   },
 };
@@ -101,7 +101,7 @@ export const presentation = {
       line: "The cane sweeps below the branch. The glasses see above it and say what is there.",
       status: "Animated diagram of the overhead-hazard warning.",
     } },
-  hardware: { title: "Sense. Process. Speak", paths: [{ label: "Distance", steps: ["Ultrasonic sensors", "ESP32", "Left / right distance readings"] }, { label: "Vision & voice", steps: ["IMX708 camera", "Raspberry Pi 5", "Gemini online", "Bluetooth headset"] }], status: "Sensors bench-tested. The Pi detects the camera.", note: "One camera. Two distance sensors. Gemini requires internet.", sideBox: { kicker: "Where it stands", title: "One camera. Two distance sensors.", points: ["Two HC-SR04 sensors feed the ESP32, which handles timing, filtering and measurements.", "The ESP32 sends JSON readings over USB to the Raspberry Pi 5 for AI, sensor fusion and hazard detection.", "The ultrasonic sensors have been bench-tested, and the Pi detects the camera."], status: "Gemini requires internet." } },
+  hardware: { title: "Sense. Process. Speak", paths: [{ label: "Distance", steps: ["Ultrasonic sensors", "ESP32", "Left / right distance readings"] }, { label: "Vision & voice", steps: ["IMX708 camera", "Raspberry Pi 5", "Gemini online", "Bluetooth headset"] }], status: "Sensors bench-tested. The Pi detects the camera.", note: "One camera. Two distance sensors. Gemini requires internet.", sideBox: { kicker: "Where it stands", title: "One camera. Two distance sensors.", points: ["Two HC-SR04 sensors feed the ESP32, which handles timing, filtering and measurements.", "The ESP32 sends JSON readings over USB to the Raspberry Pi 5 for AI, sensor fusion and speech output.", "The ultrasonic sensors have been bench-tested, and the Pi detects the camera."], status: "Gemini requires internet." } },
   next: { title: "How does the wearer\nstay in control?", subtitle: "Start. Redirect. Stop.", cueStatus: "Future control examples", cues: ["“I’m about to walk.”", "“I’m about to play.”", "“Stop.”"], future: "Future ideas: chess, banknote identification, clothing choices, and possible eye tracking.", access: "Eye tracking depends on individual access needs.", milestone: "Next: test whether wearers can reliably start, redirect, and stop assistance." },
   team: { title: "Meet the team.", subtitle: "The five people behind Vidi.", status: "Headshots, majors and LinkedIn links in place", members: teamMembers },
 };
