@@ -65,3 +65,8 @@
 # Solution section video + bottom-left text box
 - [x] Solution section: restore the clip to the size it had before it ran full section width (bottom-right, 210px tall).
 - [x] Solution section: add a text box in the bottom left, beside the clip.
+
+# Problem chart size + demo section removal
+- [x] Problem section: chart card made bigger so its bottom edge lines up with the bottom of the last bullet.
+- [x] Delete the demo section and renumber the chapters.
+- [x] Rename "IV - How it works" to "III - How It Works".

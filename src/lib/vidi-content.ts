@@ -81,7 +81,7 @@ export const teamMembers: TeamMember[] = [
 ];
 
 export const presentation = {
-  navigation: [{ label: "Problem", href: "#problem" }, { label: "Solution", href: "#prototype" }, { label: "Demo", href: "#demo" }, { label: "What’s next", href: "#next-steps" }, { label: "Team", href: "#team" }],
+  navigation: [{ label: "Problem", href: "#problem" }, { label: "Solution", href: "#prototype" }, { label: "What’s next", href: "#next-steps" }, { label: "Team", href: "#team" }],
   hero: { title: "VIDI", meaning: "Reimagining the way Blind and Visually imparied people interact with the world", caption: "Caesar & the glasses · Concept image", kicker: "A new perspective on independence", scroll: "A closer look" },
   problem: { title: "The Problem Visually Impaired People Face", captions: ["Outdated Technology", "Not Enough Sensory Information", "No Warnings of Overhead Hazards"], details: ["Technology has rapidly improved in all areas of life but White Canes for the blind have not changed.", "White Canes are good at detecting what is on the ground in front of someone but they lack in sensory information and navigation.", "White canes have a blind spot and cannot detect any hazards that are above the cane so visually impaired people are still at risk of getting hit with things like branches or cabinets."], comparisonTitle: "Human assistance. Wearable possibility.", comparison: "Be My Eyes connects people with sighted volunteers. We’re exploring a wearable interface the wearer controls." },
   prototype: { title: "Meet Vidi.", subtitle: "Visual information, on your terms.",
@@ -101,7 +101,6 @@ export const presentation = {
       line: "The cane sweeps below the branch. The glasses see above it and say what is there.",
       status: "Animated diagram of the overhead-hazard warning.",
     } },
-  demo: { title: "“I’m about to walk.”", status: "Distance sensors · Bench-tested", sceneTitle: "“What’s in front of me?”", sceneStatus: "In integration", sceneNote: "Camera → spoken response. “Which side is the chair on?”", supplement: "A supplement to existing mobility aids. Not a replacement." },
   hardware: { title: "Two ways to sense the scene.", paths: [{ label: "Distance", steps: ["Ultrasonic sensors", "ESP32", "Left / right distance readings"] }, { label: "Vision & voice", steps: ["IMX708 camera", "Raspberry Pi 5", "Gemini online", "Bluetooth headset"] }], status: "Sensors bench-tested. The Pi detects the camera.", note: "One camera. Two distance sensors. Gemini requires internet." },
   next: { title: "How does the wearer\nstay in control?", subtitle: "Start. Redirect. Stop.", cueStatus: "Future control examples", cues: ["“I’m about to walk.”", "“I’m about to play.”", "“Stop.”"], future: "Future ideas: chess, banknote identification, clothing choices, and possible eye tracking.", access: "Eye tracking depends on individual access needs.", milestone: "Next: test whether wearers can reliably start, redirect, and stop assistance." },
   team: { title: "Meet the team.", subtitle: "The five people behind Vidi.", status: "Headshots, majors and LinkedIn links in place", members: teamMembers },
