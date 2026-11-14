@@ -226,7 +226,7 @@ h3 { font-family: var(--font-display); font-size: 38px; font-weight: 400; line-h
 .prototype-section { background: var(--prototype-field); }
 .demo-section { background: var(--demo-field); }
 .hardware-section { background: var(--pearl); padding-block: 82px; }
-.next-section { background: var(--control-field); }
+.next-section { background: var(--control-field); min-height: calc(100svh - 80px); }
 h2 { font-size: 68px; max-width: 1000px; }
 .chapter-label { color: var(--primary); }
 .chapter-line { background: color-mix(in oklch, var(--primary) 30%, transparent); }
@@ -279,7 +279,8 @@ h2 { font-size: 68px; max-width: 1000px; }
  .activity-cues p { font-size: 27px; }
 }
 @media (max-width: 760px) {
- .glass-header { width: calc(100% - 24px); border-radius: 28px; padding: 12px 18px; }
+ .glass-header { width: calc(100% - 24px); border-radius: 28px; padding: 12px 18px; height: auto; min-height: 62px; row-gap: 8px; }
+ section[id] { scroll-margin-top: 112px; }
  .hero-stage { height: 90svh; min-height: 650px; max-height: 950px; }
  .caesar-image { object-position: 64% center; }
  .hero-copy { left: 0; right: 0; top: auto; bottom: 88px; width: auto; padding: 24px; background: linear-gradient(0deg, var(--cinema), color-mix(in oklch, var(--cinema) 90%, transparent) 60%, transparent); backdrop-filter: none; }
