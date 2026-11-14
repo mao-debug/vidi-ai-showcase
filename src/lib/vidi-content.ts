@@ -6,6 +6,7 @@
 
 import architectureDiagram from "@/assets/sensor-fusion-detection.png.asset.json";
 import caneBlindSpot from "@/assets/cane-blind-spot.mp4.asset.json";
+import caneBlindSpotPoster from "@/assets/cane-blind-spot-poster.jpg.asset.json";
 import headshotCard1 from "@/assets/team-headshot-card1.png.asset.json";
 import headshotCard2 from "@/assets/team-headshot-card2.png.asset.json";
 import headshotCard3 from "@/assets/team-headshot-card3.png.asset.json";
@@ -27,11 +28,12 @@ export type PresentationMedia = {
   alt: string;
   caption: string;
   captionsSrc?: string;
+  poster?: string;
   transcript?: string;
 };
 
 export const presentationMedia: Record<string, PresentationMedia> = {
-  problem: { src: caneBlindSpot.url, kind: "video", alt: "Animated diagram titled 'The cane's blind spot': a white cane sweeps the ground ahead of a walking figure and clears a tree trunk, but a low branch at chest and head level sits above the cane's reach, so the figure walks toward it unaware.", caption: "The cane's blind spot · Chest and above: the cane can't reach" },
+  problem: { src: caneBlindSpot.url, kind: "video", alt: "Animated diagram titled 'The cane's blind spot': a white cane sweeps the ground ahead of a walking figure and clears a tree trunk, but a low branch at chest and head level sits above the cane's reach, so the figure walks toward it unaware.", caption: "The cane's blind spot · Chest and above: the cane can't reach", poster: caneBlindSpotPoster.url },
   comparison: { src: "", kind: "image", alt: "Our Be My Eyes comparison", caption: "Be My Eyes · Live volunteer assistance" },
   prototype: {
     src: smartGlassesShowcase.url,
