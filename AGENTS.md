@@ -28,3 +28,6 @@ use the editor.
   own key and store it in Secrets.
 - **Secrets.** Lovable manages them. Do not put secret values in the repo.
 <!-- LOVABLE:END -->
+
+- Keep presentation copy and optional media sources in `src/lib/vidi-content.ts`, so real visuals and final wording can be replaced without restructuring the page.
+- Implement presentation motion with a browser-only observer and progressive CSS scroll timelines; leave content visible by default and disable motion for reduced-motion users.
