@@ -8,3 +8,7 @@
 - [x] Add five editable member cards with headshot slots and LinkedIn links at the end.
 - [x] Verify desktop/mobile layout, section jump, and filled photo/link rendering.
 - [x] Replace the opening "Vidi means 'I saw.'" / "Veni, vidi, vici." lines with "Envision the future, empower the execution."
+
+# Architecture diagram + banner brand
+- [x] Add the uploaded system-architecture diagram into the "How it works" section.
+- [ ] Remove "AI" next to VIDI in the top banner.
