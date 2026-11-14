@@ -358,3 +358,7 @@ h2 { font-size: 68px; max-width: 1000px; }
 .problem-section .media-empty { background: linear-gradient(145deg, color-mix(in oklch, var(--pearl) 92%, transparent), color-mix(in oklch, var(--glacier) 88%, transparent)); border-color: color-mix(in oklch, var(--glacier) 55%, transparent); }
 .problem-section .media-caption { color: var(--glacier); }
 .problem-section .media-caption > span:last-child { color: var(--glacier); }
+.problem-section .section-marker { color: var(--pearl); background: color-mix(in oklch, var(--cinema) 46%, transparent); border-color: color-mix(in oklch, var(--glacier) 55%, transparent); font-weight: 500; }
+.problem-section .chapter-label { color: var(--pearl); }
+.problem-section .problem-captions span { color: color-mix(in oklch, var(--pearl) 88%, var(--glacier)); }
+.problem-section .media-caption, .problem-section .media-caption > span:last-child { color: var(--pearl); }
