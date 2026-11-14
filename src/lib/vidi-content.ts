@@ -22,10 +22,23 @@ export type PresentationMedia = {
 };
 
 export const presentationMedia: Record<string, PresentationMedia> = {
+  problem: { src: "", kind: "image", alt: "An everyday situation where timely visual information matters", caption: "Everyday visual information" },
+  comparison: { src: "", kind: "image", alt: "Our Be My Eyes comparison", caption: "Be My Eyes · Live volunteer assistance" },
   prototype: { src: "", kind: "image", alt: "Our Vidi AI glasses prototype", caption: "The Vidi AI prototype" },
+  detail: { src: "", kind: "image", alt: "Close-up of the actual Vidi AI camera and distance sensors", caption: "Camera & sensors · Close-up" },
   walk: { src: "", kind: "video", alt: "Two-zone distance sensor bench test", caption: "Distance sensing · Bench test" },
   scene: { src: "", kind: "video", alt: "Vidi AI camera and voice workflow", caption: "Camera and voice · In integration" },
   chess: { src: "", kind: "image", alt: "Activity-aware assistance concept", caption: "Activity awareness · Future scenario" },
+};
+
+export const presentation = {
+  navigation: [{ label: "Problem", href: "#problem" }, { label: "Prototype", href: "#prototype" }, { label: "Demo", href: "#demo" }, { label: "What’s next", href: "#next-steps" }],
+  hero: { title: "VIDI AI", meaning: "Vidi means ‘I saw.’", reference: "Veni, vidi, vici.", attribution: "Julius Caesar", caption: "Caesar & the glasses · Concept image", kicker: "A new perspective on independence", scroll: "A closer look" },
+  problem: { title: "Visual information,\nwhen you need it.", captions: ["Spot an obstacle.", "Identify a bill.", "Choose what to wear."], comparisonTitle: "Human assistance. Wearable possibility.", comparison: "Be My Eyes connects people with sighted volunteers. We’re exploring a wearable interface the wearer controls." },
+  prototype: { title: "Meet Vidi AI.", subtitle: "Visual information, on your terms.", labels: ["Camera.", "Distance sensors.", "Audio."] },
+  demo: { title: "“I’m about to walk.”", status: "Distance sensors · Bench-tested", sceneTitle: "“What’s in front of me?”", sceneStatus: "In integration", sceneNote: "Camera → spoken response. “Which side is the chair on?”", supplement: "A supplement to existing mobility aids. Not a replacement." },
+  hardware: { title: "Two ways to\nsense the scene.", paths: [{ label: "Distance", steps: ["Ultrasonic sensors", "ESP32", "Left / right distance readings"] }, { label: "Vision & voice", steps: ["IMX708 camera", "Raspberry Pi 4", "Gemini online", "Bluetooth headset"] }], status: "Sensors bench-tested. The Pi detects the camera.", note: "One camera. Two distance sensors. Gemini requires internet." },
+  next: { title: "How does the wearer\nstay in control?", subtitle: "Start. Redirect. Stop.", cues: ["“I’m about to walk.”", "“I’m about to play.”", "“Stop.”"], future: "Future ideas: chess, banknote identification, clothing choices, and possible eye tracking.", access: "Eye tracking depends on individual access needs.", milestone: "Next: test whether wearers can reliably start, redirect, and stop assistance." },
 };
 
 export const problem = {

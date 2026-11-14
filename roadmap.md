@@ -1,5 +1,6 @@
-# Presentation update
-- [x] Remove top navigation and organize one continuous judge presentation.
-- [x] Add distinctive scroll-driven motion with a reduced-motion alternative.
-- [x] Reserve replaceable spaces for real prototype and demo visuals.
-- [x] Verify the presentation on desktop and narrow screens; keep unpublished.
+# Caesar-led presentation redesign
+- [x] Create labeled Caesar concept artwork and pinned lens-zoom opening.
+- [x] Apply white marble, frosted glass, and Roman editorial typography.
+- [x] Shorten presentation beats and add prominent, replaceable project media spaces.
+- [x] Add direct section navigation and distinct scroll reveals with static mobile/reduced-motion alternatives.
+- [x] Verify scrolling, navigation, media, accessibility, and screen fit; keep unpublished.
