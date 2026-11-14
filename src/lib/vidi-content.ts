@@ -4,6 +4,8 @@
  * Replace values freely; do not add fabricated photos, results, or testimonials.
  */
 
+import architectureDiagram from "@/assets/sensor-fusion-detection.png.asset.json";
+
 export const site = {
   name: "Vidi AI",
   tagline: "Visual information, on your terms.",

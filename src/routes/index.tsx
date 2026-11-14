@@ -49,6 +49,7 @@ function Index() {
       </section>
       <section id="how-it-works" className="hardware-section section-shell" aria-labelledby="hardware-title">
         <div data-reveal><Chapter n="IV">How it works</Chapter><h2 id="hardware-title">{copy.hardware.title}</h2></div>
+        <div className="architecture-figure" data-reveal><PresentationMedia slot="architecture" /></div>
         <div className="hardware-paths">{copy.hardware.paths.map((path, i) => <div className="hardware-path" key={path.label} data-reveal><div className="path-heading">{i === 0 ? <Radar strokeWidth={1.3} aria-hidden="true" /> : <Eye strokeWidth={1.3} aria-hidden="true" />}<h3>{path.label}</h3></div><ol>{path.steps.map((step, j) => <li key={step}><span className="path-index">0{j + 1}</span><span>{step}</span></li>)}</ol></div>)}</div>
         <div className="hardware-note" data-reveal><p>{copy.hardware.status}</p><p>{copy.hardware.note}</p></div>
       </section>
