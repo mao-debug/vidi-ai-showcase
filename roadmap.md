@@ -33,4 +33,4 @@
 - [x] Team section: all five cards in one row.
 
 # Problem section split layout
-- [ ] Problem section: text box on the left, picture box on the right.
+- [x] Problem section: text box on the left, picture box on the right.
