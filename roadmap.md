@@ -34,3 +34,4 @@
 
 # Problem section split layout
 - [x] Problem section: text box on the left, picture box on the right.
+- [ ] Problem section: text must be clearly visible on screen (user cannot see it at 1023x779)
