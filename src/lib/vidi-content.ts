@@ -87,6 +87,12 @@ export const presentation = {
         "Made to sit alongside a cane or dog, not replace it.",
       ],
       status: "Sensors bench-tested. The Pi detects the camera.",
+    },
+    bottomNote: {
+      kicker: "In the clip",
+      title: "A branch at head height. A spoken warning.",
+      line: "The cane sweeps below the branch. The glasses see above it and say what is there.",
+      status: "Animated diagram of the overhead-hazard warning.",
     } },
   demo: { title: "“I’m about to walk.”", status: "Distance sensors · Bench-tested", sceneTitle: "“What’s in front of me?”", sceneStatus: "In integration", sceneNote: "Camera → spoken response. “Which side is the chair on?”", supplement: "A supplement to existing mobility aids. Not a replacement." },
   hardware: { title: "Two ways to sense the scene.", paths: [{ label: "Distance", steps: ["Ultrasonic sensors", "ESP32", "Left / right distance readings"] }, { label: "Vision & voice", steps: ["IMX708 camera", "Raspberry Pi 5", "Gemini online", "Bluetooth headset"] }], status: "Sensors bench-tested. The Pi detects the camera.", note: "One camera. Two distance sensors. Gemini requires internet." },

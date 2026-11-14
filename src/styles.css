@@ -389,10 +389,9 @@ h2 { font-size: 68px; max-width: 1000px; }
 /* Hide the caption pill under the problem-section video. */
 .problem-visual .media-caption { display: none; }
 
-/* Solution section: photo box hugs the photo; the clip runs full width below both boxes. */
+/* Solution section: photo box hugs the photo; the clip sits bottom-right beside a text box. */
 .prototype-main .actual-media { height: auto; min-height: 0; }
-.prototype-wide-media { margin-top: 22px; min-width: 0; }
-.prototype-wide-media .actual-media { width: 100%; height: auto; aspect-ratio: 16 / 9; object-fit: contain; background: var(--media-surface); border: 1px solid var(--glass-edge); border-radius: 8px; }
-.prototype-wide-media .media-caption { display: none; }
-.prototype-wide-media .media-empty { aspect-ratio: 16 / 9; }
-@media (max-width: 760px) { .prototype-wide-media { margin-top: 20px; } }
+.prototype-images .prototype-bottom-text { padding: 22px 26px; gap: 12px; justify-content: center; }
+.prototype-bottom-text .solution-title { font-size: 23px; }
+.prototype-bottom-text .solution-line { margin: 0; font-size: 16px; color: var(--muted-foreground); }
+@media (max-width: 760px) { .prototype-images .prototype-bottom-text { padding: 20px 18px; gap: 10px; }.prototype-bottom-text .solution-title { font-size: 20px; }.prototype-bottom-text .solution-line { font-size: 15px; } }
