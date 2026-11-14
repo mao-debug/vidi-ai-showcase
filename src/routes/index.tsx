@@ -8,7 +8,7 @@ import caesarImage from "@/assets/caesar-cinematic-concept.jpg";
 export const Route = createFileRoute("/")({
   head: () => ({ meta: [
     { title: "VIDI AI — A new perspective on independence" },
-    { name: "description", content: "Vidi means ‘I saw.’ Meet Vidi AI, our wearable assistive-technology prototype: distance sensing, visual questions, and wearer control." },
+    { name: "description", content: "Envision the future, empower the execution. Meet Vidi AI, our wearable assistive-technology prototype: distance sensing, visual questions, and wearer control." },
     { property: "og:title", content: "VIDI AI — A new perspective on independence" },
     { property: "og:description", content: "From a new perspective to a wearable possibility. The Vidi AI live prototype presentation." },
     { property: "og:type", content: "website" }, { name: "twitter:card", content: "summary_large_image" },
@@ -27,7 +27,7 @@ function Index() {
       <section className="hero-journey" aria-labelledby="hero-title">
         <div className="hero-stage">
           <img className="caesar-image" src={caesarImage} width={1536} height={1024} alt="Cinematic concept artwork of Julius Caesar in a charcoal cloak, turning toward cool light and holding modern glasses below his chin by one temple. Concept eyewear, not the Vidi AI prototype." fetchPriority="high" />
-          <div className="hero-copy"><h1 id="hero-title">{copy.hero.title}</h1><p className="hero-meaning"><em>{copy.hero.meaning}</em></p><p className="hero-reference"><em>{copy.hero.reference}</em></p></div>
+          <div className="hero-copy"><h1 id="hero-title">{copy.hero.title}</h1><p className="hero-meaning"><em>{copy.hero.meaning}</em></p></div>
           <div className="hero-footer"><span>{copy.hero.caption}</span><a href="#problem">{copy.hero.scroll}<ArrowDown size={17} aria-hidden="true" /></a></div>
           <div className="lens-dissolve" aria-hidden="true" />
         </div>
