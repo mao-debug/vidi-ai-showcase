@@ -59,3 +59,8 @@
 - [x] Smaller text bubble under each of the three bullets, using the team's own wording.
 - [x] First bullet bubble reworded to end with a period.
 - [x] Phone fix: the one-line problem heading no longer forces the column wider than the screen (text was clipping at the right edge on phones).
+- [x] Problem section: video moved up so its top lines up with the top of the 01/02/03 list.
+
+# Solution section video + bottom-left text box
+- [x] Solution section: restore the clip to the size it had before it ran full section width (bottom-right, 210px tall).
+- [x] Solution section: add a text box in the bottom left, beside the clip.
