@@ -62,7 +62,7 @@ function Index() {
         <p className="control-status" data-reveal>{copy.next.cueStatus}</p>
         <div className="activity-cues">{copy.next.cues.map((cue, i) => <div data-reveal key={cue}><span>0{i + 1}</span><p>{cue}</p><MoveUpRight size={25} strokeWidth={1} aria-hidden="true" /></div>)}</div>
         <p className="milestone" data-reveal>{copy.next.milestone}</p>
-        <div className="final-word" data-reveal><p>On your terms.</p><span>Vtesting testing testningDI</span></div>
+        <div className="final-word" data-reveal><p>On your terms.</p><span>VIDI</span></div>
       </section>
       <section id="team" className="team-section section-shell" aria-labelledby="team-title">
         <div data-reveal><Chapter n="VI">Meet the team</Chapter><h2 id="team-title">{copy.team.title}</h2><p className="section-subtitle">{copy.team.subtitle}</p></div>
