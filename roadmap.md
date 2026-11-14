@@ -56,4 +56,5 @@
 
 # Problem bullet explanations
 - [x] Smaller text bubble under each of the three bullets, using the team's own wording.
+- [x] First bullet bubble reworded to end with a period.
 - [x] Phone fix: the one-line problem heading no longer forces the column wider than the screen (text was clipping at the right edge on phones).
