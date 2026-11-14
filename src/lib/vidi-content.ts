@@ -31,7 +31,7 @@ export type PresentationMedia = {
 };
 
 export const presentationMedia: Record<string, PresentationMedia> = {
-  problem: { src: "", kind: "image", alt: "An everyday situation where timely visual information matters", caption: "Everyday visual information" },
+  problem: { src: caneBlindSpot.url, kind: "video", alt: "Animated diagram titled 'The cane's blind spot': a white cane sweeps the ground ahead of a walking figure and clears a tree trunk, but a low branch at chest and head level sits above the cane's reach, so the figure walks toward it unaware.", caption: "The cane's blind spot · Chest and above: the cane can't reach" },
   comparison: { src: "", kind: "image", alt: "Our Be My Eyes comparison", caption: "Be My Eyes · Live volunteer assistance" },
   prototype: {
     src: smartGlassesShowcase.url,
