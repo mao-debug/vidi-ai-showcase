@@ -365,6 +365,8 @@ h2 { font-size: 68px; max-width: 1000px; }
 .prototype-images .solution-box { height: auto; flex: 1 1 auto; }
 .prototype-bottom-media { min-width: 0; }
 .prototype-images .prototype-bottom-media .media-empty, .prototype-images .prototype-bottom-media .actual-media { height: 210px; aspect-ratio: auto; }
-.prototype-main .media-caption { display: none; }
+.prototype-main .media-caption, .prototype-bottom-media .media-caption { display: none; }
+.prototype-main { display: flex; flex-direction: column; min-width: 0; }
+.prototype-main .actual-media { height: 100%; min-height: 470px; }
 @media (max-width: 1000px) { .prototype-images .prototype-bottom-media .media-empty, .prototype-images .prototype-bottom-media .actual-media { height: 180px; } }
 @media (max-width: 760px) { .prototype-detail { gap: 20px; }.prototype-images .prototype-bottom-media .media-empty, .prototype-images .prototype-bottom-media .actual-media { height: auto; aspect-ratio: 1.6; } }
