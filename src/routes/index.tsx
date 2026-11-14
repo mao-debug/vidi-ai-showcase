@@ -7,10 +7,10 @@ import caesarImage from "@/assets/caesar-cinematic-concept.jpg";
 
 export const Route = createFileRoute("/")({
   head: () => ({ meta: [
-    { title: "VIDI AI — A new perspective on independence" },
-    { name: "description", content: "Envision the future, empower the execution. Meet Vidi AI, our wearable assistive-technology prototype: distance sensing, visual questions, and wearer control." },
-    { property: "og:title", content: "VIDI AI — A new perspective on independence" },
-    { property: "og:description", content: "From a new perspective to a wearable possibility. The Vidi AI live prototype presentation." },
+    { title: "VIDI — A new perspective on independence" },
+    { name: "description", content: "Envision the future, empower the execution. Meet Vidi, our wearable assistive-technology prototype: distance sensing, visual questions, and wearer control." },
+    { property: "og:title", content: "VIDI — A new perspective on independence" },
+    { property: "og:description", content: "From a new perspective to a wearable possibility. The Vidi live prototype presentation." },
     { property: "og:type", content: "website" }, { name: "twitter:card", content: "summary_large_image" },
   ] }), component: Index,
 });
@@ -22,11 +22,11 @@ function Index() {
   return <div className="presentation" id="top">
     <a href="#problem" className="skip-link">Skip to presentation</a>
     <div className="reading-progress" aria-hidden="true" />
-    <header className="glass-header"><a href="#top" className="nav-brand" aria-label="Vidi AI, beginning">VIDI</a><nav aria-label="Presentation sections">{copy.navigation.map(item => <a key={item.href} href={item.href}>{item.label}</a>)}</nav><span className="nav-domain">{site.domain}<ArrowUpRight size={13} aria-hidden="true" /></span></header>
+    <header className="glass-header"><a href="#top" className="nav-brand" aria-label="Vidi, beginning">VIDI</a><nav aria-label="Presentation sections">{copy.navigation.map(item => <a key={item.href} href={item.href}>{item.label}</a>)}</nav><span className="nav-domain">{site.domain}<ArrowUpRight size={13} aria-hidden="true" /></span></header>
     <main>
       <section className="hero-journey" aria-labelledby="hero-title">
         <div className="hero-stage">
-          <img className="caesar-image" src={caesarImage} width={1536} height={1024} alt="Cinematic concept artwork of Julius Caesar in a charcoal cloak, turning toward cool light and holding modern glasses below his chin by one temple. Concept eyewear, not the Vidi AI prototype." fetchPriority="high" />
+          <img className="caesar-image" src={caesarImage} width={1536} height={1024} alt="Cinematic concept artwork of Julius Caesar in a charcoal cloak, turning toward cool light and holding modern glasses below his chin by one temple. Concept eyewear, not the Vidi prototype." fetchPriority="high" />
           <div className="hero-copy"><h1 id="hero-title">{copy.hero.title}</h1><p className="hero-meaning"><em>{copy.hero.meaning}</em></p></div>
           <div className="hero-footer"><span>{copy.hero.caption}</span><a href="#problem">{copy.hero.scroll}<ArrowDown size={17} aria-hidden="true" /></a></div>
           <div className="lens-dissolve" aria-hidden="true" />
@@ -58,7 +58,7 @@ function Index() {
         <p className="control-status" data-reveal>{copy.next.cueStatus}</p>
         <div className="activity-cues">{copy.next.cues.map((cue, i) => <div data-reveal key={cue}><span>0{i + 1}</span><p>{cue}</p><MoveUpRight size={25} strokeWidth={1} aria-hidden="true" /></div>)}</div>
         <p className="milestone" data-reveal>{copy.next.milestone}</p>
-        <div className="final-word" data-reveal><p>On your terms.</p><span>VIDI AI</span></div>
+        <div className="final-word" data-reveal><p>On your terms.</p><span>VIDI</span></div>
       </section>
       <section id="team" className="team-section section-shell" aria-labelledby="team-title">
         <div data-reveal><Chapter n="VI">Meet the team</Chapter><h2 id="team-title">{copy.team.title}</h2><p className="section-subtitle">{copy.team.subtitle}</p></div>
@@ -73,6 +73,6 @@ function Index() {
         </ul>
       </section>
     </main>
-    <footer className="presentation-footer section-shell"><span>VIDI AI</span><p>{footer.note}</p><span>{site.domain}</span></footer>
+    <footer className="presentation-footer section-shell"><span>VIDI</span><p>{footer.note}</p><span>{site.domain}</span></footer>
   </div>;
 }

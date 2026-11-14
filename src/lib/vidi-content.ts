@@ -1,5 +1,5 @@
 /*
- * Vidi AI — presentation copy.
+ * Vidi — presentation copy.
  * All site text lives here so final edits are one-file changes.
  * Replace values freely; do not add fabricated photos, results, or testimonials.
  */
@@ -7,7 +7,7 @@
 import architectureDiagram from "@/assets/sensor-fusion-detection.png.asset.json";
 
 export const site = {
-  name: "Vidi AI",
+  name: "Vidi",
   tagline: "Visual information, on your terms.",
   domain: "vidiai.us",
 };
@@ -26,10 +26,10 @@ export type PresentationMedia = {
 export const presentationMedia: Record<string, PresentationMedia> = {
   problem: { src: "", kind: "image", alt: "An everyday situation where timely visual information matters", caption: "Everyday visual information" },
   comparison: { src: "", kind: "image", alt: "Our Be My Eyes comparison", caption: "Be My Eyes · Live volunteer assistance" },
-  prototype: { src: "", kind: "image", alt: "Our Vidi AI glasses prototype", caption: "The Vidi AI prototype" },
-  detail: { src: "", kind: "image", alt: "Close-up of the actual Vidi AI camera and distance sensors", caption: "Camera & sensors · Close-up" },
+  prototype: { src: "", kind: "image", alt: "Our Vidi glasses prototype", caption: "The Vidi prototype" },
+  detail: { src: "", kind: "image", alt: "Close-up of the actual Vidi camera and distance sensors", caption: "Camera & sensors · Close-up" },
   walk: { src: "", kind: "video", alt: "Two-zone distance sensor bench test", caption: "Distance sensing · Bench test" },
-  scene: { src: "", kind: "video", alt: "Vidi AI camera and voice workflow", caption: "Camera and voice · In integration" },
+  scene: { src: "", kind: "video", alt: "Vidi camera and voice workflow", caption: "Camera and voice · In integration" },
   chess: { src: "", kind: "image", alt: "Activity-aware assistance concept", caption: "Activity awareness · Future scenario" },
   architecture: {
     src: architectureDiagram.url,
@@ -61,11 +61,11 @@ export const presentation = {
   navigation: [{ label: "Problem", href: "#problem" }, { label: "Prototype", href: "#prototype" }, { label: "Demo", href: "#demo" }, { label: "What’s next", href: "#next-steps" }, { label: "Team", href: "#team" }],
   hero: { title: "VIDI", meaning: "Envision the future,\nempower the execution.", caption: "Caesar & the glasses · Concept image", kicker: "A new perspective on independence", scroll: "A closer look" },
   problem: { title: "What’s in front of me?", captions: ["A nearby obstacle.", "A banknote.", "What to wear."], comparisonTitle: "Human assistance. Wearable possibility.", comparison: "Be My Eyes connects people with sighted volunteers. We’re exploring a wearable interface the wearer controls." },
-  prototype: { title: "Meet Vidi AI.", subtitle: "Visual information, on your terms.", labels: ["Camera.", "Distance sensors.", "Audio."] },
+  prototype: { title: "Meet Vidi.", subtitle: "Visual information, on your terms.", labels: ["Camera.", "Distance sensors.", "Audio."] },
   demo: { title: "“I’m about to walk.”", status: "Distance sensors · Bench-tested", sceneTitle: "“What’s in front of me?”", sceneStatus: "In integration", sceneNote: "Camera → spoken response. “Which side is the chair on?”", supplement: "A supplement to existing mobility aids. Not a replacement." },
   hardware: { title: "Two ways to sense the scene.", paths: [{ label: "Distance", steps: ["Ultrasonic sensors", "ESP32", "Left / right distance readings"] }, { label: "Vision & voice", steps: ["IMX708 camera", "Pi 4", "Gemini online", "Bluetooth headset"] }], status: "Sensors bench-tested. The Pi detects the camera.", note: "One camera. Two distance sensors. Gemini requires internet." },
   next: { title: "How does the wearer\nstay in control?", subtitle: "Start. Redirect. Stop.", cueStatus: "Future control examples", cues: ["“I’m about to walk.”", "“I’m about to play.”", "“Stop.”"], future: "Future ideas: chess, banknote identification, clothing choices, and possible eye tracking.", access: "Eye tracking depends on individual access needs.", milestone: "Next: test whether wearers can reliably start, redirect, and stop assistance." },
-  team: { title: "Meet the team.", subtitle: "The five people behind Vidi AI.", status: "Headshots and LinkedIn links ready to add", members: teamMembers },
+  team: { title: "Meet the team.", subtitle: "The five people behind Vidi.", status: "Headshots and LinkedIn links ready to add", members: teamMembers },
 };
 
 export const problem = {
@@ -79,7 +79,7 @@ export const problem = {
 
 export const intro = {
   nameExplanation:
-    "The name Vidi AI reflects the idea of turning what a camera sees into information the wearer can use.",
+    "The name Vidi reflects the idea of turning what a camera sees into information the wearer can use.",
   mediaSlotLabel: "Prototype media slot",
   mediaSlotNote:
     "Reserved for our glasses photo or a short demo clip. Until media is added, the labeled hardware diagram below stands in.",

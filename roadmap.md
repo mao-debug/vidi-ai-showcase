@@ -12,3 +12,4 @@
 # Architecture diagram + banner brand
 - [x] Add the uploaded system-architecture diagram into the "How it works" section.
 - [x] Remove "AI" next to VIDI in the top banner.
+- [x] Rename every "Vidi AI" on the site to "Vidi" (page title, banner, footer, captions, alt text, meta).
