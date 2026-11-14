@@ -22,7 +22,7 @@ function Index() {
   return <div className="presentation" id="top">
     <a href="#problem" className="skip-link">Skip to presentation</a>
     <div className="reading-progress" aria-hidden="true" />
-    <header className="glass-header"><a href="#top" className="nav-brand" aria-label="Vidi AI, beginning">VIDI <span>AI</span></a><nav aria-label="Presentation sections">{copy.navigation.map(item => <a key={item.href} href={item.href}>{item.label}</a>)}</nav><span className="nav-domain">{site.domain}<ArrowUpRight size={13} aria-hidden="true" /></span></header>
+    <header className="glass-header"><a href="#top" className="nav-brand" aria-label="Vidi AI, beginning">VIDI</a><nav aria-label="Presentation sections">{copy.navigation.map(item => <a key={item.href} href={item.href}>{item.label}</a>)}</nav><span className="nav-domain">{site.domain}<ArrowUpRight size={13} aria-hidden="true" /></span></header>
     <main>
       <section className="hero-journey" aria-labelledby="hero-title">
         <div className="hero-stage">
@@ -49,6 +49,7 @@ function Index() {
       </section>
       <section id="how-it-works" className="hardware-section section-shell" aria-labelledby="hardware-title">
         <div data-reveal><Chapter n="IV">How it works</Chapter><h2 id="hardware-title">{copy.hardware.title}</h2></div>
+        <div className="architecture-figure" data-reveal><PresentationMedia slot="architecture" /></div>
         <div className="hardware-paths">{copy.hardware.paths.map((path, i) => <div className="hardware-path" key={path.label} data-reveal><div className="path-heading">{i === 0 ? <Radar strokeWidth={1.3} aria-hidden="true" /> : <Eye strokeWidth={1.3} aria-hidden="true" />}<h3>{path.label}</h3></div><ol>{path.steps.map((step, j) => <li key={step}><span className="path-index">0{j + 1}</span><span>{step}</span></li>)}</ol></div>)}</div>
         <div className="hardware-note" data-reveal><p>{copy.hardware.status}</p><p>{copy.hardware.note}</p></div>
       </section>
