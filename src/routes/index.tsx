@@ -3,7 +3,7 @@ import { ArrowDown, ArrowUpRight, Radar, Eye, Headphones, MoveUpRight } from "lu
 import { site, presentation as copy, footer } from "@/lib/vidi-content";
 import { PresentationMedia } from "@/components/presentation-media";
 import { usePresentationMotion } from "@/hooks/use-presentation-motion";
-import caesarImage from "@/assets/caesar-glasses-concept.jpg";
+import caesarImage from "@/assets/caesar-cinematic-concept.jpg";
 
 export const Route = createFileRoute("/")({
   head: () => ({ meta: [
@@ -26,8 +26,8 @@ function Index() {
     <main>
       <section className="hero-journey" aria-labelledby="hero-title">
         <div className="hero-stage">
-          <img className="caesar-image" src={caesarImage} width={1536} height={1024} alt="Concept artwork of Julius Caesar in ivory drapery, looking at the audience and holding glasses in a white marble setting. These are concept glasses, not our prototype." fetchPriority="high" />
-          <div className="hero-copy"><p className="hero-kicker">{copy.hero.kicker}</p><h1 id="hero-title">VIDI<br /><span>AI</span></h1><p className="hero-meaning">{copy.hero.meaning}</p><p className="hero-reference"><em>{copy.hero.reference}</em><span>— {copy.hero.attribution}</span></p></div>
+          <img className="caesar-image" src={caesarImage} width={1536} height={1024} alt="Cinematic concept artwork of Julius Caesar in a charcoal cloak, turning toward cool light and holding modern glasses below his chin by one temple. Concept eyewear, not the Vidi AI prototype." fetchPriority="high" />
+          <div className="hero-copy"><h1 id="hero-title">{copy.hero.title}</h1><p className="hero-meaning"><em>{copy.hero.meaning}</em></p><p className="hero-reference"><em>{copy.hero.reference}</em></p></div>
           <div className="hero-footer"><span>{copy.hero.caption}</span><a href="#problem">{copy.hero.scroll}<ArrowDown size={17} aria-hidden="true" /></a></div>
           <div className="lens-dissolve" aria-hidden="true" />
         </div>
@@ -36,12 +36,11 @@ function Index() {
         <div data-reveal><Chapter n="I">The problem</Chapter><h2 id="problem-title">{copy.problem.title}</h2></div>
         <div className="problem-visual" data-reveal><PresentationMedia slot="problem" /></div>
         <div className="problem-captions">{copy.problem.captions.map((caption, i) => <p key={caption} data-reveal><span>0{i + 1}</span>{caption}</p>)}</div>
-        <div className="comparison-row" data-reveal><div><h3>{copy.problem.comparisonTitle}</h3><p>{copy.problem.comparison}</p></div><PresentationMedia slot="comparison" /></div>
       </section>
       <section id="prototype" className="prototype-section section-shell" aria-labelledby="prototype-title">
         <div className="section-heading" data-reveal><Chapter n="II">The prototype</Chapter><h2 id="prototype-title">{copy.prototype.title}</h2><p className="section-subtitle">{copy.prototype.subtitle}</p></div>
         <div className="prototype-images"><div className="prototype-main" data-reveal><PresentationMedia slot="prototype" /></div><div className="prototype-detail" data-reveal><PresentationMedia slot="detail" /></div></div>
-        <div className="prototype-labels" data-reveal>{copy.prototype.labels.map((label, i) => { const Icon = [Eye, Radar, Headphones][i]; return <p key={label}>{Icon && <Icon size={21} strokeWidth={1.3} aria-hidden="true" />}{label}</p>; })}</div>
+        <div className="prototype-labels">{copy.prototype.labels.map((label, i) => { const Icon = [Eye, Radar, Headphones][i]; return <p key={label} data-reveal>{Icon && <Icon size={21} strokeWidth={1.3} aria-hidden="true" />}{label}</p>; })}</div>
       </section>
       <section id="demo" className="demo-section section-shell" aria-labelledby="demo-title">
         <div data-reveal><Chapter n="III">The demonstration</Chapter><h2 id="demo-title">{copy.demo.title}</h2><p className="status-label">{copy.demo.status}</p></div>
@@ -55,8 +54,9 @@ function Index() {
       </section>
       <section id="next-steps" className="next-section section-shell" aria-labelledby="next-title">
         <div data-reveal><Chapter n="V">What’s next</Chapter><h2 id="next-title">{copy.next.title}</h2><p className="section-subtitle">{copy.next.subtitle}</p></div>
+        <p className="control-status" data-reveal>{copy.next.cueStatus}</p>
         <div className="activity-cues">{copy.next.cues.map((cue, i) => <div data-reveal key={cue}><span>0{i + 1}</span><p>{cue}</p><MoveUpRight size={25} strokeWidth={1} aria-hidden="true" /></div>)}</div>
-        <p className="future-line" data-reveal>{copy.next.future}<br /><span>{copy.next.access}</span></p><p className="milestone" data-reveal>{copy.next.milestone}</p>
+        <p className="milestone" data-reveal>{copy.next.milestone}</p>
         <div className="final-word" data-reveal><p>On your terms.</p><span>VIDI AI</span></div>
       </section>
     </main>

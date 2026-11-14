@@ -31,4 +31,4 @@ use the editor.
 
 - Keep presentation copy and optional media sources in `src/lib/vidi-content.ts`, so real visuals and final wording can be replaced without restructuring the page.
 - Implement presentation motion with a browser-only observer and progressive CSS scroll timelines; leave content visible by default and disable motion for reduced-motion users.
-- Drive the pinned concept-image zoom through the presentation motion hook, using the image's rendered lens position; mobile and reduced-motion layouts must bypass pinning and camera motion.
+- Drive the pinned concept-image zoom and curved lens transition through the presentation motion hook, using the image's rendered lens position; mobile and reduced-motion layouts bypass pinning, camera motion, and hidden reveals so the static presentation stays fully readable.

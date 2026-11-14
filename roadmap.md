@@ -1,6 +1,5 @@
-# Caesar-led presentation redesign
-- [x] Create labeled Caesar concept artwork and pinned lens-zoom opening.
-- [x] Apply white marble, frosted glass, and Roman editorial typography.
-- [x] Shorten presentation beats and add prominent, replaceable project media spaces.
-- [x] Add direct section navigation and distinct scroll reveals with static mobile/reduced-motion alternatives.
-- [x] Verify scrolling, navigation, media, accessibility, and screen fit; keep unpublished.
+# Cinematic glass presentation redesign
+- [x] Replace Caesar concept portrait and retarget the lens push-in and curved transition.
+- [x] Apply cinematic opening, luminous section colors, and rounded frosted glass.
+- [x] Refine concise pitch beats, prototype reveal, media slots, and future-control bubbles.
+- [x] Verify scroll, direct navigation, mobile, reduced motion, and media; keep unpublished.
