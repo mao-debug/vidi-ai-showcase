@@ -68,5 +68,5 @@
 
 # Problem chart size + demo section removal
 - [x] Problem section: chart card made bigger so its bottom edge lines up with the bottom of the last bullet.
-- [ ] Delete the demo section and renumber the chapters.
-- [ ] Rename "IV - How it works" to "III - How It Works".
+- [x] Delete the demo section and renumber the chapters.
+- [x] Rename "IV - How it works" to "III - How It Works".
