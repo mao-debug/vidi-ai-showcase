@@ -31,14 +31,32 @@ export const presentationMedia: Record<string, PresentationMedia> = {
   chess: { src: "", kind: "image", alt: "Activity-aware assistance concept", caption: "Activity awareness · Future scenario" },
 };
 
+// Editable team roster: five people, one headshot slot and one LinkedIn link each.
+// Fill headshot with a photo URL or a file in /public, and linkedin with the full profile URL.
+export type TeamMember = {
+  name: string;
+  role: string;
+  headshot: string;
+  linkedin: string;
+};
+
+export const teamMembers: TeamMember[] = [
+  { name: "Team member one", role: "Role or focus", headshot: "", linkedin: "" },
+  { name: "Team member two", role: "Role or focus", headshot: "", linkedin: "" },
+  { name: "Team member three", role: "Role or focus", headshot: "", linkedin: "" },
+  { name: "Team member four", role: "Role or focus", headshot: "", linkedin: "" },
+  { name: "Team member five", role: "Role or focus", headshot: "", linkedin: "" },
+];
+
 export const presentation = {
-  navigation: [{ label: "Problem", href: "#problem" }, { label: "Prototype", href: "#prototype" }, { label: "Demo", href: "#demo" }, { label: "What’s next", href: "#next-steps" }],
+  navigation: [{ label: "Problem", href: "#problem" }, { label: "Prototype", href: "#prototype" }, { label: "Demo", href: "#demo" }, { label: "What’s next", href: "#next-steps" }, { label: "Team", href: "#team" }],
   hero: { title: "VIDI", meaning: "Vidi means ‘I saw.’", reference: "Veni, vidi, vici.", attribution: "Julius Caesar", caption: "Caesar & the glasses · Concept image", kicker: "A new perspective on independence", scroll: "A closer look" },
   problem: { title: "What’s in front of me?", captions: ["A nearby obstacle.", "A banknote.", "What to wear."], comparisonTitle: "Human assistance. Wearable possibility.", comparison: "Be My Eyes connects people with sighted volunteers. We’re exploring a wearable interface the wearer controls." },
   prototype: { title: "Meet Vidi AI.", subtitle: "Visual information, on your terms.", labels: ["Camera.", "Distance sensors.", "Audio."] },
   demo: { title: "“I’m about to walk.”", status: "Distance sensors · Bench-tested", sceneTitle: "“What’s in front of me?”", sceneStatus: "In integration", sceneNote: "Camera → spoken response. “Which side is the chair on?”", supplement: "A supplement to existing mobility aids. Not a replacement." },
   hardware: { title: "Two ways to sense the scene.", paths: [{ label: "Distance", steps: ["Ultrasonic sensors", "ESP32", "Left / right distance readings"] }, { label: "Vision & voice", steps: ["IMX708 camera", "Pi 4", "Gemini online", "Bluetooth headset"] }], status: "Sensors bench-tested. The Pi detects the camera.", note: "One camera. Two distance sensors. Gemini requires internet." },
   next: { title: "How does the wearer\nstay in control?", subtitle: "Start. Redirect. Stop.", cueStatus: "Future control examples", cues: ["“I’m about to walk.”", "“I’m about to play.”", "“Stop.”"], future: "Future ideas: chess, banknote identification, clothing choices, and possible eye tracking.", access: "Eye tracking depends on individual access needs.", milestone: "Next: test whether wearers can reliably start, redirect, and stop assistance." },
+  team: { title: "Meet the team.", subtitle: "The five people behind Vidi AI.", status: "Headshots and LinkedIn links ready to add", members: teamMembers },
 };
 
 export const problem = {
@@ -128,7 +146,5 @@ export const control = {
 };
 
 export const footer = {
-  // Editable team names — replace with the real roster.
-  team: ["Team member one", "Team member two", "Team member three", "Team member four"],
   note: "Built as a hackathon final presentation.",
 };
