@@ -22,7 +22,7 @@ function Index() {
   return <div className="presentation" id="top">
     <a href="#problem" className="skip-link">Skip to presentation</a>
     <div className="reading-progress" aria-hidden="true" />
-    <header className="glass-header"><a href="#top" className="nav-brand" aria-label="Vidi AI, beginning">VIDI <span>AI</span></a><nav aria-label="Presentation sections">{copy.navigation.map(item => <a key={item.href} href={item.href}>{item.label}</a>)}</nav><span className="nav-domain">{site.domain}<ArrowUpRight size={13} aria-hidden="true" /></span></header>
+    <header className="glass-header"><a href="#top" className="nav-brand" aria-label="Vidi AI, beginning">VIDI</a><nav aria-label="Presentation sections">{copy.navigation.map(item => <a key={item.href} href={item.href}>{item.label}</a>)}</nav><span className="nav-domain">{site.domain}<ArrowUpRight size={13} aria-hidden="true" /></span></header>
     <main>
       <section className="hero-journey" aria-labelledby="hero-title">
         <div className="hero-stage">
