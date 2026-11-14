@@ -3,7 +3,7 @@ export const media = {
   // Set src to a URL (e.g. "/media/glasses.jpg" in public/media) to replace the diagram.
   type: "none" as "none" | "image" | "video",
   src: "",
-  alt: "Vidi AI prototype glasses with camera and two ultrasonic sensors mounted on the frame",
+  alt: "Vidi prototype glasses with camera and two ultrasonic sensors mounted on the frame",
   captionsSrc: "", // .vtt file for video captions
   transcript: "",
 };
