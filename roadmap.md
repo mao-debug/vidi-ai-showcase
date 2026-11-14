@@ -35,4 +35,5 @@
 # Problem section split layout
 - [x] Problem section: text box on the left, picture box on the right.
 - [x] Problem section: text clearly visible at 1023x779 — dark text on the original pastel field.
+- [x] Problem section: heading brought up so the 01/02/03 list top aligns with the image top.
 - [x] Problem section: revert the temporary blue field back to the template's original pastel gradient; text verified dark and readable.
