@@ -50,6 +50,7 @@
 - [x] Delete the Camera / Distance sensors / Audio bubbles and the caption pill above them.
 - [x] Place an image box on the bottom right, under the text box.
 - [x] Put the uploaded glasses_avoid_branch.mp4 clip into that new bottom-right box.
+- [x] Enlarge the clip: it now runs full section width below the photo and text panel; the photo box hugs the photo so the gray bands are gone.
 
 # Duplicate chapter marker
 - [x] Remove the "I - The Problem" bubble above the Problem heading; the "I — The problem" label under it is the only marker.
