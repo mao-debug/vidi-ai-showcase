@@ -43,8 +43,8 @@ function Index() {
         </div>
       </section>
       <section id="prototype" className="prototype-section section-shell" aria-labelledby="prototype-title">
-        <div className="section-heading" data-reveal><Chapter n="II">The prototype</Chapter><h2 id="prototype-title">{copy.prototype.title}</h2><p className="section-subtitle">{copy.prototype.subtitle}</p></div>
-        <div className="prototype-images"><div className="prototype-main" data-reveal><PresentationMedia slot="prototype" /></div><div className="prototype-detail" data-reveal><PresentationMedia slot="detail" /></div></div>
+        <div className="section-heading" data-reveal><Chapter n="II">Our Solution</Chapter><h2 id="prototype-title">{copy.prototype.title}</h2><p className="section-subtitle">{copy.prototype.subtitle}</p></div>
+        <div className="prototype-images"><div className="prototype-main" data-reveal><PresentationMedia slot="prototype" /></div><div className="prototype-detail" data-reveal><div className="solution-box"><p className="solution-kicker">{copy.prototype.solution.kicker}</p><h3 className="solution-title">{copy.prototype.solution.title}</h3><ul className="solution-points">{copy.prototype.solution.points.map((point, i) => <li key={point}><span>0{i + 1}</span>{point}</li>)}</ul><p className="solution-status">{copy.prototype.solution.status}</p></div></div></div>
         <div className="prototype-labels">{copy.prototype.labels.map((label, i) => { const Icon = [Eye, Radar, Headphones][i]; return <p key={label} data-reveal>{Icon && <Icon size={21} strokeWidth={1.3} aria-hidden="true" />}{label}</p>; })}</div>
       </section>
       <section id="demo" className="demo-section section-shell" aria-labelledby="demo-title">

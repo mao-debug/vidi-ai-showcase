@@ -347,3 +347,15 @@ h2 { font-size: 68px; max-width: 1000px; }
 /* Small text box above the problem section: chapter marker. */
 .section-marker { display: inline-flex; align-items: center; gap: 9px; padding: 9px 18px; margin: 0 0 30px; border: 1px solid var(--glass-edge); border-radius: 999px; background: var(--glass-surface); box-shadow: var(--glass-shadow); backdrop-filter: blur(24px) saturate(150%); font-size: 13px; letter-spacing: .06em; color: var(--foreground); }
 @media (max-width: 760px) { .section-marker { padding: 7px 14px; font-size: 11px; margin-bottom: 22px; } }
+
+/* Section II: solution text panel in place of the second image slot */
+.solution-box { display: flex; flex-direction: column; justify-content: center; gap: 20px; padding: 32px 28px; background: var(--media-field); border: 1px solid var(--glass-edge); border-radius: 8px; box-shadow: var(--glass-shadow); }
+.prototype-images .solution-box { height: 470px; }
+.solution-kicker { margin: 0; font-size: 12px; letter-spacing: .08em; text-transform: uppercase; color: var(--primary); }
+.solution-title { margin: 0; font-size: 27px; line-height: 1.15; }
+.solution-points { list-style: none; margin: 0; padding: 0; display: grid; gap: 14px; }
+.solution-points li { display: flex; gap: 12px; font-size: 16px; color: var(--muted-foreground); }
+.solution-points span { color: var(--primary); font-size: 12px; padding-top: 4px; }
+.solution-status { margin: 0; padding-top: 14px; border-top: 1px solid var(--glass-edge); font-size: 12px; color: var(--muted-foreground); }
+@media (max-width: 1000px) { .prototype-images .solution-box { height: 360px; } }
+@media (max-width: 760px) { .prototype-images .solution-box { height: auto; padding: 24px 20px; gap: 16px; }.solution-title { font-size: 23px; }.solution-points li { font-size: 15px; } }
