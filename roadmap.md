@@ -18,7 +18,7 @@
 # Team links and headshots
 - [x] Add LinkedIn links for members 2, 3, 4, 5 and fill all five headshots from the uploaded photos.
 - [x] Card 1 is Marcos Gomes with his LinkedIn link.
-- [ ] Roles for all five named cards still say "Role or focus".
+- [x] Roles for all five named cards: replaced by majors (see Team majors + one row).
 
 # Two more team members
 - [x] Make room for two more people: seven cards, second row centered, phone layout unchanged.
@@ -34,4 +34,5 @@
 
 # Problem section split layout
 - [x] Problem section: text box on the left, picture box on the right.
-- [ ] Problem section: text must be clearly visible on screen (user cannot see it at 1023x779)
+- [x] Problem section: text clearly visible at 1023x779 — dark text on the original pastel field.
+- [x] Problem section: revert the temporary blue field back to the template's original pastel gradient; text verified dark and readable.
