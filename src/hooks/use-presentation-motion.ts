@@ -18,24 +18,25 @@ export function usePresentationMotion() {
       if (reduced.matches || mobile.matches) { hero.style.setProperty("--hero-zoom", "1"); hero.style.setProperty("--hero-dissolve", "0"); hero.style.setProperty("--hero-copy", "1"); return; }
       const travel = hero.offsetHeight - stage.offsetHeight;
       const progress = Math.min(1, Math.max(0, -hero.getBoundingClientRect().top / Math.max(1, travel)));
-      // Lens center in the 1536×1024 concept portrait: x=.654, y=.427.
+      // Outward-facing right lens center in the 1536×1024 cinematic portrait.
       const width = stage.clientWidth, height = stage.clientHeight;
       const fit = Math.max(width / 1536, height / 1024);
-      const lensX = (width - 1536 * fit) / 2 + 1536 * fit * .654;
-      const lensY = (height - 1024 * fit) / 2 + 1024 * fit * .427;
+      const lensX = (width - 1536 * fit) / 2 + 1536 * fit * .653;
+      const lensY = (height - 1024 * fit) / 2 + 1024 * fit * .578;
       const push = Math.pow(progress, 1.65);
-      const scale = 1 + push * 23;
+      const scale = 1 + push * 29;
       image.style.transformOrigin = `${lensX}px ${lensY}px`;
       image.style.transform = `translate(${(width / 2 - lensX) * push}px, ${(height / 2 - lensY) * push}px) scale(${scale})`;
       hero.style.setProperty("--hero-copy", String(1 - Math.min(1, progress * 4)));
-      hero.style.setProperty("--hero-dissolve", String(Math.max(0, (progress - .78) / .22)));
+      hero.style.setProperty("--hero-dissolve", String(Math.max(0, (progress - .74) / .26)));
+      hero.style.setProperty("--lens-opening", `${Math.max(0, (progress - .74) / .26) * 150}%`);
     };
     const onScroll = () => { if (!frame) frame = window.requestAnimationFrame(update); };
     const configure = () => {
       observer?.disconnect();
-      root.classList.toggle("presentation-motion", !reduced.matches);
+      root.classList.toggle("presentation-motion", !reduced.matches && !mobile.matches);
       root.classList.toggle("cinematic-motion", !reduced.matches && !mobile.matches);
-      if (!reduced.matches && "IntersectionObserver" in window) {
+      if (!reduced.matches && !mobile.matches && "IntersectionObserver" in window) {
         observer = new IntersectionObserver((entries) => entries.forEach((entry) => {
           if (entry.isIntersecting) { entry.target.classList.add("is-visible"); observer?.unobserve(entry.target); }
         }), { threshold: .06 });
