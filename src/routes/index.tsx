@@ -45,26 +45,21 @@ function Index() {
         <div className="section-heading" data-reveal><Chapter n="II">Our Solution</Chapter><h2 id="prototype-title">{copy.prototype.title}</h2><p className="section-subtitle">{copy.prototype.subtitle}</p></div>
         <div className="prototype-images"><div className="prototype-main" data-reveal><PresentationMedia slot="prototype" /></div><div className="prototype-detail" data-reveal><div className="solution-box"><p className="solution-kicker">{copy.prototype.solution.kicker}</p><h3 className="solution-title">{copy.prototype.solution.title}</h3><ul className="solution-points">{copy.prototype.solution.points.map((point, i) => <li key={point}><span>0{i + 1}</span>{point}</li>)}</ul><p className="solution-status">{copy.prototype.solution.status}</p></div></div><div className="prototype-bottom-text solution-box" data-reveal><p className="solution-kicker">{copy.prototype.bottomNote.kicker}</p><h3 className="solution-title">{copy.prototype.bottomNote.title}</h3><p className="solution-line">{copy.prototype.bottomNote.line}</p><p className="solution-status">{copy.prototype.bottomNote.status}</p></div><div className="prototype-bottom-media" data-reveal><PresentationMedia slot="detail" /></div></div>
       </section>
-      <section id="demo" className="demo-section section-shell" aria-labelledby="demo-title">
-        <div data-reveal><Chapter n="III">The demonstration</Chapter><h2 id="demo-title">{copy.demo.title}</h2><p className="status-label">{copy.demo.status}</p></div>
-        <div className="demo-wide" data-reveal><PresentationMedia slot="walk" /></div><p className="supplement-note">{copy.demo.supplement}</p>
-        <div className="scene-reveal"><div data-reveal><h3>{copy.demo.sceneTitle}</h3><span className="glass-label">{copy.demo.sceneStatus}</span><p>{copy.demo.sceneNote}</p></div><div data-reveal><PresentationMedia slot="scene" /></div></div>
-      </section>
       <section id="how-it-works" className="hardware-section section-shell" aria-labelledby="hardware-title">
-        <div data-reveal><Chapter n="IV">How it works</Chapter><h2 id="hardware-title">{copy.hardware.title}</h2></div>
+        <div data-reveal><Chapter n="III">How It Works</Chapter><h2 id="hardware-title">{copy.hardware.title}</h2></div>
         <div className="architecture-figure" data-reveal><PresentationMedia slot="architecture" /></div>
         <div className="hardware-paths">{copy.hardware.paths.map((path, i) => <div className="hardware-path" key={path.label} data-reveal><div className="path-heading">{i === 0 ? <Radar strokeWidth={1.3} aria-hidden="true" /> : <Eye strokeWidth={1.3} aria-hidden="true" />}<h3>{path.label}</h3></div><ol>{path.steps.map((step, j) => <li key={step}><span className="path-index">0{j + 1}</span><span>{step}</span></li>)}</ol></div>)}</div>
         <div className="hardware-note" data-reveal><p>{copy.hardware.status}</p><p>{copy.hardware.note}</p></div>
       </section>
       <section id="next-steps" className="next-section section-shell" aria-labelledby="next-title">
-        <div data-reveal><Chapter n="V">What’s next</Chapter><h2 id="next-title">{copy.next.title}</h2><p className="section-subtitle">{copy.next.subtitle}</p></div>
+        <div data-reveal><Chapter n="IV">What’s next</Chapter><h2 id="next-title">{copy.next.title}</h2><p className="section-subtitle">{copy.next.subtitle}</p></div>
         <p className="control-status" data-reveal>{copy.next.cueStatus}</p>
         <div className="activity-cues">{copy.next.cues.map((cue, i) => <div data-reveal key={cue}><span>0{i + 1}</span><p>{cue}</p><MoveUpRight size={25} strokeWidth={1} aria-hidden="true" /></div>)}</div>
         <p className="milestone" data-reveal>{copy.next.milestone}</p>
         <div className="final-word" data-reveal><p>On your terms.</p><span>VIDI</span></div>
       </section>
       <section id="team" className="team-section section-shell" aria-labelledby="team-title">
-        <div data-reveal><Chapter n="VI">Meet the team</Chapter><h2 id="team-title">{copy.team.title}</h2><p className="section-subtitle">{copy.team.subtitle}</p></div>
+        <div data-reveal><Chapter n="V">Meet the team</Chapter><h2 id="team-title">{copy.team.title}</h2><p className="section-subtitle">{copy.team.subtitle}</p></div>
         <p className="control-status" data-reveal>{copy.team.status}</p>
         <ul className="team-cards">
           {copy.team.members.map((member) => <li className="team-card" key={member.name} data-reveal>
