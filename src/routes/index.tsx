@@ -33,9 +33,13 @@ function Index() {
         </div>
       </section>
       <section id="problem" className="section-shell problem-section" aria-labelledby="problem-title">
-        <div data-reveal><Chapter n="I">The problem</Chapter><h2 id="problem-title">{copy.problem.title}</h2></div>
-        <div className="problem-visual" data-reveal><PresentationMedia slot="problem" /></div>
-        <div className="problem-captions">{copy.problem.captions.map((caption, i) => <p key={caption} data-reveal><span>0{i + 1}</span>{caption}</p>)}</div>
+        <div className="problem-split">
+          <div className="problem-text">
+            <div data-reveal><Chapter n="I">The problem</Chapter><h2 id="problem-title">{copy.problem.title}</h2></div>
+            <div className="problem-captions">{copy.problem.captions.map((caption, i) => <p key={caption} data-reveal><span>0{i + 1}</span>{caption}</p>)}</div>
+          </div>
+          <div className="problem-visual" data-reveal><PresentationMedia slot="problem" /></div>
+        </div>
       </section>
       <section id="prototype" className="prototype-section section-shell" aria-labelledby="prototype-title">
         <div className="section-heading" data-reveal><Chapter n="II">The prototype</Chapter><h2 id="prototype-title">{copy.prototype.title}</h2><p className="section-subtitle">{copy.prototype.subtitle}</p></div>

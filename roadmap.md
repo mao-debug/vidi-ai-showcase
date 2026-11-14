@@ -28,3 +28,9 @@
 - [x] Put the uploaded smart-glasses multi-view photo into the "The Vidi prototype" image slot.
 - [x] Team has only five members: remove the two extra cards and restore five-person copy.
 - [ ] Close-up photo for the small panel beside the prototype photo, and roles for all five cards.
+# Team majors + one row
+- [x] Replace role lines with majors: Marcos CS, Simao EE, Stephen BME, Walter Accounting, Abraham Managerial Economics.
+- [x] Team section: all five cards in one row.
+
+# Problem section split layout
+- [x] Problem section: text box on the left, picture box on the right.
