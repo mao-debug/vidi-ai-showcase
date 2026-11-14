@@ -15,6 +15,7 @@ import headshotCard3 from "@/assets/team-headshot-card3.png.asset.json";
 import headshotCard4 from "@/assets/team-headshot-card4.png.asset.json";
 import headshotCard5 from "@/assets/team-headshot-card5.png.asset.json";
 import smartGlassesShowcase from "@/assets/smart-glasses-multiview-showcase.png.asset.json";
+import visionLossStat from "@/assets/vision-loss-stat.png.asset.json";
 
 export const site = {
   name: "Vidi",
@@ -37,6 +38,12 @@ export type PresentationMedia = {
 export const presentationMedia: Record<string, PresentationMedia> = {
   problem: { src: caneBlindSpot.url, kind: "video", alt: "Animated diagram titled 'The cane's blind spot': a white cane sweeps the ground ahead of a walking figure and clears a tree trunk, but a low branch at chest and head level sits above the cane's reach, so the figure walks toward it unaware.", caption: "The cane's blind spot · Chest and above: the cane can't reach", poster: caneBlindSpotPoster.url },
   comparison: { src: "", kind: "image", alt: "Our Be My Eyes comparison", caption: "Be My Eyes · Live volunteer assistance" },
+  problemGraph: {
+    src: visionLossStat.url,
+    kind: "image",
+    alt: "Horizontal bar chart titled 'Vision loss worldwide, 2020': 1.1 billion people live with vision loss, split into blind 43 million, moderate to severe distance vision impairment 295 million, mild distance vision impairment 258 million, and near vision impairment 510 million.",
+    caption: "Vision loss worldwide, 2020 · 1.1 billion people",
+  },
   prototype: {
     src: smartGlassesShowcase.url,
     kind: "image",
