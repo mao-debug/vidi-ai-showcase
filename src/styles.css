@@ -344,9 +344,6 @@ h2 { font-size: 68px; max-width: 1000px; }
 .architecture-figure .media-caption { color: var(--cinema-muted); }
 @media (max-width: 760px) { .architecture-figure { margin-top: 32px; padding: 10px 10px 16px; border-radius: 24px; }.architecture-figure .actual-media { border-radius: 14px; }.architecture-figure .media-caption { flex-direction: column; gap: 5px; font-size: 11px; margin-top: 10px; } }
 
-/* Small text box above the problem section: chapter marker. */
-.section-marker { display: inline-flex; align-items: center; gap: 9px; padding: 9px 18px; margin: 0 0 30px; border: 1px solid var(--glass-edge); border-radius: 999px; background: var(--glass-surface); box-shadow: var(--glass-shadow); backdrop-filter: blur(24px) saturate(150%); font-size: 13px; letter-spacing: .06em; color: var(--foreground); }
-@media (max-width: 760px) { .section-marker { padding: 7px 14px; font-size: 11px; margin-bottom: 22px; } }
 
 /* Section II: solution text panel in place of the second image slot */
 .solution-box { display: flex; flex-direction: column; justify-content: center; gap: 20px; padding: 32px 28px; background: var(--media-field); border: 1px solid var(--glass-edge); border-radius: 8px; box-shadow: var(--glass-shadow); }
