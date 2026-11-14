@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { ArrowDown, ArrowUpRight, Radar, Eye, Headphones, MoveUpRight, Linkedin } from "lucide-react";
+import { ArrowDown, ArrowUpRight, Radar, Eye, MoveUpRight, Linkedin } from "lucide-react";
 import { site, presentation as copy, footer } from "@/lib/vidi-content";
 import { PresentationMedia, TeamHeadshot } from "@/components/presentation-media";
 import { usePresentationMotion } from "@/hooks/use-presentation-motion";
