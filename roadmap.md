@@ -43,4 +43,5 @@
 # Section II: Our Solution
 - [x] Section II chapter label reads "Our Solution" instead of "The prototype".
 - [x] Replace the right image box with a text panel the same size, filled from vidi-content.
-- [ ] Confirm the wording of the new text panel with the team, and decide whether the top nav pill should also change from "Prototype".
+- [x] Top nav pill changed from "Prototype" to "Solution"; it still jumps to the same section.
+- [ ] Confirm the wording of the new text panel with the team.
