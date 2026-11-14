@@ -49,7 +49,6 @@ function Index() {
         <div data-reveal><Chapter n="III">How It Works</Chapter><h2 id="hardware-title">{copy.hardware.title}</h2></div>
         <div className="hardware-split"><div className="architecture-figure" data-reveal><PresentationMedia slot="architecture" /></div><div className="hardware-side solution-box" data-reveal><p className="solution-kicker">{copy.hardware.sideBox.kicker}</p><h3 className="solution-title">{copy.hardware.sideBox.title}</h3><ul className="solution-points">{copy.hardware.sideBox.points.map((point, i) => <li key={point}><span>0{i + 1}</span>{point}</li>)}</ul><p className="solution-status">{copy.hardware.sideBox.status}</p></div></div>
         <div className="hardware-paths">{copy.hardware.paths.map((path, i) => <div className="hardware-path" key={path.label} data-reveal><div className="path-heading">{i === 0 ? <Radar strokeWidth={1.3} aria-hidden="true" /> : <Eye strokeWidth={1.3} aria-hidden="true" />}<h3>{path.label}</h3></div><ol>{path.steps.map((step, j) => <li key={step}><span className="path-index">0{j + 1}</span><span>{step}</span></li>)}</ol></div>)}</div>
-        <div className="hardware-note" data-reveal><p>{copy.hardware.status}</p><p>{copy.hardware.note}</p></div>
       </section>
       <section id="next-steps" className="next-section section-shell" aria-labelledby="next-title">
         <div data-reveal><Chapter n="IV">What’s next</Chapter><h2 id="next-title">{copy.next.title}</h2><p className="section-subtitle">{copy.next.subtitle}</p></div>
