@@ -18,4 +18,8 @@
 # Team links and headshots
 - [x] Add LinkedIn links for members 2, 3, 4, 5 and fill all five headshots from the uploaded photos.
 - [x] Card 1 is Marcos Gomes with his LinkedIn link.
-- [ ] Roles for all five cards still say "Role or focus".
+- [ ] Roles for all five named cards still say "Role or focus".
+
+# Two more team members
+- [x] Make room for two more people: seven cards, second row centered, phone layout unchanged.
+- [ ] Need names, LinkedIn links, photos and roles for members six and seven.
