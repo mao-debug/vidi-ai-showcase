@@ -53,3 +53,7 @@
 
 # Duplicate chapter marker
 - [x] Remove the "I - The Problem" bubble above the Problem heading; the "I — The problem" label under it is the only marker.
+
+# Problem bullet explanations
+- [x] Smaller text bubble under each of the three bullets, using the team's own wording.
+- [x] Phone fix: the one-line problem heading no longer forces the column wider than the screen (text was clipping at the right edge on phones).
