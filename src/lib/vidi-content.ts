@@ -7,6 +7,8 @@
 import architectureDiagram from "@/assets/sensor-fusion-detection.png.asset.json";
 import caneBlindSpot from "@/assets/cane-blind-spot.mp4.asset.json";
 import caneBlindSpotPoster from "@/assets/cane-blind-spot-poster.jpg.asset.json";
+import glassesAvoidBranch from "@/assets/glasses-avoid-branch.mp4.asset.json";
+import glassesAvoidBranchPoster from "@/assets/glasses-avoid-branch-poster.jpg.asset.json";
 import headshotCard1 from "@/assets/team-headshot-card1.png.asset.json";
 import headshotCard2 from "@/assets/team-headshot-card2.png.asset.json";
 import headshotCard3 from "@/assets/team-headshot-card3.png.asset.json";
@@ -41,7 +43,7 @@ export const presentationMedia: Record<string, PresentationMedia> = {
     alt: "Five-view product sheet of the white smart glasses prototype: front view, left side view, right side view, top view and back view, showing the camera above the nose bridge and two stacked sensors on each front corner.",
     caption: "Smart glasses · Front, side, top and back views",
   },
-  detail: { src: "", kind: "image", alt: "Close-up of the actual Vidi camera and distance sensors", caption: "Camera & sensors · Close-up" },
+  detail: { src: glassesAvoidBranch.url, kind: "video", alt: "Animated diagram titled 'The cane's blind spot': a stick figure wearing gold glasses walks with a white cane toward a tree whose low branch sits at head height, above the cane's reach; audio waves appear behind the head, then a blue check mark badge, while the caption reads 'but our glasses warn: Branch ahead at head height.'", caption: "Glasses warning · “Branch ahead at head height.”", poster: glassesAvoidBranchPoster.url },
   walk: { src: "", kind: "video", alt: "Two-zone distance sensor bench test", caption: "Distance sensing · Bench test" },
   scene: { src: "", kind: "video", alt: "Vidi camera and voice workflow", caption: "Camera and voice · In integration" },
   chess: { src: "", kind: "image", alt: "Activity-aware assistance concept", caption: "Activity awareness · Future scenario" },
