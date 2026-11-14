@@ -39,6 +39,7 @@
 - [x] Problem section: revert the temporary blue field back to the template's original pastel gradient; text verified dark and readable.
 - [x] Problem section: bullets read "Outdated Technology", "Not Enough Sensory Information", "No Warnings of Overhead Hazards".
 - [x] Problem section: put the uploaded cane blind-spot video in the picture box, with a still preview before play.
+- [x] Problem section: second image box under the video holding the uploaded "Vision loss worldwide, 2020" bar chart.
 
 # Section II: Our Solution
 - [x] Section II chapter label reads "Our Solution" instead of "The prototype".
