@@ -31,6 +31,12 @@ export const presentationMedia: Record<string, PresentationMedia> = {
   walk: { src: "", kind: "video", alt: "Two-zone distance sensor bench test", caption: "Distance sensing · Bench test" },
   scene: { src: "", kind: "video", alt: "Vidi AI camera and voice workflow", caption: "Camera and voice · In integration" },
   chess: { src: "", kind: "image", alt: "Activity-aware assistance concept", caption: "Activity awareness · Future scenario" },
+  architecture: {
+    src: architectureDiagram.url,
+    kind: "image",
+    alt: "System architecture diagram: HC-SR04 left sensor and HC-SR04 right sensor both feed the ESP32, which handles timing, filtering and measurements, then sends USB JSON readings at 115200 baud to the Raspberry Pi 5 running AI, sensor fusion and hazard detection.",
+    caption: "System architecture · Sensors → ESP32 → Raspberry Pi 5",
+  },
 };
 
 // Editable team roster: five people, one headshot slot and one LinkedIn link each.
