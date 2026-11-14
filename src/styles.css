@@ -359,3 +359,14 @@ h2 { font-size: 68px; max-width: 1000px; }
 .solution-status { margin: 0; padding-top: 14px; border-top: 1px solid var(--glass-edge); font-size: 12px; color: var(--muted-foreground); }
 @media (max-width: 1000px) { .prototype-images .solution-box { height: 360px; } }
 @media (max-width: 760px) { .prototype-images .solution-box { height: auto; padding: 24px 20px; gap: 16px; }.solution-title { font-size: 23px; }.solution-points li { font-size: 15px; } }
+
+/* Section II: image box under the solution text box, right column */
+.prototype-detail { display: flex; flex-direction: column; gap: 22px; min-width: 0; }
+.prototype-images .solution-box { height: auto; flex: 1 1 auto; }
+.prototype-bottom-media { min-width: 0; }
+.prototype-images .prototype-bottom-media .media-empty, .prototype-images .prototype-bottom-media .actual-media { height: 210px; aspect-ratio: auto; }
+.prototype-main .media-caption, .prototype-bottom-media .media-caption { display: none; }
+.prototype-main { display: flex; flex-direction: column; justify-content: center; min-width: 0; background: var(--media-surface); border: 1px solid var(--glass-edge); border-radius: 8px; overflow: hidden; }
+.prototype-main .actual-media { flex: 1 1 auto; width: 100%; height: auto; min-height: 470px; object-fit: contain; }
+@media (max-width: 1000px) { .prototype-images .prototype-bottom-media .media-empty, .prototype-images .prototype-bottom-media .actual-media { height: 180px; } }
+@media (max-width: 760px) { .prototype-detail { gap: 20px; }.prototype-images .prototype-bottom-media .media-empty, .prototype-images .prototype-bottom-media .actual-media { height: auto; aspect-ratio: 1.6; } }
