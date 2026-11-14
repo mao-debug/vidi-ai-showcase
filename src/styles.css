@@ -313,7 +313,7 @@ h2 { font-size: 68px; max-width: 1000px; }
 
 /* Meet the team: five frosted cards with editable headshots and LinkedIn links. */
 :root { --team-field: linear-gradient(140deg, var(--pearl), var(--glacier) 45%, var(--ivory) 88%); }
-.team-section { width: 100%; padding: 96px max(40px, calc((100% - 1200px) / 2)); margin: 0; border: 0; background: var(--team-field); }
+.team-section { width: 100%; padding: 96px max(40px, calc((100% - 1200px) / 2)); margin: 0; border: 0; background: var(--team-field); min-height: calc(100svh - 80px); }
 .team-cards { list-style: none; padding: 0; margin: 26px 0 0; display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 18px; }
 .team-card { display: flex; flex-direction: column; gap: 13px; padding: 18px; border: 1px solid var(--glass-edge); border-radius: 30px; background: var(--glass-surface); backdrop-filter: blur(28px) saturate(170%); box-shadow: var(--glass-shadow); }
 .team-card:nth-child(2) { transition-delay: .1s; }

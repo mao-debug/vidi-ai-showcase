@@ -41,7 +41,7 @@ export type TeamMember = {
 };
 
 export const teamMembers: TeamMember[] = [
-  { name: "Team member one", role: "Role or focus", headshot: "", linkedin: "" },
+  { name: "Team member one", role: "Role or focus", headshot: "/headshot-check.jpg", linkedin: "https://www.linkedin.com/in/example" },
   { name: "Team member two", role: "Role or focus", headshot: "", linkedin: "" },
   { name: "Team member three", role: "Role or focus", headshot: "", linkedin: "" },
   { name: "Team member four", role: "Role or focus", headshot: "", linkedin: "" },
