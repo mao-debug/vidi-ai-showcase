@@ -1,5 +1,21 @@
-import { Camera, AudioLines, Scan, Glasses, MoveUpRight, Image } from "lucide-react";
-import { presentationMedia } from "@/lib/vidi-content";
+import { Camera, AudioLines, Scan, Glasses, MoveUpRight, Image, UserRound } from "lucide-react";
+import { presentationMedia, type TeamMember } from "@/lib/vidi-content";
+
+// One editable headshot slot per team member: photo when supplied, reserved slot until then.
+export function TeamHeadshot({ member }: { member: TeamMember }) {
+  return (
+    <figure className="team-headshot">
+      {member.headshot ? (
+        <img className="actual-headshot" src={member.headshot} alt={`Headshot of ${member.name}`} loading="lazy" />
+      ) : (
+        <div className="headshot-empty">
+          <UserRound className="headshot-icon" strokeWidth={1} aria-hidden="true" />
+          <span className="headshot-note"><span className="media-dot" />Headshot slot<MoveUpRight size={14} aria-hidden="true" /></span>
+        </div>
+      )}
+    </figure>
+  );
+}
 
 export function PresentationMedia({ slot }: { slot: string }) {
   const media = presentationMedia[slot];

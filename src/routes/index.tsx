@@ -1,14 +1,14 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { ArrowDown, ArrowUpRight, Radar, Eye, Headphones, MoveUpRight } from "lucide-react";
+import { ArrowDown, ArrowUpRight, Radar, Eye, Headphones, MoveUpRight, Linkedin } from "lucide-react";
 import { site, presentation as copy, footer } from "@/lib/vidi-content";
-import { PresentationMedia } from "@/components/presentation-media";
+import { PresentationMedia, TeamHeadshot } from "@/components/presentation-media";
 import { usePresentationMotion } from "@/hooks/use-presentation-motion";
 import caesarImage from "@/assets/caesar-cinematic-concept.jpg";
 
 export const Route = createFileRoute("/")({
   head: () => ({ meta: [
     { title: "VIDI AI — A new perspective on independence" },
-    { name: "description", content: "Vidi means ‘I saw.’ Meet Vidi AI, our wearable assistive-technology prototype: distance sensing, visual questions, and wearer control." },
+    { name: "description", content: "Envision the future, empower the execution. Meet Vidi AI, our wearable assistive-technology prototype: distance sensing, visual questions, and wearer control." },
     { property: "og:title", content: "VIDI AI — A new perspective on independence" },
     { property: "og:description", content: "From a new perspective to a wearable possibility. The Vidi AI live prototype presentation." },
     { property: "og:type", content: "website" }, { name: "twitter:card", content: "summary_large_image" },
@@ -27,7 +27,7 @@ function Index() {
       <section className="hero-journey" aria-labelledby="hero-title">
         <div className="hero-stage">
           <img className="caesar-image" src={caesarImage} width={1536} height={1024} alt="Cinematic concept artwork of Julius Caesar in a charcoal cloak, turning toward cool light and holding modern glasses below his chin by one temple. Concept eyewear, not the Vidi AI prototype." fetchPriority="high" />
-          <div className="hero-copy"><h1 id="hero-title">{copy.hero.title}</h1><p className="hero-meaning"><em>{copy.hero.meaning}</em></p><p className="hero-reference"><em>{copy.hero.reference}</em></p></div>
+          <div className="hero-copy"><h1 id="hero-title">{copy.hero.title}</h1><p className="hero-meaning"><em>{copy.hero.meaning}</em></p></div>
           <div className="hero-footer"><span>{copy.hero.caption}</span><a href="#problem">{copy.hero.scroll}<ArrowDown size={17} aria-hidden="true" /></a></div>
           <div className="lens-dissolve" aria-hidden="true" />
         </div>
@@ -59,7 +59,19 @@ function Index() {
         <p className="milestone" data-reveal>{copy.next.milestone}</p>
         <div className="final-word" data-reveal><p>On your terms.</p><span>VIDI AI</span></div>
       </section>
+      <section id="team" className="team-section section-shell" aria-labelledby="team-title">
+        <div data-reveal><Chapter n="VI">Meet the team</Chapter><h2 id="team-title">{copy.team.title}</h2><p className="section-subtitle">{copy.team.subtitle}</p></div>
+        <p className="control-status" data-reveal>{copy.team.status}</p>
+        <ul className="team-cards">
+          {copy.team.members.map((member) => <li className="team-card" key={member.name} data-reveal>
+            <TeamHeadshot member={member} />
+            <h3 className="team-name">{member.name}</h3>
+            <p className="team-role">{member.role}</p>
+            {member.linkedin ? <a className="team-link" href={member.linkedin} target="_blank" rel="noopener noreferrer">LinkedIn<Linkedin size={15} aria-hidden="true" /></a> : <span className="team-link team-link-empty">LinkedIn link to add</span>}
+          </li>)}
+        </ul>
+      </section>
     </main>
-    <footer className="presentation-footer section-shell"><span>VIDI AI</span><p>{footer.team.join(" · ")}</p><span>{site.domain}</span></footer>
+    <footer className="presentation-footer section-shell"><span>VIDI AI</span><p>{footer.note}</p><span>{site.domain}</span></footer>
   </div>;
 }
