@@ -11,4 +11,4 @@
 
 # Architecture diagram + banner brand
 - [x] Add the uploaded system-architecture diagram into the "How it works" section.
-- [ ] Remove "AI" next to VIDI in the top banner.
+- [x] Remove "AI" next to VIDI in the top banner.
