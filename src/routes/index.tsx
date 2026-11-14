@@ -33,7 +33,6 @@ function Index() {
         </div>
       </section>
       <section id="problem" className="section-shell problem-section" aria-labelledby="problem-title">
-        <p className="section-marker" data-reveal>{copy.problem.marker}</p>
         <div className="problem-split">
           <div className="problem-text">
             <div className="problem-heading" data-reveal><Chapter n="I">The problem</Chapter><h2 id="problem-title">{copy.problem.title}</h2></div>
