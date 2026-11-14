@@ -8,7 +8,7 @@ import caesarImage from "@/assets/caesar-cinematic-concept.jpg";
 export const Route = createFileRoute("/")({
   head: () => ({ meta: [
     { title: "VIDI — A new perspective on independence" },
-    { name: "description", content: "Envision the future, empower the execution. Meet Vidi, our wearable assistive-technology prototype: distance sensing, visual questions, and wearer control." },
+    { name: "description", content: "Envision the Future, Empower the Execution. Meet Vidi, our wearable assistive-technology prototype: distance sensing, visual questions, and wearer control." },
     { property: "og:title", content: "VIDI — A new perspective on independence" },
     { property: "og:description", content: "From a new perspective to a wearable possibility. The Vidi live prototype presentation." },
     { property: "og:type", content: "website" }, { name: "twitter:card", content: "summary_large_image" },
