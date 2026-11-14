@@ -27,7 +27,7 @@
 # Prototype photo + team back to five
 - [x] Put the uploaded smart-glasses multi-view photo into the "The Vidi prototype" image slot.
 - [x] Team has only five members: remove the two extra cards and restore five-person copy.
-- [ ] Close-up photo for the small panel beside the prototype photo, and roles for all five cards.
+- [ ] Close-up photo for the small panel beside the prototype photo.
 # Team majors + one row
 - [x] Replace role lines with majors: Marcos CS, Simao EE, Stephen BME, Walter Accounting, Abraham Managerial Economics.
 - [x] Team section: all five cards in one row.
@@ -37,3 +37,5 @@
 - [x] Problem section: text clearly visible at 1023x779 — dark text on the original pastel field.
 - [x] Problem section: heading brought up so the 01/02/03 list top aligns with the image top.
 - [x] Problem section: revert the temporary blue field back to the template's original pastel gradient; text verified dark and readable.
+- [x] Problem section: bullets read "Outdated Technology", "Not Enough Sensory Information", "No Warnings of Overhead Hazards".
+- [x] Problem section: put the uploaded cane blind-spot video in the picture box, with a still preview before play.
