@@ -32,7 +32,8 @@ export const presentationMedia: Record<string, PresentationMedia> = {
 };
 
 // Editable team roster: five people, one headshot slot and one LinkedIn link each.
-// Fill headshot with a photo URL or a file in /public, and linkedin with the full profile URL.
+// headshot: a photo in src/assets imported at the top of this file, or a full https photo URL.
+// linkedin: the full profile URL, e.g. https://www.linkedin.com/in/username
 export type TeamMember = {
   name: string;
   role: string;
