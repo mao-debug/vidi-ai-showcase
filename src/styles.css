@@ -396,6 +396,12 @@ h2 { font-size: 68px; max-width: 1000px; }
     .problem-graph .actual-media { flex: 1 1 auto; width: 100%; min-height: 0; aspect-ratio: auto; object-fit: contain; object-position: top center; background: #fcfcfb; }
     .problem-graph .media-empty { flex: 1 1 auto; min-height: 0; aspect-ratio: auto; }
   }
+  /* Narrow desktop: keep the bullet list compact so the chart card never
+     has to stretch far past the chart itself. */
+  @media (min-width: 761px) and (max-width: 1000px) {
+    .problem-captions { gap: 18px; }
+    .problem-caption-body small { font-size: 13px; padding: 8px 11px; }
+  }
 }
 /* Hide the caption pill under the problem-section video. */
 .problem-visual .media-caption { display: none; }
