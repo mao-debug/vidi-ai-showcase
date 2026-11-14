@@ -1,3 +1,4 @@
+import testPhoto from "@/assets/caesar-cinematic-concept.jpg";
 /*
  * Vidi AI — presentation copy.
  * All site text lives here so final edits are one-file changes.
@@ -41,7 +42,7 @@ export type TeamMember = {
 };
 
 export const teamMembers: TeamMember[] = [
-  { name: "Team member one", role: "Role or focus", headshot: "", linkedin: "" },
+  { name: "Team member one", role: "Role or focus", headshot: testPhoto, linkedin: "https://www.linkedin.com/in/example" },
   { name: "Team member two", role: "Role or focus", headshot: "", linkedin: "" },
   { name: "Team member three", role: "Role or focus", headshot: "", linkedin: "" },
   { name: "Team member four", role: "Role or focus", headshot: "", linkedin: "" },
