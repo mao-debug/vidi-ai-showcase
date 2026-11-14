@@ -386,6 +386,17 @@ h2 { font-size: 68px; max-width: 1000px; }
   .problem-section h2 { white-space: normal; overflow-wrap: anywhere; font-size: 34px; }
 }
 
+/* Chart card fills the column so its bottom edge lines up with the last bullet.
+   The chart's own background is #fcfcfb, so the fill reads as one seamless card. */
+@supports (grid-template-rows: subgrid) {
+  @media (min-width: 761px) {
+    .problem-visual { align-self: stretch; }
+    .problem-graph { flex: 1 1 auto; min-height: 0; display: flex; flex-direction: column; }
+    .problem-graph .project-media { flex: 1 1 auto; min-height: 0; display: flex; flex-direction: column; }
+    .problem-graph .actual-media { flex: 1 1 auto; width: 100%; min-height: 0; aspect-ratio: auto; object-fit: contain; object-position: top center; background: #fcfcfb; }
+    .problem-graph .media-empty { flex: 1 1 auto; min-height: 0; aspect-ratio: auto; }
+  }
+}
 /* Hide the caption pill under the problem-section video. */
 .problem-visual .media-caption { display: none; }
 
