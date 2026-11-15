@@ -82,6 +82,6 @@
 - [x] Engineering & Design section (IV): mechanical design, hardware architecture, design evolution, innovation & limitations — no overlap with How It Works sensor diagrams; nav + chapter renumbering (What's Next → V, Team → VI)
 
 # Sensor simplification and chapter reorder
-- [ ] Keep the echo scene, remove its repeated timeline, and replace processing with three labeled mini-diagrams.
-- [ ] Add the approximate five-hour battery life at peak draw, without claiming a measurement.
-- [ ] Move Engineering & Design to III and How It Works to IV; match navigation order and verify desktop/mobile.
+- [x] Keep the echo scene, remove its repeated timeline, and replace processing with three labeled mini-diagrams.
+- [x] Add the approximate five-hour battery life at peak draw, without claiming a measurement.
+- [x] Move Engineering & Design to III and How It Works to IV; match navigation order and verify desktop/mobile.
