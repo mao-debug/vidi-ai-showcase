@@ -112,12 +112,22 @@ function Index() {
         <UltrasonicDiagrams />
         <div className="hardware-paths">{copy.hardware.paths.slice(1).map((path) => <div className="hardware-path" key={path.label} data-reveal><div className="path-heading"><Eye strokeWidth={1.3} aria-hidden="true" /><h3>{path.label}</h3></div><ol>{path.steps.map((step, j) => <li key={step}><span className="path-index">0{j + 1}</span><span>{step}</span></li>)}</ol></div>)}</div>
       </section>
+      <section id="software" className="software-section section-shell" aria-labelledby="software-title">
+        <div data-reveal><Chapter n="V">Software</Chapter><h2 id="software-title">{copy.software.title}</h2><p className="section-subtitle">{copy.software.subtitle}</p></div>
+        <div className="software-grid">
+          {copy.software.modules.map((mod) => <article className="software-card" data-reveal key={mod.kicker}><p className="solution-kicker">{mod.kicker}</p><h3>{mod.title}</h3><p className="software-body">{mod.body}</p></article>)}
+        </div>
+        <div className="software-flow" data-reveal>
+          <p className="solution-kicker">{copy.software.flow.kicker}</p>
+          <ol>{copy.software.flow.steps.map((step, i) => <li key={step}><span className="path-index">0{i + 1}</span><span>{step}</span></li>)}</ol>
+        </div>
+      </section>
       <section id="next-steps" className="next-section section-shell" aria-labelledby="next-title">
-        <div data-reveal><Chapter n="V">What’s next</Chapter><h2 id="next-title">{copy.next.title}</h2><p className="section-subtitle">{copy.next.subtitle}</p></div>
+        <div data-reveal><Chapter n="VI">What’s next</Chapter><h2 id="next-title">{copy.next.title}</h2><p className="section-subtitle">{copy.next.subtitle}</p></div>
         <div className="next-timeline">{copy.next.cards.map((card) => <article className="next-card" data-reveal key={card.label}><p className="next-card-label">{card.label}</p><h3>{card.title}</h3><p className="next-card-text">{card.text}</p></article>)}</div>
       </section>
       <section id="team" className="team-section section-shell" aria-labelledby="team-title">
-        <div data-reveal><Chapter n="VI">Meet the team</Chapter><h2 id="team-title">{copy.team.title}</h2><p className="section-subtitle">{copy.team.subtitle}</p></div>
+        <div data-reveal><Chapter n="VII">Meet the team</Chapter><h2 id="team-title">{copy.team.title}</h2><p className="section-subtitle">{copy.team.subtitle}</p></div>
         <p className="control-status" data-reveal>{copy.team.status}</p>
         <ul className="team-cards">
           {copy.team.members.map((member) => <li className="team-card" key={member.name} data-reveal>
