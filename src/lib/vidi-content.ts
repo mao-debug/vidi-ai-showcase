@@ -102,11 +102,11 @@ export const presentation = {
       kicker: "What VIDI does",
       title: "One frame. Two ways to sense the scene.",
       points: [
-        "Measure distance in the dark. Two ultrasonic sensors measure the distance to nearby obstacles in complete darkness and require minimal computation.",
-        "Turn visual information into speech. A camera captures the scene so VIDI can classify objects, recognize text, and speak useful information aloud.",
-        "Complement everyday mobility tools. VIDI is designed to work alongside a traditional white cane or guide dog, giving blind and low-vision users more information about their surroundings and helping with everyday tasks.",
+        "Conversational AI Assistance. VIDI allows users to ask questions about their surroundings and receive useful spoken responses through a hands-free audio interface, making environmental information more accessible.",
+        "Object and Text Recognition. Using a Raspberry Pi camera and AI-powered visual processing, VIDI is designed to identify everyday objects, interpret scenes, and read signs or printed text aloud.",
+        "Ultrasonic Obstacle Detection. Two ultrasonic sensors independently measure distances to nearby objects on the left and right sides of the glasses, providing additional proximity awareness even in low-light conditions.",
       ],
-      status: "We bench-tested the sensors and confirmed that the Pi detects the camera.",
+      status: "Both ultrasonic sensors have been successfully bench-tested, and the Raspberry Pi 5 recognizes the camera. Full system integration and real-world performance still require validation.",
     },
     bottomNote: {
       kicker: "Features",
