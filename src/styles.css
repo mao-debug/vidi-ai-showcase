@@ -486,7 +486,7 @@ h2 { font-size: 68px; max-width: 1000px; }
 .sensor-processing { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); list-style: none; margin: 0; padding: 24px 0 0; border-top: 1px solid var(--media-line); gap: 34px; }
 .sensor-processing li { position: relative; min-width: 0; display: flex; flex-direction: column; gap: 10px; }
 .processing-cue { width: 100%; max-width: 180px; height: 64px; color: var(--primary); fill: none; stroke: currentColor; stroke-width: 2; }
-.processing-cue circle { fill: var(--primary); }.processing-cue .cue-noise { color: var(--muted-foreground); }
+.processing-cue circle { fill: var(--primary); }.sensor-processing li:last-child .processing-cue circle { fill: none; }.processing-cue .cue-noise { color: var(--muted-foreground); }
 .sensor-processing small { font-size: 14px; color: var(--muted-foreground); }
 .sensor-processing strong { font-size: 19px; line-height: 1.4; font-weight: 400; }
 .processing-arrow { position: absolute; right: -28px; top: 22px; color: var(--primary); }
@@ -501,7 +501,7 @@ h2 { font-size: 68px; max-width: 1000px; }
 .sensor-power { display: flex; align-items: center; gap: 22px; padding: 24px 0; border-block: 1px solid var(--media-line); color: var(--primary); }
 .sensor-power h3 { font-size: 28px; margin: 0 0 6px; }.sensor-power p { margin: 0; font-size: 19px; color: var(--muted-foreground); }.sensor-power .power-draw { margin-left: auto; color: var(--foreground); }
 .prototype-detail .solution-points li { line-height: 1.5; }
-.prototype-bottom-text .solution-line { font-size: 2.55cqw; }
+.prototype-bottom-text .solution-line { font-size: 2.4cqw; }
 @media (max-width: 760px) {
  .sensor-diagram { padding: 24px 20px; }.sensor-diagram h3 { font-size: 30px; }.ultrasonic-explanation { margin-top: 32px; gap: 24px; }
  .echo-scene { grid-template-columns: 62px minmax(0, 1fr) 66px; gap: 12px; }.echo-sensor, .echo-obstacle { font-size: 14px; }.pulse-lane { font-size: 14px; }.pulse-lane svg { width: 18px; }
