@@ -89,15 +89,15 @@ export const presentation = {
       kicker: "What Vidi does",
       title: "One frame. Two ways to sense the scene.",
       points: [
-        "Two ultrasonic sensors report left and right distance readings.",
-        "The camera sends a visual question to Gemini and the answer returns as speech.",
-        "Made to sit alongside a cane or dog, not replace it.",
+        "Measure distance in the dark. Two ultrasonic sensors work together to measure the distance to nearby obstacles. They work in complete darkness and require minimal computation.",
+        "Turn visual information into speech. A camera captures the scene so VIDI can classify objects, recognize text, and speak useful information aloud.",
+        "Complement everyday mobility tools. VIDI is designed to work alongside a traditional white cane or guide dog, giving blind and low-vision users more information about their surroundings and helping with everyday tasks.",
       ],
       status: "Sensors bench-tested. The Pi detects the camera.",
     },
     bottomNote: {
       kicker: "Features",
-      line: "Object Recognition | Conversational AI | Navigation | text Recognition",
+      line: "Object Detection & Recognition | Conversational AI | Scene Description | Text Recognition",
     } },
   hardware: { title: "Sense. Process. Speak", paths: [{ label: "Distance", steps: ["Ultrasonic sensors", "ESP32", "Left / right distance readings"] }, { label: "Vision & voice", steps: ["IMX708 camera", "Raspberry Pi 5", "Gemini online", "Bluetooth headset"] }], status: "Sensors bench-tested. The Pi detects the camera.", note: "One camera. Two distance sensors. Gemini requires internet.", sideBox: { kicker: "Where it stands", title: "One camera. Two distance sensors.", points: ["Two HC-SR04 sensors feed the ESP32, which handles timing, filtering and measurements.", "The ESP32 sends JSON readings over USB to the Raspberry Pi 5 for AI, sensor fusion and speech output.", "The ultrasonic sensors have been bench-tested, and the Pi detects the camera."], status: "Gemini requires internet." } },
   next: {
@@ -201,3 +201,37 @@ export const control = {
 export const footer = {
   note: "Built as a hackathon final presentation.",
 };
+
+export const ultrasonicExplanation = {
+  echo: {
+    title: "From echo to distance.",
+    sensor: "Sensor", obstacle: "Obstacle", outbound: "Send pulse", returning: "Reflected sound",
+    timeline: ["Send pulse", "Wait for echo", "Measure round-trip time"],
+    formula: "Distance = speed of sound × round-trip time ÷ 2",
+    note: "The sound travels to the obstacle and back.",
+  },
+  timing: {
+    title: "What the ESP32 does.",
+    firingIntervalMs: 40,
+    slots: [0, 40, 80, 120],
+    lanes: ["Left sensor", "Right sensor"],
+    processing: ["Noise rejection and filtering", "Distance and motion tracking", "Geometric localization", "Predictive hazard detection"],
+    cues: ["Noise → signal", "Track motion", "Estimate position", "Time to contact"],
+  },
+  transport: {
+    title: "From ESP32 to Raspberry Pi.",
+    nodes: ["Left and right sensors", "ESP32", "USB serial", "Raspberry Pi 5"],
+    baud: 115200,
+    note: "The ESP32 processes ultrasonic readings and sends usable obstacle estimates to the Pi.",
+    packetLabel: "Example obstacle estimate · illustrative values",
+    packet: { left_distance_cm: 120, right_distance_cm: 135, estimated_bearing_deg: -8, hazard_level: "caution" },
+  },
+  power: {
+    title: "Power", source: "Powered by a portable battery pack", peakWatts: 6.4,
+    capacityWh: null as number | null,
+    measuredRuntimeHours: null as number | null,
+  },
+};
+
+export function sensorUpdateIntervalMs(firingIntervalMs: number) { return firingIntervalMs * 2; }
+export function sensorUpdateHz(firingIntervalMs: number) { return 1000 / sensorUpdateIntervalMs(firingIntervalMs); }

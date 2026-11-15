@@ -45,7 +45,7 @@
 - [x] Section II chapter label reads "Our Solution" instead of "The prototype".
 - [x] Replace the right image box with a text panel the same size, filled from vidi-content.
 - [x] Top nav pill changed from "Prototype" to "Solution"; it still jumps to the same section.
-- [ ] Confirm the wording of the new text panel with the team.
+- [x] Confirm the wording of the new text panel with the team: replaced with the supplied sensor, speech, and mobility-tool copy.
 
 # Section II bubbles + bottom image box
 - [x] Delete the Camera / Distance sensors / Audio bubbles and the caption pill above them.
@@ -74,3 +74,8 @@
 # What's Next timeline
 - [x] Replace the future-control content with the supplied heading, subheading, and Today / Next / Later cards.
 - [x] Verify all three cards and readable desktop/mobile layouts.
+
+# Sensor explanation update
+- [x] Update traditional white cane wording, solution points, and feature labels.
+- [x] Add echo, ESP32 timing/processing, USB packet, and Power visuals above the unchanged Vision & voice path.
+- [ ] Verify timing and power rules, desktop/mobile layout, and reduced motion; keep unpublished.
