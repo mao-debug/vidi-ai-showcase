@@ -502,15 +502,23 @@ h2 { font-size: 68px; max-width: 1000px; }
 .timing-summary, .serial-label { margin: 24px 0; font-size: 21px; color: var(--primary); font-weight: 600; }
 .sensor-processing { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); list-style: none; margin: 0; padding: 24px 0 0; border-top: 1px solid var(--media-line); gap: 34px; }
 .sensor-processing li { position: relative; min-width: 0; }
-.sensor-processing summary { cursor: pointer; }
-.sensor-processing summary::marker { color: var(--primary); }
-.sensor-processing summary:focus-visible { outline: 2px solid var(--primary); outline-offset: 4px; }
-.sensor-processing details p { margin: 8px 0 0; font-size: 15px; color: var(--muted-foreground); }
-.processing-cue { width: 100%; max-width: 180px; height: 64px; color: var(--primary); fill: none; stroke: currentColor; stroke-width: 2; }
-.processing-cue circle { fill: var(--primary); }.sensor-processing li:last-child .processing-cue circle { fill: none; }.processing-cue .cue-noise { color: var(--muted-foreground); }
-.sensor-processing small { font-size: 14px; color: var(--muted-foreground); }
-.sensor-processing strong { font-size: 19px; line-height: 1.4; font-weight: 400; }
-.processing-arrow { position: absolute; right: -28px; top: 22px; color: var(--primary); }
+.sensor-processing details { border: 1px solid var(--media-line); border-radius: 8px; background: var(--glass-surface); }
+.sensor-processing summary { display: grid; gap: 12px; padding: 14px; list-style: none; cursor: pointer; border-radius: 8px; }
+.sensor-processing summary::-webkit-details-marker { display: none; }
+.sensor-processing summary:focus-visible { outline: 2px solid var(--primary); outline-offset: 3px; }
+.processing-heading { display: flex; justify-content: space-between; align-items: flex-start; gap: 8px; min-height: 2.7em; }
+.processing-heading strong { font-size: 17px; line-height: 1.3; }
+.processing-heading svg { flex: none; color: var(--primary); }
+.sensor-processing details[open] .processing-heading svg { transform: rotate(180deg); }
+.sensor-processing details p { margin: 0; padding: 12px 14px 14px; border-top: 1px solid var(--media-line); font-size: 15px; color: var(--muted-foreground); }
+.processing-metric { min-height: 2.8em; font: 12px/1.4 "IBM Plex Mono", ui-monospace, monospace; color: var(--primary); }
+.processing-cue { width: 100%; height: auto; background: var(--background); border: 1px solid var(--media-line); border-radius: 4px; color: var(--primary); fill: none; stroke: currentColor; stroke-width: 1.5; }
+.processing-cue circle { fill: currentColor; }
+.processing-cue .cue-grid { stroke: var(--media-line); stroke-dasharray: 3 3; }
+.processing-cue .cue-raw { color: var(--muted-foreground); }
+.processing-cue text { fill: var(--muted-foreground); stroke: none; font: 11px ui-monospace, monospace; }
+.processing-cue .cue-label-field { paint-order: stroke; stroke: var(--background); stroke-width: 5px; stroke-linejoin: round; }
+.processing-arrow { position: absolute; right: -28px; top: 45%; color: var(--primary); }
 .serial-flow { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 38px; }
 .serial-node { position: relative; min-width: 0; display: flex; align-items: center; gap: 14px; padding-block: 12px; color: var(--primary); }
 .serial-node > svg:not(.serial-arrow) { flex-shrink: 0; }
@@ -527,7 +535,7 @@ h2 { font-size: 68px; max-width: 1000px; }
  .sensor-diagram { padding: 24px 20px; }.sensor-diagram h3 { font-size: 30px; }.ultrasonic-explanation { margin-top: 32px; gap: 24px; }
  .sensor-note { font-size: 17px; }
  .timing-summary, .serial-label { font-size: 18px; }
- .sensor-processing { grid-template-columns: 1fr; gap: 28px; }.sensor-processing strong { font-size: 18px; }.processing-arrow { transform: rotate(90deg); right: auto; left: 42px; top: auto; bottom: -27px; }
+ .sensor-processing { grid-template-columns: 1fr; gap: 28px; }.processing-heading, .processing-metric { min-height: 0; }.processing-arrow { transform: translateX(-50%) rotate(90deg); right: auto; left: 50%; top: auto; bottom: -27px; }
  .serial-flow { grid-template-columns: 1fr; gap: 20px; }.serial-node { gap: 18px; }.serial-arrow { transform: rotate(90deg); right: auto; left: 4px; bottom: -23px; }.serial-details { grid-template-columns: 1fr; gap: 22px; }.sensor-packet { font-size: 14px; padding: 16px; }
  .sensor-power { flex-wrap: wrap; gap: 16px; }.sensor-power .power-draw { width: 100%; margin: 0; }.sensor-power p { font-size: 17px; }
 }

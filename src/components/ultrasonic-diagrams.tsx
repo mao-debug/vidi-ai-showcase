@@ -1,4 +1,4 @@
-import { ArrowRight, Battery, Radio, Cpu, Cable, CircuitBoard } from "lucide-react";
+import { ArrowRight, Battery, Radio, Cpu, Cable, CircuitBoard, ChevronDown } from "lucide-react";
 import { useEffect, useState } from "react";
 import { ultrasonicExplanation as copy, sensorUpdateHz, sensorUpdateIntervalMs } from "@/lib/vidi-content";
 
@@ -68,10 +68,26 @@ function MultiplexTiming() {
 }
 
 function ProcessingCue({ index }: { index: number }) {
-  return <svg viewBox="0 0 160 60" aria-hidden="true" className="processing-cue">
-    {index === 0 && <><g className="cue-noise">{[12, 27, 42, 58, 74].map((x, i) => <circle key={x} cx={x} cy={[36, 15, 43, 22, 34][i]} r="3" />)}</g><path d="M84 30h20m-6-6 6 6-6 6M112 42l14-8 14-6 14-12" /><circle cx="126" cy="34" r="3" /><circle cx="140" cy="28" r="3" /></>}
-    {index === 1 && <><path d="M25 53 80 12 135 53M25 53Q10 0 80 12M135 53Q150 0 80 12" /><circle cx="80" cy="12" r="5" /><circle cx="25" cy="53" r="3" /><circle cx="135" cy="53" r="3" /></>}
-    {index === 2 && <><circle cx="48" cy="30" r="22" /><path d="M48 14v16l12 8M84 30h61m-8-8 8 8-8 8" /></>}
+  return <svg viewBox="0 0 240 96" aria-hidden="true" className="processing-cue">
+    {index === 0 && <>
+      <path className="cue-grid" d="M23 12V75H221M23 32H221M23 54H221" />
+      <path d="M33 27L68 34L103 42L138 49L173 57L208 64" />
+      <g className="cue-raw"><circle cx="33" cy="24" r="3" /><circle cx="68" cy="38" r="3" /><circle cx="103" cy="39" r="3" /><circle cx="138" cy="19" r="3" /><circle cx="173" cy="61" r="3" /><circle cx="208" cy="62" r="3" /></g>
+      <text x="151" y="21">Raw samples</text><text x="36" y="66">Tracked range</text><text x="188" y="90">Time →</text>
+    </>}
+    {index === 1 && <>
+      <path className="cue-grid" d="M120 10V72M48 72H192" />
+      <path d="M58 72L104 25L182 72M58 85H182M58 81V89M182 81V89" />
+      <circle cx="58" cy="72" r="3" /><circle cx="182" cy="72" r="3" /><circle cx="104" cy="25" r="4" />
+      <text x="113" y="22">Estimate</text><text x="35" y="71">L</text><text x="196" y="71">R</text>
+      <text className="cue-label-field" x="120" y="89" textAnchor="middle">14 cm</text>
+    </>}
+    {index === 2 && <>
+      <path className="cue-grid" d="M23 12V75H221M23 37H221M23 57H221" />
+      <path d="M33 23L118 49" /><path className="cue-grid" d="M118 49L201 75M118 49V75M201 75V55" />
+      <circle cx="118" cy="49" r="4" /><circle cx="201" cy="75" r="3" />
+      <text x="123" y="43">Now</text><text x="153" y="21">Projection</text><text x="188" y="90">Time →</text>
+    </>}
   </svg>;
 }
 
@@ -91,7 +107,11 @@ export function UltrasonicDiagrams() {
       <ol className="sensor-processing">
         {copy.timing.processing.map((step, i) => <li key={step}>
           <details name="esp32-processing">
-            <summary><ProcessingCue index={i} /><strong>{step}</strong></summary>
+            <summary>
+              <span className="processing-heading"><strong>{step}</strong><ChevronDown size={18} aria-hidden="true" /></span>
+              <ProcessingCue index={i} />
+              <span className="processing-metric">{copy.timing.processingMetrics[i]}</span>
+            </summary>
             <p>{copy.timing.processingDetails[i]}</p>
           </details>
           {i < copy.timing.processing.length - 1 && <ArrowRight className="processing-arrow" aria-hidden="true" />}
