@@ -85,3 +85,8 @@
 - [x] Keep the echo scene, remove its repeated timeline, and replace processing with three labeled mini-diagrams.
 - [x] Add the approximate five-hour battery life at peak draw, without claiming a measurement.
 - [x] Move Engineering & Design to III and How It Works to IV; match navigation order and verify desktop/mobile.
+
+# Prototype photos in Engineering
+- [x] Add the four uploaded bench photos as a labeled 2x2 gallery in Engineering & design (III).
+- [x] Replace the five-view glasses sheet in the Our solution photo slot with the front view.
+- [x] Verify desktop/mobile layout, photo aspect with no empty band, and build; keep unpublished.
