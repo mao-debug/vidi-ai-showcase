@@ -470,15 +470,23 @@ h2 { font-size: 68px; max-width: 1000px; }
 .pulse-back::after { background: var(--foreground); animation-direction: reverse; }
 @keyframes echo-pulse { 0%, 10% { left: 0; } 60%, 100% { left: calc(100% - 10px); } }
 .echo-formula { font-size: 25px; font-weight: 600; margin: 24px 0 0; color: var(--foreground); }
-.sensor-timing { display: grid; gap: 16px; }
-.timing-axis, .timing-lane { display: grid; grid-template-columns: 150px repeat(4, minmax(0, 1fr)); align-items: center; text-align: center; font-size: 19px; }
-.timing-lane > strong { text-align: left; font-weight: 400; }
-.timing-slot { display: grid; place-items: center; border-bottom: 2px solid var(--media-line); height: 44px; }
-.timing-slot > span { display: grid; place-items: center; width: 38px; height: 38px; border-radius: 50%; font-size: 28px; line-height: 1; }
-.timing-fire > span { color: var(--primary-foreground); background: var(--primary); animation: sensor-fire 3.2s ease-in-out infinite; }
-.firing-1 > span { animation-delay: .8s; }.firing-2 > span { animation-delay: 1.6s; }.firing-3 > span { animation-delay: 2.4s; }
-.timing-wait { color: var(--muted-foreground); }
-@keyframes sensor-fire { 0%, 20% { box-shadow: 0 0 0 6px var(--glacier); } 25%, 100% { box-shadow: 0 0 0 0 var(--glacier); } }
+.multiplex-chart { --lane-label-width: clamp(76px, 15vw, 144px); display: grid; gap: 6px; }
+.multiplex-axis { position: relative; height: 1.5em; margin-left: var(--lane-label-width); font-variant-numeric: tabular-nums; font-size: clamp(11px, 1.7vw, 16px); }
+.multiplex-axis span { position: absolute; transform: translateX(-50%); }
+.multiplex-axis .multiplex-unit { right: 0; bottom: 100%; transform: none; color: var(--muted-foreground); }
+.multiplex-lane { display: grid; grid-template-columns: var(--lane-label-width) minmax(0, 1fr); align-items: center; font-size: clamp(12px, 2vw, 19px); }
+.multiplex-lane svg { display: block; width: 100%; height: clamp(32px, 5vw, 48px); overflow: visible; }
+.multiplex-slot { fill: var(--primary); opacity: .04; }
+.multiplex-slot.right-slot { opacity: .11; }
+.multiplex-grid, .multiplex-cursor, .multiplex-wave { fill: none; vector-effect: non-scaling-stroke; }
+.multiplex-grid { stroke: var(--media-line); stroke-dasharray: 3 3; }
+.multiplex-cursor { stroke: var(--primary); stroke-width: 3; opacity: .34; }
+.multiplex-wave { stroke: var(--primary); stroke-width: 2; }
+.multiplex-output .multiplex-wave { stroke-dasharray: 4 2; }
+.multiplex-active { fill: var(--primary); }
+.multiplex-controls { display: flex; flex-wrap: wrap; gap: 8px 12px; align-items: center; margin: 16px 0 8px; }
+.multiplex-controls button { min-height: 44px; padding: 0 14px; border: 1px solid var(--primary); border-radius: 8px; color: var(--primary); font-weight: 600; cursor: pointer; }
+.multiplex-controls button:focus-visible { outline: 2px solid var(--primary); outline-offset: 3px; }
 .timing-summary, .serial-label { margin: 24px 0; font-size: 21px; color: var(--primary); font-weight: 600; }
 .sensor-processing { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); list-style: none; margin: 0; padding: 24px 0 0; border-top: 1px solid var(--media-line); gap: 34px; }
 .sensor-processing li { position: relative; min-width: 0; display: flex; flex-direction: column; gap: 10px; }
@@ -503,12 +511,12 @@ h2 { font-size: 68px; max-width: 1000px; }
  .sensor-diagram { padding: 24px 20px; }.sensor-diagram h3 { font-size: 30px; }.ultrasonic-explanation { margin-top: 32px; gap: 24px; }
  .echo-scene { grid-template-columns: 62px minmax(0, 1fr) 66px; gap: 12px; }.echo-sensor, .echo-obstacle { font-size: 14px; }.pulse-lane { font-size: 14px; }.pulse-lane svg { width: 18px; }
  .echo-formula { font-size: 20px; }.sensor-note { font-size: 17px; }
- .timing-axis, .timing-lane { grid-template-columns: 80px repeat(4, minmax(0, 1fr)); font-size: 13px; }.timing-slot > span { width: 28px; height: 28px; font-size: 22px; }.timing-summary, .serial-label { font-size: 18px; }
+ .timing-summary, .serial-label { font-size: 18px; }
  .sensor-processing { grid-template-columns: 1fr; gap: 28px; }.sensor-processing li { display: grid; grid-template-columns: 110px minmax(0, 1fr); gap: 6px 18px; align-items: center; }.sensor-processing strong { font-size: 18px; }.processing-arrow { transform: rotate(90deg); right: auto; left: 42px; top: auto; bottom: -27px; }
  .serial-flow { grid-template-columns: 1fr; gap: 20px; }.serial-node { gap: 18px; }.serial-arrow { transform: rotate(90deg); right: auto; left: 4px; bottom: -23px; }.serial-details { grid-template-columns: 1fr; gap: 22px; }.sensor-packet { font-size: 14px; padding: 16px; }
  .sensor-power { flex-wrap: wrap; gap: 16px; }.sensor-power .power-draw { width: 100%; margin: 0; }.sensor-power p { font-size: 17px; }
 }
-@media (prefers-reduced-motion: reduce) { .pulse-lane::after, .timing-fire > span { animation: none; }.pulse-lane::after { display: none; } }
+@media (prefers-reduced-motion: reduce) { .pulse-lane::after { animation: none; }.pulse-lane::after { display: none; } }
 
 /* Engineering & Design: mechanical frame, component roles, evolution timeline, limitations. */
 .engineering-section { width: 100%; padding: 82px max(40px, calc((100% - 1200px) / 2)); margin: 0; border: 0; background: linear-gradient(160deg, var(--glacier), var(--pearl) 55%, var(--ivory)); }
