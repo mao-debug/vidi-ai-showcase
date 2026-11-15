@@ -18,9 +18,4 @@ describe("Phase 6 ultrasonic presentation", () => {
       right: { status: "no_echo", distance_mm: null, age_ms: 0 },
     });
   });
-
-  it("does not publish an unconfirmed battery capacity or runtime", () => {
-    expect(copy.power.capacityWh).toBeNull();
-    expect(copy.power.measuredRuntimeHours).toBeNull();
-  });
 });

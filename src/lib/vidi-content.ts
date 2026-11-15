@@ -154,7 +154,7 @@ export const presentation = {
     cards: [
       { label: "01 · TODAY", title: "A working prototype", text: "We’ve bench-tested the ultrasonic sensors, confirmed that the Pi detects the camera, and used Gemini to provide spoken answers. The prototype fits in a 3D-printed frame." },
       { label: "02 · NEXT", title: "Real-world testing", text: "Test VIDI with people who are blind or have low vision, tune the warning distances, and reduce false alarms. Their feedback will guide what we build next." },
-      { label: "03 · LATER", title: "Smaller, lighter, and longer-lasting", text: "Develop a custom circuit board to replace the Pi and ESP32, extend battery life to a full day, and build a weatherproof frame." },
+      { label: "03 · LATER", title: "Smaller and lighter", text: "Develop a custom circuit board to replace the Pi and ESP32 and build a weatherproof frame." },
     ],
   },
   team: { title: "Meet the team", subtitle: "The five people behind VIDI.", status: "Headshots, majors, and LinkedIn links in place", members: teamMembers },
@@ -277,10 +277,5 @@ export const ultrasonicExplanation = {
       left: { status: "ok", distance_mm: 1200, age_ms: 122 },
       right: { status: "no_echo", distance_mm: null, age_ms: 0 },
     },
-  },
-  power: {
-    title: "Power", source: "Powered by a portable battery pack", peakWatts: 6.4,
-    capacityWh: null as number | null,
-    measuredRuntimeHours: null as number | null,
   },
 };

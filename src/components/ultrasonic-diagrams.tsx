@@ -1,4 +1,4 @@
-import { ArrowRight, Battery, Radio, Cpu, Cable, CircuitBoard } from "lucide-react";
+import { ArrowRight, Radio, Cpu, Cable, CircuitBoard } from "lucide-react";
 import { useState } from "react";
 import { ultrasonicExplanation as copy } from "@/lib/vidi-content";
 
@@ -65,6 +65,5 @@ export function UltrasonicDiagrams() {
       <p className="serial-label">JSON over USB serial · {copy.transport.baud.toLocaleString("en-US")} baud.</p>
       <div className="serial-details"><div><p className="sensor-note">{copy.transport.note}</p><p className="packet-caption">{copy.transport.packetLabel}</p></div><pre className="sensor-packet"><code>{JSON.stringify(copy.transport.packet, null, 2)}</code></pre></div>
     </article>
-    <aside className="sensor-power" data-reveal aria-label="System power"><Battery size={32} aria-hidden="true" /><div><h3>{copy.power.title}</h3><p>{copy.power.source}</p></div><div className="power-draw"><p>Reported peak system draw is about {copy.power.peakWatts} W.</p></div></aside>
   </div>;
 }
