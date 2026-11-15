@@ -135,6 +135,10 @@ export const presentation = {
       steps: ["sherpa-onnx detects “Hey VIDI.”", "After the cue, the wearer speaks the command.", "Gemini recognizes the spoken command.", "Python selects the reading action and captures a fresh image.", "Gemini transcribes the visible printed text.", "Piper reads the result through the headphones."],
     },
   },
+  demo: {
+    title: "See VIDI in action",
+    subtitle: "Our product demo from HackUMass XIV — the prototype, worn and working.",
+  },
   hardware: { title: "Sense. Process. Speak.", paths: [{ label: "Distance", steps: ["Ultrasonic sensors", "ESP32", "Left and right distance readings"] }, { label: "Vision & voice", steps: ["IMX708 camera", "Raspberry Pi 5", "Gemini online", "Bluetooth headset"] }], status: "We bench-tested the sensors and confirmed that the Pi detects the camera.", note: "One camera. Two distance sensors. Gemini requires an internet connection.", sideBox: { kicker: "Where it stands", title: "One camera. Two distance sensors.", points: ["Two HC-SR04 sensors feed the ESP32, which times the echoes and calculates distance.", "The Raspberry Pi 5 requests a pair of independent distance readings over USB serial.", "The ultrasonic sensors have been bench-tested, and the Pi detects the camera."], status: "Gemini requires an internet connection." } },
   engineering: {
     title: "Engineering and design",
