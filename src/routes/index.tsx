@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { ArrowDown, ArrowUpRight, Eye, Linkedin } from "lucide-react";
 import { site, presentation as copy, footer } from "@/lib/vidi-content";
-import { PresentationMedia, TeamHeadshot } from "@/components/presentation-media";
+import { PresentationMedia, PrototypeDiagram, TeamHeadshot } from "@/components/presentation-media";
 import { usePresentationMotion } from "@/hooks/use-presentation-motion";
 import caesarImage from "@/assets/caesar-cinematic-concept.jpg";
 import { UltrasonicDiagrams } from "@/components/ultrasonic-diagrams";
@@ -51,12 +51,51 @@ function Index() {
         <UltrasonicDiagrams />
         <div className="hardware-paths">{copy.hardware.paths.slice(1).map((path) => <div className="hardware-path" key={path.label} data-reveal><div className="path-heading"><Eye strokeWidth={1.3} aria-hidden="true" /><h3>{path.label}</h3></div><ol>{path.steps.map((step, j) => <li key={step}><span className="path-index">0{j + 1}</span><span>{step}</span></li>)}</ol></div>)}</div>
       </section>
+      <section id="engineering" className="engineering-section section-shell" aria-labelledby="engineering-title">
+        <div data-reveal><Chapter n="IV">Engineering & Design</Chapter><h2 id="engineering-title">{copy.engineering.title}</h2><p className="section-subtitle">{copy.engineering.subtitle}</p></div>
+        <div className="engineering-grid">
+          <div className="engineering-mechanical" data-reveal>
+            <p className="solution-kicker">{copy.engineering.mechanical.kicker}</p>
+            <h3>{copy.engineering.mechanical.title}</h3>
+            <p className="engineering-body">{copy.engineering.mechanical.body}</p>
+            <ul className="engineering-tags">{copy.engineering.mechanical.tags.map((tag) => <li key={tag}>{tag}</li>)}</ul>
+          </div>
+          <div className="engineering-render" data-reveal>
+            <div className="engineering-render-frame"><PrototypeDiagram /></div>
+            <p className="engineering-render-note">Annotated frame schematic · CAD renderings and prototype photography slot in here</p>
+          </div>
+        </div>
+        <div className="engineering-architecture" data-reveal>
+          <p className="solution-kicker">{copy.engineering.architecture.kicker}</p>
+          <ul className="engineering-parts">
+            {copy.engineering.architecture.items.map((item) => <li key={item.part}><strong>{item.part}</strong><span>{item.role}</span></li>)}
+          </ul>
+          <p className="engineering-comms">{copy.engineering.architecture.comms}</p>
+        </div>
+        <div className="engineering-lower">
+          <div className="engineering-evolution" data-reveal>
+            <p className="solution-kicker">{copy.engineering.evolution.kicker}</p>
+            <h3>{copy.engineering.evolution.title}</h3>
+            <ol className="engineering-steps">
+              {copy.engineering.evolution.steps.map((step, i) => <li key={step}><span className="path-index">0{i + 1}</span><span>{step}</span></li>)}
+            </ol>
+          </div>
+          <div className="engineering-innovation" data-reveal>
+            <p className="solution-kicker">{copy.engineering.innovation.kicker}</p>
+            <p className="engineering-body">{copy.engineering.innovation.body}</p>
+            <ul className="engineering-limits">
+              {copy.engineering.innovation.limitations.map((limit) => <li key={limit}>{limit}</li>)}
+            </ul>
+            <p className="engineering-status">{copy.engineering.innovation.status}</p>
+          </div>
+        </div>
+      </section>
       <section id="next-steps" className="next-section section-shell" aria-labelledby="next-title">
-        <div data-reveal><Chapter n="IV">What’s Next</Chapter><h2 id="next-title">{copy.next.title}</h2><p className="section-subtitle">{copy.next.subtitle}</p></div>
+        <div data-reveal><Chapter n="V">What’s Next</Chapter><h2 id="next-title">{copy.next.title}</h2><p className="section-subtitle">{copy.next.subtitle}</p></div>
         <div className="next-timeline">{copy.next.cards.map((card) => <article className="next-card" data-reveal key={card.label}><p className="next-card-label">{card.label}</p><h3>{card.title}</h3><p className="next-card-text">{card.text}</p></article>)}</div>
       </section>
       <section id="team" className="team-section section-shell" aria-labelledby="team-title">
-        <div data-reveal><Chapter n="V">Meet the team</Chapter><h2 id="team-title">{copy.team.title}</h2><p className="section-subtitle">{copy.team.subtitle}</p></div>
+        <div data-reveal><Chapter n="VI">Meet the team</Chapter><h2 id="team-title">{copy.team.title}</h2><p className="section-subtitle">{copy.team.subtitle}</p></div>
         <p className="control-status" data-reveal>{copy.team.status}</p>
         <ul className="team-cards">
           {copy.team.members.map((member) => <li className="team-card" key={member.name} data-reveal>

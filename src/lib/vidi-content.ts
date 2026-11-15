@@ -81,7 +81,7 @@ export const teamMembers: TeamMember[] = [
 ];
 
 export const presentation = {
-  navigation: [{ label: "Problem", href: "#problem" }, { label: "Solution", href: "#prototype" }, { label: "How It Works", href: "#how-it-works" }, { label: "What’s next", href: "#next-steps" }, { label: "Team", href: "#team" }],
+  navigation: [{ label: "Problem", href: "#problem" }, { label: "Solution", href: "#prototype" }, { label: "How It Works", href: "#how-it-works" }, { label: "Engineering", href: "#engineering" }, { label: "What’s next", href: "#next-steps" }, { label: "Team", href: "#team" }],
   hero: { title: "VIDI", meaning: "Reimagining the way Blind and Visually imparied people interact with the world", caption: "Caesar & the glasses · Concept image", kicker: "A new perspective on independence", scroll: "A closer look" },
   problem: { title: "The Problem Visually Impaired People Face", captions: ["Outdated Technology", "Not Enough Sensory Information", "No Warnings of Overhead Hazards"], details: ["Technology has rapidly improved in all areas of life but Traditional white canes for the blind have not changed.", "Traditional white canes are good at detecting what is on the ground in front of someone but they lack in sensory information and navigation.", "Traditional traditional white canes have a blind spot and cannot detect any hazards that are above the cane so visually impaired people are still at risk of getting hit with things like branches or cabinets."], comparisonTitle: "Human assistance. Wearable possibility.", comparison: "Be My Eyes connects people with sighted volunteers. We’re exploring a wearable interface the wearer controls." },
   prototype: { title: "Meet Vidi.", subtitle: "Visual information, on your terms.",
@@ -100,6 +100,44 @@ export const presentation = {
       line: "Object Detection & Recognition | Conversational AI | Scene Description | Text Recognition",
     } },
   hardware: { title: "Sense. Process. Speak", paths: [{ label: "Distance", steps: ["Ultrasonic sensors", "ESP32", "Left / right distance readings"] }, { label: "Vision & voice", steps: ["IMX708 camera", "Raspberry Pi 5", "Gemini online", "Bluetooth headset"] }], status: "Sensors bench-tested. The Pi detects the camera.", note: "One camera. Two distance sensors. Gemini requires internet.", sideBox: { kicker: "Where it stands", title: "One camera. Two distance sensors.", points: ["Two HC-SR04 sensors feed the ESP32, which handles timing, filtering and measurements.", "The ESP32 sends JSON readings over USB to the Raspberry Pi 5 for AI, sensor fusion and speech output.", "The ultrasonic sensors have been bench-tested, and the Pi detects the camera."], status: "Gemini requires internet." } },
+  engineering: {
+    title: "Engineering & Design",
+    subtitle: "A modular frame, built to be rebuilt.",
+    mechanical: {
+      kicker: "Mechanical design",
+      title: "Modular, 3D-printed, serviceable.",
+      body: "VIDI uses a modular, 3D-printed glasses frame that integrates multiple sensing and processing components. Reinforced, ergonomic temple arms carry curved over-ear supports, removable electronics mounts, and adjustable ultrasonic sensor holders — so any component can be replaced or modified without redesigning the entire frame.",
+      tags: ["3D-printed frame", "Removable mounts", "Adjustable sensor holders", "Over-ear supports"],
+    },
+    architecture: {
+      kicker: "Hardware architecture",
+      items: [
+        { part: "Raspberry Pi 5", role: "Main computer for camera processing, AI integration, and speech interaction — housed in its original enclosure with the internal cooling fan." },
+        { part: "ESP32", role: "Microcontroller collecting distance measurements from the two HC-SR04 ultrasonic sensors." },
+        { part: "Dual ultrasonic sensors", role: "Mounted on opposite sides of the frame for independent left and right proximity measurements." },
+        { part: "IMX708 camera", role: "Centrally mounted, rotated 90° so its 7.5-inch ribbon cable routes toward the right temple while the lens stays forward-facing." },
+        { part: "Bluetooth headset", role: "Hands-free voice interaction and audible feedback." },
+      ],
+      comms: "ESP32 → Raspberry Pi 5 · USB serial · 115,200 baud",
+    },
+    evolution: {
+      kicker: "Design evolution",
+      title: "Five iterations, five problems solved.",
+      steps: [
+        "Redesigned the ultrasonic mounts after the original supports obstructed sensor installation.",
+        "Reinforced the temple arms to carry the electronics.",
+        "Separated the ear-contact structure from the external electronics supports to improve wearability.",
+        "Rotated the camera board to work within the limited ribbon-cable length.",
+        "Developed a ventilated Raspberry Pi enclosure mount while retaining its cooling system.",
+      ],
+    },
+    innovation: {
+      kicker: "Innovation & limitations",
+      body: "VIDI combines camera-based visual interpretation with independently acquired ultrasonic proximity measurements. The modular design emphasizes accessibility, adaptability, and iterative prototyping — and is intended to complement traditional mobility aids, not replace them.",
+      limitations: ["Electronics weight distribution", "Thermal management", "Sensor blind spots", "Wiring durability", "Real-world validation still ahead"],
+      status: "Bench-tested functions are labeled as such; proposed capabilities stay marked as unverified.",
+    },
+  },
   next: {
     title: "From prototype to everyday wear.",
     subtitle: "We built VIDI in a weekend. Here’s where it goes from here.",

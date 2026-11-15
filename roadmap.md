@@ -79,3 +79,4 @@
 - [x] Update traditional white cane wording, solution points, and feature labels.
 - [x] Add echo, ESP32 timing/processing, USB packet, and Power visuals above the unchanged Vision & voice path.
 - [x] Verify timing and power rules, desktop/mobile layout, and reduced motion; keep unpublished.
+- [x] Engineering & Design section (IV): mechanical design, hardware architecture, design evolution, innovation & limitations — no overlap with How It Works sensor diagrams; nav + chapter renumbering (What's Next → V, Team → VI)

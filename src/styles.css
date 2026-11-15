@@ -513,3 +513,41 @@ h2 { font-size: 68px; max-width: 1000px; }
  .sensor-power { flex-wrap: wrap; gap: 16px; }.sensor-power .power-draw { width: 100%; margin: 0; }.sensor-power p { font-size: 17px; }
 }
 @media (prefers-reduced-motion: reduce) { .pulse-lane::after, .timing-fire > span { animation: none; }.pulse-lane::after { display: none; } }
+
+/* Engineering & Design: mechanical frame, component roles, evolution timeline, limitations. */
+.engineering-section { width: 100%; padding: 82px max(40px, calc((100% - 1200px) / 2)); margin: 0; border: 0; background: linear-gradient(160deg, var(--glacier), var(--pearl) 55%, var(--ivory)); }
+.engineering-section .section-subtitle { margin-top: 0; font-size: 23px; }
+.engineering-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 44px; }
+.engineering-mechanical { display: flex; flex-direction: column; gap: 18px; padding: 32px 28px; border: 1px solid var(--glass-edge); border-radius: 8px; background: var(--glass-surface); backdrop-filter: blur(24px) saturate(150%); box-shadow: var(--glass-shadow); }
+.engineering-mechanical h3, .engineering-evolution h3 { font-size: 32px; margin: 0; }
+.engineering-body { font-size: 18px; line-height: 1.55; color: var(--foreground); margin: 0; }
+.engineering-tags { list-style: none; display: flex; flex-wrap: wrap; gap: 10px; padding: 0; margin: 6px 0 0; }
+.engineering-tags li, .engineering-limits li { padding: 9px 15px; border: 1px solid var(--glass-edge); border-radius: 999px; background: var(--glass-surface); box-shadow: var(--glass-shadow); font-size: 15px; }
+.engineering-render { display: flex; flex-direction: column; gap: 12px; }
+.engineering-render-frame { flex: 1; display: grid; place-items: center; padding: 26px; border: 1px solid var(--glass-edge); border-radius: 8px; background: var(--media-field); }
+.engineering-render-frame .prototype-diagram { width: 100%; }
+.engineering-render-note { font-size: 13px; color: var(--muted-foreground); margin: 0; }
+.engineering-architecture { margin-top: 24px; padding: 32px 28px; border: 1px solid var(--glass-edge); border-radius: 8px; background: var(--glass-surface); backdrop-filter: blur(24px) saturate(150%); box-shadow: var(--glass-shadow); }
+.engineering-parts { list-style: none; display: grid; grid-template-columns: repeat(5, 1fr); gap: 16px; padding: 0; margin: 22px 0 0; }
+.engineering-parts li { display: flex; flex-direction: column; gap: 10px; padding: 18px; border: 1px solid var(--glass-edge); border-radius: 8px; background: var(--media-field); }
+.engineering-parts strong { font-size: 17px; }
+.engineering-parts span { font-size: 14px; line-height: 1.45; color: var(--muted-foreground); }
+.engineering-comms { margin: 22px 0 0; padding-top: 18px; border-top: 1px solid var(--media-line); font-size: 15px; color: var(--primary); }
+.engineering-lower { display: grid; grid-template-columns: 1.15fr 1fr; gap: 24px; margin-top: 24px; }
+.engineering-evolution, .engineering-innovation { padding: 32px 28px; border: 1px solid var(--glass-edge); border-radius: 8px; background: var(--glass-surface); backdrop-filter: blur(24px) saturate(150%); box-shadow: var(--glass-shadow); }
+.engineering-steps { list-style: none; padding: 0; margin: 24px 0 0; }
+.engineering-steps li { display: flex; gap: 20px; align-items: flex-start; padding-block: 13px; font-size: 16px; line-height: 1.45; position: relative; }
+.engineering-steps li:not(:last-child)::after { content: ''; position: absolute; left: 20px; top: 52px; height: 18px; width: 1px; background: var(--media-line); }
+.engineering-innovation { display: flex; flex-direction: column; gap: 18px; }
+.engineering-limits { list-style: none; display: flex; flex-wrap: wrap; gap: 10px; padding: 0; margin: 0; }
+.engineering-status { font-size: 13px; color: var(--muted-foreground); margin: auto 0 0; padding-top: 16px; border-top: 1px solid var(--media-line); }
+@media (max-width: 1000px) {
+ .engineering-parts { grid-template-columns: repeat(3, 1fr); }
+}
+@media (max-width: 760px) {
+ .engineering-section { padding: 64px 20px; }
+ .engineering-grid, .engineering-lower { grid-template-columns: 1fr; }
+ .engineering-parts { grid-template-columns: 1fr; }
+ .engineering-mechanical h3, .engineering-evolution h3 { font-size: 26px; }
+ .engineering-body { font-size: 16px; }
+}
