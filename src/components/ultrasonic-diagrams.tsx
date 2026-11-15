@@ -2,6 +2,32 @@ import { ArrowRight, Battery, Radio, Cpu, Cable, CircuitBoard } from "lucide-rea
 import { useEffect, useState } from "react";
 import { ultrasonicExplanation as copy, sensorUpdateHz, sensorUpdateIntervalMs } from "@/lib/vidi-content";
 
+function EchoCapture() {
+  const [distanceCm, setDistanceCm] = useState(100);
+  const speed = 331.3 + 0.606 * 20;
+  const echoMs = 20 * distanceCm / speed;
+  const echoEnd = 8 + 4.6 * echoMs;
+
+  return <div className="echo-capture">
+    <div className="capture-panel">
+      <div className="capture-heading"><strong>HC-SR04 pulse capture</strong><span>Illustrative trace · 20 °C</span></div>
+      <div className="capture-trace" aria-hidden="true">
+        <div><span>TRIG</span><svg viewBox="0 0 100 30" preserveAspectRatio="none"><path d="M0 24H3V6H5V24H100" /></svg></div>
+        <div><span>ECHO</span><svg viewBox="0 0 100 30" preserveAspectRatio="none"><path d={`M0 24H8V6H${echoEnd}V24H100`} /></svg></div>
+        <div className="capture-interval"><span>Δt</span><div><span style={{ left: "8%", width: `${echoEnd - 8}%` }} /></div></div>
+      </div>
+      <p className="sensor-note">The ESP32 sends a 10 µs trigger. Interrupts timestamp both ECHO edges. Their difference is the acoustic round-trip time. The trigger width and delay before ECHO rises are schematic.</p>
+    </div>
+    <div className="capture-readout">
+      <label htmlFor="echo-distance">Simulated obstacle distance</label>
+      <input id="echo-distance" type="range" min="2" max="300" value={distanceCm} aria-valuetext={`${distanceCm} centimeters`} onChange={event => setDistanceCm(event.currentTarget.valueAsNumber)} />
+      <output htmlFor="echo-distance"><strong>{distanceCm} cm</strong><span>{echoMs.toFixed(2)} ms echo</span></output>
+      <p className="echo-formula">{copy.echo.formula}</p>
+      <p className="sensor-note">At 20 °C, sound travels at about {speed.toFixed(1)} m/s. The firmware accepts raw ranges from 2 to 300 cm.</p>
+    </div>
+  </div>;
+}
+
 function MultiplexTiming() {
   const { slots, firingIntervalMs, lanes } = copy.timing;
   const times = [...slots, slots.length * firingIntervalMs];
@@ -56,12 +82,7 @@ export function UltrasonicDiagrams() {
   return <div className="ultrasonic-explanation">
     <article className="sensor-diagram echo-diagram" data-reveal aria-labelledby="echo-title">
       <h3 id="echo-title">{copy.echo.title}</h3>
-      <div className="echo-scene">
-        <div className="echo-sensor"><Radio size={34} aria-hidden="true" /><strong>{copy.echo.sensor}</strong></div>
-        <div className="echo-travel"><div className="pulse-lane pulse-out"><span>{copy.echo.outbound}</span><ArrowRight aria-hidden="true" /></div><div className="pulse-lane pulse-back"><ArrowRight aria-hidden="true" /><span>{copy.echo.returning}</span></div></div>
-        <div className="echo-obstacle"><span aria-hidden="true" /><strong>{copy.echo.obstacle}</strong></div>
-      </div>
-      <p className="echo-formula">{copy.echo.formula}</p><p className="sensor-note">{copy.echo.note}</p>
+      <EchoCapture />
     </article>
     <article className="sensor-diagram timing-diagram" data-reveal aria-labelledby="timing-title">
       <h3 id="timing-title">{copy.timing.title}</h3>

@@ -252,21 +252,19 @@ export const footer = {
 
 export const ultrasonicExplanation = {
   echo: {
-    title: "From echo to distance",
-    sensor: "Sensor", obstacle: "Obstacle", outbound: "Outgoing pulse", returning: "Reflected sound",
+    title: "Ultrasonic time of flight",
     formula: "Distance = speed of sound × round-trip time ÷ 2",
-    note: "The sound travels to the obstacle and back.",
   },
   timing: {
-    title: "What the ESP32 does",
+    title: "Time-division multiplexing and fusion",
     firingIntervalMs: 40,
     slots: [0, 40, 80, 120],
     lanes: ["Left sensor", "Right sensor"],
-    processing: ["Filter echoes", "Locate the obstacle", "Estimate time to contact"],
+    processing: ["Range and velocity tracking", "Geometric localization", "Hazard classification"],
     processingDetails: [
-      "A median filter rejects brief spikes. A tracker uses the filtered readings to estimate distance and closing speed.",
-      "The ESP32 aligns both readings in time and uses the sensor spacing to estimate direction. If the readings differ too much, it reports the nearer side.",
-      "A distance of 1 m and a closing speed of 0.5 m/s give about 2 seconds to contact. Distance and time to contact together determine the hazard level.",
+      "A three-sample filter rejects spikes. An alpha–beta tracker predicts the next range, then corrects its range and velocity estimates using the difference between the prediction and the reading.",
+      "The ESP32 projects both tracks to the same time. It uses a 14 cm sensor baseline and circle intersection to estimate bearing. If the ranges differ by more than 18 cm, it reports the nearer side.",
+      "The firmware estimates time to contact as range divided by closing speed when closing faster than 10 cm/s. Distance sets the hazard level, and a short time to contact can raise it for obstacles within 3 m.",
     ],
   },
   transport: {
