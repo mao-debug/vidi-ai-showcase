@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { ArrowDown, ArrowUpRight, Eye, Linkedin } from "lucide-react";
 import { site, presentation as copy, footer } from "@/lib/vidi-content";
-import { PresentationMedia, TeamHeadshot } from "@/components/presentation-media";
+import { PresentationMedia, PrototypeDiagram, TeamHeadshot } from "@/components/presentation-media";
 import { usePresentationMotion } from "@/hooks/use-presentation-motion";
 import caesarImage from "@/assets/caesar-cinematic-concept.jpg";
 import { UltrasonicDiagrams } from "@/components/ultrasonic-diagrams";

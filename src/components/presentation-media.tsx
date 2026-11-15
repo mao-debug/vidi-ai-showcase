@@ -47,7 +47,7 @@ export function PresentationMedia({ slot }: { slot: string }) {
   );
 }
 
-function PrototypeDiagram() {
+export function PrototypeDiagram() {
   return (
     <div className="prototype-diagram">
       <svg viewBox="0 0 700 260" role="img" aria-label="Conceptual glasses-frame diagram showing left and right ultrasonic sensors and a central IMX708 camera. Not a product photograph.">
