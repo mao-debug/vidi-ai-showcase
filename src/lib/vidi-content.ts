@@ -84,7 +84,7 @@ export const teamMembers: TeamMember[] = [
 ];
 
 export const presentation = {
-  navigation: [{ label: "Problem", href: "#problem" }, { label: "Solution", href: "#prototype" }, { label: "Engineering", href: "#engineering" }, { label: "How it works", href: "#how-it-works" }, { label: "What’s next", href: "#next-steps" }, { label: "Team", href: "#team" }],
+  navigation: [{ label: "Problem", href: "#problem" }, { label: "Solution", href: "#prototype" }, { label: "Engineering", href: "#engineering" }, { label: "How it works", href: "#how-it-works" }, { label: "Software", href: "#software" }, { label: "What’s next", href: "#next-steps" }, { label: "Team", href: "#team" }],
   hero: { title: "VIDI", meaning: "Reimagining how Visually Impaired People (VIP) interact with the world", caption: "Caesar and the glasses · Concept image", kicker: "A new perspective on independence", scroll: "A closer look" },
   problem: {
     title: "The problem people with vision loss face",
@@ -112,6 +112,20 @@ export const presentation = {
       kicker: "Features",
       line: "Object Detection & Recognition | Conversational AI | Scene Description | Text Recognition",
     } },
+  software: {
+    title: "Software",
+    subtitle: "Python connects the whole system.",
+    modules: [
+      { kicker: "Python", title: "The central coordinator", body: "Python runs the main application on the Raspberry Pi 5: it coordinates camera capture, receives sensor readings from the ESP32, sends images or audio to Gemini, and passes responses to the speech engine. Each feature is a separate module, so we can swap a camera, AI model, or speech engine without rebuilding the app — and the camera keeps running while an AI response is being generated." },
+      { kicker: "OpenCV & NumPy", title: "Image preparation", body: "NumPy represents each camera frame as an array of pixel values, and OpenCV resizes, converts, and encodes frames as JPEGs before they are sent to Gemini. In our experimental chess workflow, OpenCV also detects the printed markers around the board — physical chess recognition still needs validation." },
+      { kicker: "Gemini, sherpa-onnx & Piper", title: "Understanding, activation, and speech", body: "Gemini provides cloud-based visual and audio understanding — describing images, identifying objects, transcribing text, and recognizing short spoken commands (internet required). sherpa-onnx listens locally on the Pi for the wake word “Hey VIDI,” and Piper turns responses into speech locally, played through the Bluetooth headphones. Idle microphone audio is never streamed to the cloud." },
+      { kicker: "Git, GitHub & VS Code", title: "Development and teamwork", body: "We developed on a Mac in VS Code, tracked changes with Git, and collaborated through a shared GitHub repository — pushing updates from the Mac and pulling them onto the Raspberry Pi to test on real hardware." },
+    ],
+    flow: {
+      kicker: "Example: “Read the text in front of me.”",
+      steps: ["sherpa-onnx detects “Hey VIDI.”", "After the cue, the wearer speaks the command.", "Gemini recognizes the spoken command.", "Python selects the reading action and captures a fresh image.", "Gemini transcribes the visible printed text.", "Piper reads the result through the headphones."],
+    },
+  },
   hardware: { title: "Sense. Process. Speak.", paths: [{ label: "Distance", steps: ["Ultrasonic sensors", "ESP32", "Left and right distance readings"] }, { label: "Vision & voice", steps: ["IMX708 camera", "Raspberry Pi 5", "Gemini online", "Bluetooth headset"] }], status: "We bench-tested the sensors and confirmed that the Pi detects the camera.", note: "One camera. Two distance sensors. Gemini requires an internet connection.", sideBox: { kicker: "Where it stands", title: "One camera. Two distance sensors.", points: ["Two HC-SR04 sensors feed the ESP32, which times the echoes and calculates distance.", "The Raspberry Pi 5 requests a pair of independent distance readings over USB serial.", "The ultrasonic sensors have been bench-tested, and the Pi detects the camera."], status: "Gemini requires an internet connection." } },
   engineering: {
     title: "Engineering and design",
