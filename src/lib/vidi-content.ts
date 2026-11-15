@@ -36,7 +36,7 @@ export type PresentationMedia = {
 };
 
 export const presentationMedia: Record<string, PresentationMedia> = {
-  problem: { src: caneBlindSpot.url, kind: "video", alt: "Animated diagram titled 'The cane's blind spot': a white cane sweeps the ground ahead of a walking figure and clears a tree trunk, but a low branch at chest and head level sits above the cane's reach, so the figure walks toward it unaware.", caption: "The cane's blind spot · Chest and above: the cane can't reach", poster: caneBlindSpotPoster.url },
+  problem: { src: caneBlindSpot.url, kind: "video", alt: "Animated diagram titled 'The cane's blind spot': a traditional white cane sweeps the ground ahead of a walking figure and clears a tree trunk, but a low branch at chest and head level sits above the cane's reach, so the figure walks toward it unaware.", caption: "The cane's blind spot · Chest and above: the cane can't reach", poster: caneBlindSpotPoster.url },
   comparison: { src: "", kind: "image", alt: "Our Be My Eyes comparison", caption: "Be My Eyes · Live volunteer assistance" },
   problemGraph: {
     src: visionLossStat.url,
@@ -50,7 +50,7 @@ export const presentationMedia: Record<string, PresentationMedia> = {
     alt: "Five-view product sheet of the white smart glasses prototype: front view, left side view, right side view, top view and back view, showing the camera above the nose bridge and two stacked sensors on each front corner.",
     caption: "Smart glasses · Front, side, top and back views",
   },
-  detail: { src: glassesAvoidBranch.url, kind: "video", alt: "Animated diagram titled 'The cane's blind spot': a stick figure wearing gold glasses walks with a white cane toward a tree whose low branch sits at head height, above the cane's reach; audio waves appear behind the head, then a blue check mark badge, while the caption reads 'but our glasses warn: Branch ahead at head height.'", caption: "Glasses warning · “Branch ahead at head height.”", poster: glassesAvoidBranchPoster.url },
+  detail: { src: glassesAvoidBranch.url, kind: "video", alt: "Animated diagram titled 'The cane's blind spot': a stick figure wearing gold glasses walks with a traditional white cane toward a tree whose low branch sits at head height, above the cane's reach; audio waves appear behind the head, then a blue check mark badge, while the caption reads 'but our glasses warn: Branch ahead at head height.'", caption: "Glasses warning · “Branch ahead at head height.”", poster: glassesAvoidBranchPoster.url },
   walk: { src: "", kind: "video", alt: "Two-zone distance sensor bench test", caption: "Distance sensing · Bench test" },
   scene: { src: "", kind: "video", alt: "Vidi camera and voice workflow", caption: "Camera and voice · In integration" },
   chess: { src: "", kind: "image", alt: "Activity-aware assistance concept", caption: "Activity awareness · Future scenario" },
@@ -83,21 +83,21 @@ export const teamMembers: TeamMember[] = [
 export const presentation = {
   navigation: [{ label: "Problem", href: "#problem" }, { label: "Solution", href: "#prototype" }, { label: "How It Works", href: "#how-it-works" }, { label: "What’s next", href: "#next-steps" }, { label: "Team", href: "#team" }],
   hero: { title: "VIDI", meaning: "Reimagining the way Blind and Visually imparied people interact with the world", caption: "Caesar & the glasses · Concept image", kicker: "A new perspective on independence", scroll: "A closer look" },
-  problem: { title: "The Problem Visually Impaired People Face", captions: ["Outdated Technology", "Not Enough Sensory Information", "No Warnings of Overhead Hazards"], details: ["Technology has rapidly improved in all areas of life but White Canes for the blind have not changed.", "White Canes are good at detecting what is on the ground in front of someone but they lack in sensory information and navigation.", "White canes have a blind spot and cannot detect any hazards that are above the cane so visually impaired people are still at risk of getting hit with things like branches or cabinets."], comparisonTitle: "Human assistance. Wearable possibility.", comparison: "Be My Eyes connects people with sighted volunteers. We’re exploring a wearable interface the wearer controls." },
+  problem: { title: "The Problem Visually Impaired People Face", captions: ["Outdated Technology", "Not Enough Sensory Information", "No Warnings of Overhead Hazards"], details: ["Technology has rapidly improved in all areas of life but Traditional white canes for the blind have not changed.", "Traditional white canes are good at detecting what is on the ground in front of someone but they lack in sensory information and navigation.", "Traditional traditional white canes have a blind spot and cannot detect any hazards that are above the cane so visually impaired people are still at risk of getting hit with things like branches or cabinets."], comparisonTitle: "Human assistance. Wearable possibility.", comparison: "Be My Eyes connects people with sighted volunteers. We’re exploring a wearable interface the wearer controls." },
   prototype: { title: "Meet Vidi.", subtitle: "Visual information, on your terms.",
     solution: {
       kicker: "What Vidi does",
       title: "One frame. Two ways to sense the scene.",
       points: [
-        "Two ultrasonic sensors report left and right distance readings.",
-        "The camera sends a visual question to Gemini and the answer returns as speech.",
-        "Made to sit alongside a cane or dog, not replace it.",
+        "Measure distance in the dark. Two ultrasonic sensors work together to measure the distance to nearby obstacles. They work in complete darkness and require minimal computation.",
+        "Turn visual information into speech. A camera captures the scene so VIDI can classify objects, recognize text, and speak useful information aloud.",
+        "Complement everyday mobility tools. VIDI is designed to work alongside a traditional white cane or guide dog, giving blind and low-vision users more information about their surroundings and helping with everyday tasks.",
       ],
       status: "Sensors bench-tested. The Pi detects the camera.",
     },
     bottomNote: {
       kicker: "Features",
-      line: "Object Recognition | Conversational AI | Navigation | text Recognition",
+      line: "Object Detection & Recognition | Conversational AI | Scene Description | Text Recognition",
     } },
   hardware: { title: "Sense. Process. Speak", paths: [{ label: "Distance", steps: ["Ultrasonic sensors", "ESP32", "Left / right distance readings"] }, { label: "Vision & voice", steps: ["IMX708 camera", "Raspberry Pi 5", "Gemini online", "Bluetooth headset"] }], status: "Sensors bench-tested. The Pi detects the camera.", note: "One camera. Two distance sensors. Gemini requires internet.", sideBox: { kicker: "Where it stands", title: "One camera. Two distance sensors.", points: ["Two HC-SR04 sensors feed the ESP32, which handles timing, filtering and measurements.", "The ESP32 sends JSON readings over USB to the Raspberry Pi 5 for AI, sensor fusion and speech output.", "The ultrasonic sensors have been bench-tested, and the Pi detects the camera."], status: "Gemini requires internet." } },
   next: {
@@ -201,3 +201,37 @@ export const control = {
 export const footer = {
   note: "Built as a hackathon final presentation.",
 };
+
+export const ultrasonicExplanation = {
+  echo: {
+    title: "From echo to distance.",
+    sensor: "Sensor", obstacle: "Obstacle", outbound: "Send pulse", returning: "Reflected sound",
+    timeline: ["Send pulse", "Wait for echo", "Measure round-trip time"],
+    formula: "Distance = speed of sound × round-trip time ÷ 2",
+    note: "The sound travels to the obstacle and back.",
+  },
+  timing: {
+    title: "What the ESP32 does.",
+    firingIntervalMs: 40,
+    slots: [0, 40, 80, 120],
+    lanes: ["Left sensor", "Right sensor"],
+    processing: ["Noise rejection and filtering", "Distance and motion tracking", "Geometric localization", "Predictive hazard detection"],
+    cues: ["Noise → signal", "Track motion", "Estimate position", "Time to contact"],
+  },
+  transport: {
+    title: "From ESP32 to Raspberry Pi.",
+    nodes: ["Left and right sensors", "ESP32", "USB serial", "Raspberry Pi 5"],
+    baud: 115200,
+    note: "The ESP32 processes ultrasonic readings and sends usable obstacle estimates to the Pi.",
+    packetLabel: "Example obstacle estimate · illustrative values",
+    packet: { left_distance_cm: 120, right_distance_cm: 135, estimated_bearing_deg: -8, hazard_level: "caution" },
+  },
+  power: {
+    title: "Power", source: "Powered by a portable battery pack", peakWatts: 6.4,
+    capacityWh: null as number | null,
+    measuredRuntimeHours: null as number | null,
+  },
+};
+
+export function sensorUpdateIntervalMs(firingIntervalMs: number) { return firingIntervalMs * 2; }
+export function sensorUpdateHz(firingIntervalMs: number) { return 1000 / sensorUpdateIntervalMs(firingIntervalMs); }
