@@ -1,5 +1,5 @@
 /*
- * Vidi — presentation copy.
+ * VIDI — presentation copy.
  * All site text lives here so final edits are one-file changes.
  * Replace values freely; do not add fabricated photos, results, or testimonials.
  */
@@ -18,7 +18,7 @@ import smartGlassesShowcase from "@/assets/smart-glasses-multiview-showcase.png.
 import visionLossStat from "@/assets/vision-loss-stat.png.asset.json";
 
 export const site = {
-  name: "Vidi",
+  name: "VIDI",
   tagline: "Visual information, on your terms.",
   domain: "vidiai.us",
 };
@@ -41,23 +41,23 @@ export const presentationMedia: Record<string, PresentationMedia> = {
   problemGraph: {
     src: visionLossStat.url,
     kind: "image",
-    alt: "Horizontal bar chart titled 'Vision loss worldwide, 2020': 1.1 billion people live with vision loss, split into blind 43 million, moderate to severe distance vision impairment 295 million, mild distance vision impairment 258 million, and near vision impairment 510 million.",
+    alt: "The chart shows that 1.1 billion people lived with vision loss worldwide in 2020. Of these, 43 million were blind, 295 million had moderate to severe distance vision impairment, 258 million had mild distance vision impairment, and 510 million had near vision impairment.",
     caption: "Vision loss worldwide, 2020 · 1.1 billion people",
   },
   prototype: {
     src: smartGlassesShowcase.url,
     kind: "image",
-    alt: "Five-view product sheet of the white smart glasses prototype: front view, left side view, right side view, top view and back view, showing the camera above the nose bridge and two stacked sensors on each front corner.",
+    alt: "Five views of the white smart glasses prototype show the camera above the nose bridge and two stacked sensors on each front corner.",
     caption: "Smart glasses · Front, side, top and back views",
   },
   detail: { src: glassesAvoidBranch.url, kind: "video", alt: "Animated diagram titled 'The cane's blind spot': a stick figure wearing gold glasses walks with a traditional white cane toward a tree whose low branch sits at head height, above the cane's reach; audio waves appear behind the head, then a blue check mark badge, while the caption reads 'but our glasses warn: Branch ahead at head height.'", caption: "Glasses warning · “Branch ahead at head height.”", poster: glassesAvoidBranchPoster.url },
   walk: { src: "", kind: "video", alt: "Two-zone distance sensor bench test", caption: "Distance sensing · Bench test" },
-  scene: { src: "", kind: "video", alt: "Vidi camera and voice workflow", caption: "Camera and voice · In integration" },
+  scene: { src: "", kind: "video", alt: "VIDI camera and voice workflow", caption: "Camera and voice · In integration" },
   chess: { src: "", kind: "image", alt: "Activity-aware assistance concept", caption: "Activity awareness · Future scenario" },
   architecture: {
     src: architectureDiagram.url,
     kind: "image",
-    alt: "System architecture diagram: HC-SR04 #1, the left ultrasonic distance sensor, and HC-SR04 #2, the right ultrasonic distance sensor, both feed the ESP32 microcontroller for timing, filtering and measurements, which sends USB, JSON at 115200 baud to the Raspberry Pi 5 main computer running AI, sensor fusion and speech output.",
+    alt: "The two HC-SR04 sensors feed the ESP32, which handles timing, filtering, and distance measurements. The ESP32 sends JSON over USB serial at 115,200 baud to the Raspberry Pi 5, which handles AI processing, sensor fusion, and speech output.",
     caption: "System architecture · Sensors → ESP32 → Raspberry Pi 5",
   },
 };
@@ -81,31 +81,41 @@ export const teamMembers: TeamMember[] = [
 ];
 
 export const presentation = {
-  navigation: [{ label: "Problem", href: "#problem" }, { label: "Solution", href: "#prototype" }, { label: "Engineering", href: "#engineering" }, { label: "How It Works", href: "#how-it-works" }, { label: "What’s next", href: "#next-steps" }, { label: "Team", href: "#team" }],
-  hero: { title: "VIDI", meaning: "Reimagining the way Blind and Visually imparied people interact with the world", caption: "Caesar & the glasses · Concept image", kicker: "A new perspective on independence", scroll: "A closer look" },
-  problem: { title: "The Problem Visually Impaired People Face", captions: ["Outdated Technology", "Not Enough Sensory Information", "No Warnings of Overhead Hazards"], details: ["Technology has rapidly improved in all areas of life but Traditional white canes for the blind have not changed.", "Traditional white canes are good at detecting what is on the ground in front of someone but they lack in sensory information and navigation.", "Traditional traditional white canes have a blind spot and cannot detect any hazards that are above the cane so visually impaired people are still at risk of getting hit with things like branches or cabinets."], comparisonTitle: "Human assistance. Wearable possibility.", comparison: "Be My Eyes connects people with sighted volunteers. We’re exploring a wearable interface the wearer controls." },
-  prototype: { title: "Meet Vidi.", subtitle: "Visual information, on your terms.",
+  navigation: [{ label: "Problem", href: "#problem" }, { label: "Solution", href: "#prototype" }, { label: "Engineering", href: "#engineering" }, { label: "How it works", href: "#how-it-works" }, { label: "What’s next", href: "#next-steps" }, { label: "Team", href: "#team" }],
+  hero: { title: "VIDI", meaning: "Reimagining how people who are blind or have low vision interact with the world", caption: "Caesar and the glasses · Concept image", kicker: "A new perspective on independence", scroll: "A closer look" },
+  problem: {
+    title: "The problem people with vision loss face",
+    captions: ["Limited technology", "Limited sensory information", "No warnings about overhead hazards"],
+    details: [
+      "Technology has advanced rapidly, while the basic design of the traditional white cane has changed little.",
+      "A traditional white cane helps detect obstacles at ground level and provides limited information about the wider surroundings.",
+      "Overhead hazards such as low branches and open cabinet doors can sit beyond the reach of a traditional white cane.",
+    ],
+    comparisonTitle: "Human assistance. Wearable possibility.",
+    comparison: "Be My Eyes connects people with sighted volunteers. We’re exploring a wearable interface the wearer controls.",
+  },
+  prototype: { title: "Meet VIDI", subtitle: "Visual information, on your terms.",
     solution: {
-      kicker: "What Vidi does",
+      kicker: "What VIDI does",
       title: "One frame. Two ways to sense the scene.",
       points: [
-        "Measure distance in the dark. Two ultrasonic sensors work together to measure the distance to nearby obstacles. They work in complete darkness and require minimal computation.",
+        "Measure distance in the dark. Two ultrasonic sensors measure the distance to nearby obstacles in complete darkness and require minimal computation.",
         "Turn visual information into speech. A camera captures the scene so VIDI can classify objects, recognize text, and speak useful information aloud.",
         "Complement everyday mobility tools. VIDI is designed to work alongside a traditional white cane or guide dog, giving blind and low-vision users more information about their surroundings and helping with everyday tasks.",
       ],
-      status: "Sensors bench-tested. The Pi detects the camera.",
+      status: "We bench-tested the sensors and confirmed that the Pi detects the camera.",
     },
     bottomNote: {
       kicker: "Features",
       line: "Object Detection & Recognition | Conversational AI | Scene Description | Text Recognition",
     } },
-  hardware: { title: "Sense. Process. Speak", paths: [{ label: "Distance", steps: ["Ultrasonic sensors", "ESP32", "Left / right distance readings"] }, { label: "Vision & voice", steps: ["IMX708 camera", "Raspberry Pi 5", "Gemini online", "Bluetooth headset"] }], status: "Sensors bench-tested. The Pi detects the camera.", note: "One camera. Two distance sensors. Gemini requires internet.", sideBox: { kicker: "Where it stands", title: "One camera. Two distance sensors.", points: ["Two HC-SR04 sensors feed the ESP32, which handles timing, filtering and measurements.", "The ESP32 sends JSON readings over USB to the Raspberry Pi 5 for AI, sensor fusion and speech output.", "The ultrasonic sensors have been bench-tested, and the Pi detects the camera."], status: "Gemini requires internet." } },
+  hardware: { title: "Sense. Process. Speak.", paths: [{ label: "Distance", steps: ["Ultrasonic sensors", "ESP32", "Left and right distance readings"] }, { label: "Vision & voice", steps: ["IMX708 camera", "Raspberry Pi 5", "Gemini online", "Bluetooth headset"] }], status: "We bench-tested the sensors and confirmed that the Pi detects the camera.", note: "One camera. Two distance sensors. Gemini requires an internet connection.", sideBox: { kicker: "Where it stands", title: "One camera. Two distance sensors.", points: ["Two HC-SR04 sensors feed the ESP32, which handles timing, filtering, and measurements.", "The ESP32 sends JSON readings over USB to the Raspberry Pi 5 for AI, sensor fusion, and speech output.", "The ultrasonic sensors have been bench-tested, and the Pi detects the camera."], status: "Gemini requires an internet connection." } },
   engineering: {
-    title: "Engineering & Design",
-    subtitle: "A modular frame, built to be rebuilt.",
+    title: "Engineering and design",
+    subtitle: "A modular frame built to be rebuilt.",
     mechanical: {
       kicker: "Mechanical design",
-      title: "Modular, 3D-printed, serviceable.",
+      title: "Modular, 3D-printed, and serviceable",
       body: "VIDI uses a modular, 3D-printed glasses frame that integrates multiple sensing and processing components. Reinforced, ergonomic temple arms carry curved over-ear supports, removable electronics mounts, and adjustable ultrasonic sensor holders — so any component can be replaced or modified without redesigning the entire frame.",
       tags: ["3D-printed frame", "Removable mounts", "Adjustable sensor holders", "Over-ear supports"],
     },
@@ -113,7 +123,7 @@ export const presentation = {
       kicker: "Hardware architecture",
       items: [
         { part: "Raspberry Pi 5", role: "Main computer for camera processing, AI integration, and speech interaction — housed in its original enclosure with the internal cooling fan." },
-        { part: "ESP32", role: "Microcontroller collecting distance measurements from the two HC-SR04 ultrasonic sensors." },
+        { part: "ESP32", role: "The microcontroller collects distance measurements from two HC-SR04 ultrasonic sensors." },
         { part: "Dual ultrasonic sensors", role: "Mounted on opposite sides of the frame for independent left and right proximity measurements." },
         { part: "IMX708 camera", role: "Centrally mounted, rotated 90° so its 7.5-inch ribbon cable routes toward the right temple while the lens stays forward-facing." },
         { part: "Bluetooth headset", role: "Hands-free voice interaction and audible feedback." },
@@ -142,12 +152,12 @@ export const presentation = {
     title: "From prototype to everyday wear.",
     subtitle: "We built VIDI in a weekend. Here’s where it goes from here.",
     cards: [
-      { label: "01 · TODAY", title: "A working prototype", text: "The ultrasonic sensors are bench-tested, the Pi detects the camera, and Gemini returns spoken answers. All of it fits in a 3D-printed frame." },
-      { label: "02 · NEXT", title: "Real-world testing", text: "Put VIDI on blind and low-vision users, tune the warning distances, and cut false alarms. Their feedback decides what we build next." },
-      { label: "03 · LATER", title: "Smaller, lighter, longer-lasting", text: "A custom circuit board in place of the Pi and ESP32, all-day battery life, and a weatherproof frame people can wear anywhere." },
+      { label: "01 · TODAY", title: "A working prototype", text: "We’ve bench-tested the ultrasonic sensors, confirmed that the Pi detects the camera, and used Gemini to provide spoken answers. The prototype fits in a 3D-printed frame." },
+      { label: "02 · NEXT", title: "Real-world testing", text: "Test VIDI with people who are blind or have low vision, tune the warning distances, and reduce false alarms. Their feedback will guide what we build next." },
+      { label: "03 · LATER", title: "Smaller, lighter, and longer-lasting", text: "Develop a custom circuit board to replace the Pi and ESP32, extend battery life to a full day, and build a weatherproof frame." },
     ],
   },
-  team: { title: "Meet the team.", subtitle: "The five people behind Vidi.", status: "Headshots, majors and LinkedIn links in place", members: teamMembers },
+  team: { title: "Meet the team", subtitle: "The five people behind VIDI.", status: "Headshots, majors, and LinkedIn links in place", members: teamMembers },
 };
 
 export const problem = {
@@ -161,7 +171,7 @@ export const problem = {
 
 export const intro = {
   nameExplanation:
-    "The name Vidi reflects the idea of turning what a camera sees into information the wearer can use.",
+    "The name VIDI reflects the idea of turning what a camera sees into information the wearer can use.",
   mediaSlotLabel: "Prototype media slot",
   mediaSlotNote:
     "Reserved for our glasses photo or a short demo clip. Until media is added, the labeled hardware diagram below stands in.",
@@ -237,18 +247,18 @@ export const control = {
 };
 
 export const footer = {
-  note: "Built as a hackathon final presentation.",
+  note: "Built for our final hackathon presentation.",
 };
 
 export const ultrasonicExplanation = {
   echo: {
-    title: "From echo to distance.",
-    sensor: "Sensor", obstacle: "Obstacle", outbound: "Send pulse", returning: "Reflected sound",
+    title: "From echo to distance",
+    sensor: "Sensor", obstacle: "Obstacle", outbound: "Outgoing pulse", returning: "Reflected sound",
     formula: "Distance = speed of sound × round-trip time ÷ 2",
     note: "The sound travels to the obstacle and back.",
   },
   timing: {
-    title: "What the ESP32 does.",
+    title: "What the ESP32 does",
     firingIntervalMs: 40,
     slots: [0, 40, 80, 120],
     lanes: ["Left sensor", "Right sensor"],
@@ -260,7 +270,7 @@ export const ultrasonicExplanation = {
     ],
   },
   transport: {
-    title: "From ESP32 to Raspberry Pi.",
+    title: "From the ESP32 to the Raspberry Pi",
     nodes: ["Left and right sensors", "ESP32", "USB serial", "Raspberry Pi 5"],
     baud: 115200,
     note: "The ESP32 processes ultrasonic readings and sends usable obstacle estimates to the Pi.",

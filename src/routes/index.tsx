@@ -9,9 +9,9 @@ import { UltrasonicDiagrams } from "@/components/ultrasonic-diagrams";
 export const Route = createFileRoute("/")({
   head: () => ({ meta: [
     { title: "VIDI — A new perspective on independence" },
-    { name: "description", content: "Envision the Future, Empower the Execution. Meet Vidi, our wearable assistive-technology prototype: distance sensing, visual questions, and wearer control." },
+    { name: "description", content: "Meet VIDI, our wearable assistive technology prototype with distance sensing, spoken answers about the scene, and wearer controls." },
     { property: "og:title", content: "VIDI — A new perspective on independence" },
-    { property: "og:description", content: "From a new perspective to a wearable possibility. The Vidi live prototype presentation." },
+    { property: "og:description", content: "Explore the VIDI smart glasses prototype and see how it combines distance sensing, vision, and voice." },
     { property: "og:type", content: "website" }, { name: "twitter:card", content: "summary_large_image" },
   ] }), component: Index,
 });
@@ -24,7 +24,7 @@ function Index() {
     <a href="#problem" className="skip-link">Skip to presentation</a>
     <div className="reading-progress" aria-hidden="true" />
     <header className="glass-header">
-      <a href="#top" className="nav-brand" aria-label="Vidi, beginning">VIDI</a>
+      <a href="#top" className="nav-brand" aria-label="VIDI, back to top">VIDI</a>
       <nav className="desktop-sections" aria-label="Presentation sections">{copy.navigation.map(item => <a key={item.href} href={item.href}>{item.label}</a>)}</nav>
       <details className="mobile-sections">
         <summary>Sections</summary>
@@ -40,7 +40,7 @@ function Index() {
     <main>
       <section className="hero-journey" aria-labelledby="hero-title">
         <div className="hero-stage">
-          <img className="caesar-image" src={caesarImage} width={1536} height={1024} alt="Cinematic concept artwork of Julius Caesar in a charcoal cloak, turning toward cool light and holding modern glasses below his chin by one temple. Concept eyewear, not the Vidi prototype." fetchPriority="high" />
+          <img className="caesar-image" src={caesarImage} width={1536} height={1024} alt="Cinematic concept artwork of Julius Caesar in a charcoal cloak, turning toward cool light and holding modern glasses below his chin by one temple. Concept eyewear, not the VIDI prototype." fetchPriority="high" />
           <div className="hero-copy"><h1 id="hero-title">{copy.hero.title}</h1><p className="hero-meaning"><em>{copy.hero.meaning}</em></p></div>
           <div className="hero-footer">
             <span>{copy.hero.caption}</span>
@@ -63,11 +63,11 @@ function Index() {
         </div>
       </section>
       <section id="prototype" className="prototype-section section-shell" aria-labelledby="prototype-title">
-        <div className="section-heading" data-reveal><Chapter n="II">Our Solution</Chapter><h2 id="prototype-title">{copy.prototype.title}</h2><p className="section-subtitle">{copy.prototype.subtitle}</p></div>
+        <div className="section-heading" data-reveal><Chapter n="II">Our solution</Chapter><h2 id="prototype-title">{copy.prototype.title}</h2><p className="section-subtitle">{copy.prototype.subtitle}</p></div>
         <div className="prototype-images"><div className="prototype-main" data-reveal><PresentationMedia slot="prototype" /></div><div className="prototype-detail" data-reveal><div className="solution-box"><p className="solution-kicker">{copy.prototype.solution.kicker}</p><h3 className="solution-title">{copy.prototype.solution.title}</h3><ul className="solution-points">{copy.prototype.solution.points.map((point, i) => <li key={point}><span>0{i + 1}</span>{point}</li>)}</ul><p className="solution-status">{copy.prototype.solution.status}</p></div></div><div className="prototype-bottom-text solution-box" data-reveal><p className="solution-kicker">{copy.prototype.bottomNote.kicker}</p><p className="solution-line">{copy.prototype.bottomNote.line}</p></div><div className="prototype-bottom-media" data-reveal><PresentationMedia slot="detail" /></div></div>
       </section>
       <section id="engineering" className="engineering-section section-shell" aria-labelledby="engineering-title">
-        <div data-reveal><Chapter n="III">Engineering & Design</Chapter><h2 id="engineering-title">{copy.engineering.title}</h2><p className="section-subtitle">{copy.engineering.subtitle}</p></div>
+        <div data-reveal><Chapter n="III">Engineering and design</Chapter><h2 id="engineering-title">{copy.engineering.title}</h2><p className="section-subtitle">{copy.engineering.subtitle}</p></div>
         <div className="engineering-grid">
           <div className="engineering-mechanical" data-reveal>
             <p className="solution-kicker">{copy.engineering.mechanical.kicker}</p>
@@ -106,12 +106,12 @@ function Index() {
         </div>
       </section>
       <section id="how-it-works" className="hardware-section section-shell" aria-labelledby="hardware-title">
-        <div data-reveal><Chapter n="IV">How It Works</Chapter><h2 id="hardware-title">{copy.hardware.title}</h2></div>
+        <div data-reveal><Chapter n="IV">How it works</Chapter><h2 id="hardware-title">{copy.hardware.title}</h2></div>
         <UltrasonicDiagrams />
         <div className="hardware-paths">{copy.hardware.paths.slice(1).map((path) => <div className="hardware-path" key={path.label} data-reveal><div className="path-heading"><Eye strokeWidth={1.3} aria-hidden="true" /><h3>{path.label}</h3></div><ol>{path.steps.map((step, j) => <li key={step}><span className="path-index">0{j + 1}</span><span>{step}</span></li>)}</ol></div>)}</div>
       </section>
       <section id="next-steps" className="next-section section-shell" aria-labelledby="next-title">
-        <div data-reveal><Chapter n="V">What’s Next</Chapter><h2 id="next-title">{copy.next.title}</h2><p className="section-subtitle">{copy.next.subtitle}</p></div>
+        <div data-reveal><Chapter n="V">What’s next</Chapter><h2 id="next-title">{copy.next.title}</h2><p className="section-subtitle">{copy.next.subtitle}</p></div>
         <div className="next-timeline">{copy.next.cards.map((card) => <article className="next-card" data-reveal key={card.label}><p className="next-card-label">{card.label}</p><h3>{card.title}</h3><p className="next-card-text">{card.text}</p></article>)}</div>
       </section>
       <section id="team" className="team-section section-shell" aria-labelledby="team-title">

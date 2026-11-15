@@ -19,7 +19,7 @@ function MultiplexTiming() {
   }, [playing, firingIntervalMs, slots.length]);
 
   return <>
-    <div className="multiplex-chart" role="img" aria-label="Relative timing. Left triggers at 0, 80, and 160 milliseconds, right triggers at 40 and 120. At 80 and 160 milliseconds the ESP32 finishes the right slot and sends a fused packet just before the next left trigger.">
+    <div className="multiplex-chart" role="img" aria-label="Relative timing. The left sensor triggers at 0, 80, and 160 milliseconds. The right sensor triggers at 40 and 120 milliseconds. At 80 and 160 milliseconds, the ESP32 finishes the right slot and sends a fused packet just before the next left trigger.">
       <div className="multiplex-axis" aria-hidden="true">{times.map((ms, i) => <span key={ms} style={{ left: `${edge(i) / trackWidth * 100}%` }}>{ms}</span>)}<span className="multiplex-unit">ms</span></div>
       {[...lanes, "Fused JSON"].map((lane, index) => <div className="multiplex-lane" key={lane} aria-hidden="true">
         <strong>{lane}</strong>
@@ -83,6 +83,6 @@ export function UltrasonicDiagrams() {
       <p className="serial-label">JSON over USB serial · {copy.transport.baud.toLocaleString("en-US")} baud.</p>
       <div className="serial-details"><div><p className="sensor-note">{copy.transport.note}</p><p className="packet-caption">{copy.transport.packetLabel}</p></div><pre className="sensor-packet"><code>{JSON.stringify(copy.transport.packet, null, 2)}</code></pre></div>
     </article>
-    <aside className="sensor-power" data-reveal aria-label="System power"><Battery size={32} aria-hidden="true" /><div><h3>{copy.power.title}</h3><p>{copy.power.source}</p></div><div className="power-draw"><p>Approx. {copy.power.peakWatts} W peak system draw.</p><p>Approx. {copy.power.estimatedRuntimeHours} hours battery life at peak system draw.</p></div></aside>
+    <aside className="sensor-power" data-reveal aria-label="System power"><Battery size={32} aria-hidden="true" /><div><h3>{copy.power.title}</h3><p>{copy.power.source}</p></div><div className="power-draw"><p>Approx. {copy.power.peakWatts} W peak system draw.</p><p>Estimated battery life at peak draw is approximately {copy.power.estimatedRuntimeHours} hours.</p></div></aside>
   </div>;
 }

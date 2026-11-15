@@ -41,7 +41,7 @@ export function PresentationMedia({ slot }: { slot: string }) {
           <div className="media-reservation"><span className="media-dot" />{slot === "prototype" ? "Actual glasses photo" : slot === "detail" ? "Camera & sensor close-up" : slot === "walk" ? "Actual demo footage / stills" : slot === "comparison" ? "Comparison visual" : "Actual project visual"}<MoveUpRight size={16} aria-hidden="true" /></div>
         </div>
       )}
-      <figcaption className="media-caption"><span>{media.caption}</span><span>{media.src ? "Vidi" : "Placeholder · awaiting your media"}</span></figcaption>
+      <figcaption className="media-caption"><span>{media.caption}</span><span>{media.src ? "VIDI" : "Placeholder · awaiting your media"}</span></figcaption>
       {media.kind === "video" && media.src && media.transcript && <details className="mt-4 text-muted-foreground"><summary>Demo transcript</summary><p className="mt-3">{media.transcript}</p></details>}
     </figure>
   );
