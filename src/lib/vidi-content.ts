@@ -85,7 +85,7 @@ export const teamMembers: TeamMember[] = [
 
 export const presentation = {
   navigation: [{ label: "Problem", href: "#problem" }, { label: "Solution", href: "#prototype" }, { label: "Engineering", href: "#engineering" }, { label: "How it works", href: "#how-it-works" }, { label: "What’s next", href: "#next-steps" }, { label: "Team", href: "#team" }],
-  hero: { title: "VIDI", meaning: "Reimagining how people who are blind or have low vision interact with the world", caption: "Caesar and the glasses · Concept image", kicker: "A new perspective on independence", scroll: "A closer look" },
+  hero: { title: "VIDI", meaning: "Reimagining how Visually Impaired People (VIP) interact with the world", caption: "Caesar and the glasses · Concept image", kicker: "A new perspective on independence", scroll: "A closer look" },
   problem: {
     title: "The problem people with vision loss face",
     captions: ["Limited technology", "Limited sensory information", "No warnings about overhead hazards"],

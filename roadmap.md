@@ -90,3 +90,7 @@
 - [x] Add the four uploaded bench photos as a labeled 2x2 gallery in Engineering & design (III).
 - [x] Replace the five-view glasses sheet in the Our solution photo slot with the front view.
 - [x] Verify desktop/mobile layout, photo aspect with no empty band, and build; keep unpublished.
+
+# Opening line wording
+- [x] Change the hero line to "Reimagining how Visually Impaired People (VIP) interact with the world", exactly as written.
+- [x] Verify the line renders on desktop and phone with no clipping; keep unpublished.
