@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { ArrowDown, ArrowUpRight, Radar, Eye, MoveUpRight, Linkedin } from "lucide-react";
+import { ArrowDown, ArrowUpRight, Radar, Eye, Linkedin } from "lucide-react";
 import { site, presentation as copy, footer } from "@/lib/vidi-content";
 import { PresentationMedia, TeamHeadshot } from "@/components/presentation-media";
 import { usePresentationMotion } from "@/hooks/use-presentation-motion";
@@ -51,11 +51,8 @@ function Index() {
         <div className="hardware-paths">{copy.hardware.paths.map((path, i) => <div className="hardware-path" key={path.label} data-reveal><div className="path-heading">{i === 0 ? <Radar strokeWidth={1.3} aria-hidden="true" /> : <Eye strokeWidth={1.3} aria-hidden="true" />}<h3>{path.label}</h3></div><ol>{path.steps.map((step, j) => <li key={step}><span className="path-index">0{j + 1}</span><span>{step}</span></li>)}</ol></div>)}</div>
       </section>
       <section id="next-steps" className="next-section section-shell" aria-labelledby="next-title">
-        <div data-reveal><Chapter n="IV">What’s next</Chapter><h2 id="next-title">{copy.next.title}</h2><p className="section-subtitle">{copy.next.subtitle}</p></div>
-        <p className="control-status" data-reveal>{copy.next.cueStatus}</p>
-        <div className="activity-cues">{copy.next.cues.map((cue, i) => <div data-reveal key={cue}><span>0{i + 1}</span><p>{cue}</p><MoveUpRight size={25} strokeWidth={1} aria-hidden="true" /></div>)}</div>
-        <p className="milestone" data-reveal>{copy.next.milestone}</p>
-        <div className="final-word" data-reveal><p>On your terms.</p><span>VIDI</span></div>
+        <div data-reveal><Chapter n="IV">What’s Next</Chapter><h2 id="next-title">{copy.next.title}</h2><p className="section-subtitle">{copy.next.subtitle}</p></div>
+        <div className="next-timeline">{copy.next.cards.map((card) => <article className="next-card" data-reveal key={card.label}><p className="next-card-label">{card.label}</p><h3>{card.title}</h3><p className="next-card-text">{card.text}</p></article>)}</div>
       </section>
       <section id="team" className="team-section section-shell" aria-labelledby="team-title">
         <div data-reveal><Chapter n="V">Meet the team</Chapter><h2 id="team-title">{copy.team.title}</h2><p className="section-subtitle">{copy.team.subtitle}</p></div>

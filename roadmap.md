@@ -70,3 +70,7 @@
 - [x] Problem section: chart card made bigger so its bottom edge lines up with the bottom of the last bullet.
 - [x] Delete the demo section and renumber the chapters.
 - [x] Rename "IV - How it works" to "III - How It Works".
+
+# What's Next timeline
+- [x] Replace the future-control content with the supplied heading, subheading, and Today / Next / Later cards.
+- [x] Verify all three cards and readable desktop/mobile layouts.
