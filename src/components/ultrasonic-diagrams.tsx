@@ -13,9 +13,10 @@ function MultiplexTiming() {
 
   useEffect(() => {
     if (!playing) return;
-    const timer = window.setInterval(() => setStep(current => (current + 1) % times.length), 800);
+    // The final boundary is also the first left trigger of the next cycle.
+    const timer = window.setInterval(() => setStep(current => current % slots.length + 1), firingIntervalMs);
     return () => window.clearInterval(timer);
-  }, [playing, times.length]);
+  }, [playing, firingIntervalMs, slots.length]);
 
   return <>
     <div className="multiplex-chart" role="img" aria-label="Relative timing. Left triggers at 0, 80, and 160 milliseconds, right triggers at 40 and 120. At 80 and 160 milliseconds the ESP32 finishes the right slot and sends a fused packet just before the next left trigger.">
@@ -33,10 +34,10 @@ function MultiplexTiming() {
     </div>
     <div className="multiplex-controls">
       <button type="button" onClick={() => setPlaying(current => !current)}>{playing ? "Pause" : "Play"}</button>
-      <button type="button" onClick={() => { setPlaying(false); setStep(current => (current + 1) % times.length); }}>Step</button>
+      <button type="button" onClick={() => { setPlaying(false); setStep(current => current % slots.length + 1); }}>Step</button>
       <span><strong>{times[step]} ms</strong> · {step % 2 !== 0 ? "Right trigger" : step === 0 ? "Left trigger" : "Fused packet → left trigger"}</span>
     </div>
-    <p className="sensor-note">Rising edges mark triggers or packet emission. Pulse widths are illustrative. Playback is slowed down.</p>
+    <p className="sensor-note">Play runs at {sensorUpdateHz(firingIntervalMs)} fused packets per second. Step advances {firingIntervalMs} ms. Pulse widths are illustrative.</p>
   </>;
 }
 
@@ -66,7 +67,15 @@ export function UltrasonicDiagrams() {
       <h3 id="timing-title">{copy.timing.title}</h3>
       <MultiplexTiming />
       <p className="timing-summary">One sensor fires every {copy.timing.firingIntervalMs} ms · Each sensor updates every {updateMs} ms · {hz} Hz per sensor.</p>
-      <ol className="sensor-processing">{copy.timing.processing.map((step, i) => <li key={step}><ProcessingCue index={i} /><strong>{step}</strong>{i < copy.timing.processing.length - 1 && <ArrowRight className="processing-arrow" aria-hidden="true" />}</li>)}</ol>
+      <ol className="sensor-processing">
+        {copy.timing.processing.map((step, i) => <li key={step}>
+          <details name="esp32-processing">
+            <summary><ProcessingCue index={i} /><strong>{step}</strong></summary>
+            <p>{copy.timing.processingDetails[i]}</p>
+          </details>
+          {i < copy.timing.processing.length - 1 && <ArrowRight className="processing-arrow" aria-hidden="true" />}
+        </li>)}
+      </ol>
     </article>
     <article className="sensor-diagram transport-diagram" data-reveal aria-labelledby="transport-title">
       <h3 id="transport-title">{copy.transport.title}</h3>

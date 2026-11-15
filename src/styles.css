@@ -489,7 +489,11 @@ h2 { font-size: 68px; max-width: 1000px; }
 .multiplex-controls button:focus-visible { outline: 2px solid var(--primary); outline-offset: 3px; }
 .timing-summary, .serial-label { margin: 24px 0; font-size: 21px; color: var(--primary); font-weight: 600; }
 .sensor-processing { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); list-style: none; margin: 0; padding: 24px 0 0; border-top: 1px solid var(--media-line); gap: 34px; }
-.sensor-processing li { position: relative; min-width: 0; display: flex; flex-direction: column; gap: 10px; }
+.sensor-processing li { position: relative; min-width: 0; }
+.sensor-processing summary { cursor: pointer; }
+.sensor-processing summary::marker { color: var(--primary); }
+.sensor-processing summary:focus-visible { outline: 2px solid var(--primary); outline-offset: 4px; }
+.sensor-processing details p { margin: 8px 0 0; font-size: 15px; color: var(--muted-foreground); }
 .processing-cue { width: 100%; max-width: 180px; height: 64px; color: var(--primary); fill: none; stroke: currentColor; stroke-width: 2; }
 .processing-cue circle { fill: var(--primary); }.sensor-processing li:last-child .processing-cue circle { fill: none; }.processing-cue .cue-noise { color: var(--muted-foreground); }
 .sensor-processing small { font-size: 14px; color: var(--muted-foreground); }
@@ -512,7 +516,7 @@ h2 { font-size: 68px; max-width: 1000px; }
  .echo-scene { grid-template-columns: 62px minmax(0, 1fr) 66px; gap: 12px; }.echo-sensor, .echo-obstacle { font-size: 14px; }.pulse-lane { font-size: 14px; }.pulse-lane svg { width: 18px; }
  .echo-formula { font-size: 20px; }.sensor-note { font-size: 17px; }
  .timing-summary, .serial-label { font-size: 18px; }
- .sensor-processing { grid-template-columns: 1fr; gap: 28px; }.sensor-processing li { display: grid; grid-template-columns: 110px minmax(0, 1fr); gap: 6px 18px; align-items: center; }.sensor-processing strong { font-size: 18px; }.processing-arrow { transform: rotate(90deg); right: auto; left: 42px; top: auto; bottom: -27px; }
+ .sensor-processing { grid-template-columns: 1fr; gap: 28px; }.sensor-processing strong { font-size: 18px; }.processing-arrow { transform: rotate(90deg); right: auto; left: 42px; top: auto; bottom: -27px; }
  .serial-flow { grid-template-columns: 1fr; gap: 20px; }.serial-node { gap: 18px; }.serial-arrow { transform: rotate(90deg); right: auto; left: 4px; bottom: -23px; }.serial-details { grid-template-columns: 1fr; gap: 22px; }.sensor-packet { font-size: 14px; padding: 16px; }
  .sensor-power { flex-wrap: wrap; gap: 16px; }.sensor-power .power-draw { width: 100%; margin: 0; }.sensor-power p { font-size: 17px; }
 }

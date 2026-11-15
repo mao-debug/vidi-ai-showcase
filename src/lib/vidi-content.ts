@@ -252,7 +252,12 @@ export const ultrasonicExplanation = {
     firingIntervalMs: 40,
     slots: [0, 40, 80, 120],
     lanes: ["Left sensor", "Right sensor"],
-    processing: ["Intelligent signal filtering", "Real time spatial awareness", "Predictive hazard detection"],
+    processing: ["Filter echoes", "Locate the obstacle", "Estimate time to contact"],
+    processingDetails: [
+      "A median filter rejects brief spikes. A tracker uses the filtered readings to estimate distance and closing speed.",
+      "The ESP32 aligns both readings in time and uses the sensor spacing to estimate direction. If the readings differ too much, it reports the nearer side.",
+      "A distance of 1 m and a closing speed of 0.5 m/s give about 2 seconds to contact. Distance and time to contact together determine the hazard level.",
+    ],
   },
   transport: {
     title: "From ESP32 to Raspberry Pi.",
