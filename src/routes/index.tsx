@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { ArrowDown, ArrowUpRight, Eye, Linkedin } from "lucide-react";
 import { site, presentation as copy, footer } from "@/lib/vidi-content";
-import { PresentationMedia, PrototypeDiagram, TeamHeadshot } from "@/components/presentation-media";
+import { PresentationMedia, TeamHeadshot } from "@/components/presentation-media";
 import { usePresentationMotion } from "@/hooks/use-presentation-motion";
 import caesarImage from "@/assets/caesar-cinematic-concept.jpg";
 import { UltrasonicDiagrams } from "@/components/ultrasonic-diagrams";
@@ -75,9 +75,11 @@ function Index() {
             <p className="engineering-body">{copy.engineering.mechanical.body}</p>
             <ul className="engineering-tags">{copy.engineering.mechanical.tags.map((tag) => <li key={tag}>{tag}</li>)}</ul>
           </div>
-          <div className="engineering-render" data-reveal>
-            <div className="engineering-render-frame"><PrototypeDiagram /></div>
-            <p className="engineering-render-note">Annotated frame schematic · CAD renderings and prototype photography slot in here</p>
+          <div className="engineering-photos" data-reveal>
+            <ul className="engineering-photo-grid">
+              {copy.engineering.photos.items.map((photo) => <li key={photo.label}><img src={photo.src} alt={photo.alt} loading="lazy" /><figcaption><strong>{photo.label}</strong><span>{photo.caption}</span></figcaption></li>)}
+            </ul>
+            <p className="engineering-render-note">{copy.engineering.photos.note}</p>
           </div>
         </div>
         <div className="engineering-architecture" data-reveal>

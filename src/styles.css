@@ -516,9 +516,13 @@ h2 { font-size: 68px; max-width: 1000px; }
 .engineering-body { font-size: 18px; line-height: 1.55; color: var(--foreground); margin: 0; }
 .engineering-tags { list-style: none; display: flex; flex-wrap: wrap; gap: 10px; padding: 0; margin: 6px 0 0; }
 .engineering-tags li, .engineering-limits li { padding: 9px 15px; border: 1px solid var(--glass-edge); border-radius: 999px; background: var(--glass-surface); box-shadow: var(--glass-shadow); font-size: 15px; }
-.engineering-render { display: flex; flex-direction: column; gap: 12px; }
-.engineering-render-frame { flex: 1; display: grid; place-items: center; padding: 26px; border: 1px solid var(--glass-edge); border-radius: 8px; background: var(--media-field); }
-.engineering-render-frame .prototype-diagram { width: 100%; }
+.engineering-photos { display: flex; flex-direction: column; gap: 12px; }
+.engineering-photo-grid { list-style: none; display: grid; grid-template-columns: 1fr 1fr; gap: 14px; padding: 0; margin: 0; }
+.engineering-photo-grid li { display: flex; flex-direction: column; gap: 9px; padding: 12px; border: 1px solid var(--glass-edge); border-radius: 8px; background: var(--media-field); box-shadow: var(--glass-shadow); }
+.engineering-photo-grid img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; border-radius: 6px; display: block; }
+.engineering-photo-grid figcaption { display: flex; flex-direction: column; gap: 3px; }
+.engineering-photo-grid figcaption strong { font-size: 13px; letter-spacing: 0.04em; text-transform: uppercase; color: var(--primary); }
+.engineering-photo-grid figcaption span { font-size: 13px; line-height: 1.4; color: var(--muted-foreground); }
 .engineering-render-note { font-size: 13px; color: var(--muted-foreground); margin: 0; }
 .engineering-architecture { margin-top: 24px; padding: 32px 28px; border: 1px solid var(--glass-edge); border-radius: 8px; background: var(--glass-surface); backdrop-filter: blur(24px) saturate(150%); box-shadow: var(--glass-shadow); }
 .engineering-parts { list-style: none; display: grid; grid-template-columns: repeat(5, 1fr); gap: 16px; padding: 0; margin: 22px 0 0; }
