@@ -44,7 +44,7 @@ function PairTiming() {
     </ol>
     <div className="multiplex-controls">
       <button type="button" onClick={() => setStep(current => (current + 1) % steps.length)}>Step</button>
-      <p className="sensor-note" aria-live="polite">{steps[step].detail}</p>
+      <p className="sensor-note" aria-live="polite">{steps[step]?.detail ?? ""}</p>
     </div>
     <figure className="pair-timing" aria-labelledby="pair-timing-caption">
       <figcaption id="pair-timing-caption">Time-division multiplexing</figcaption>

@@ -14,7 +14,12 @@ import headshotCard2 from "@/assets/team-headshot-card2.png.asset.json";
 import headshotCard3 from "@/assets/team-headshot-card3.png.asset.json";
 import headshotCard4 from "@/assets/team-headshot-card4.png.asset.json";
 import headshotCard5 from "@/assets/team-headshot-card5.png.asset.json";
-import smartGlassesShowcase from "@/assets/smart-glasses-multiview-showcase.png.asset.json";
+import prototypeElectronics from "@/assets/prototype-electronics.jpg.asset.json";
+import prototypeFront from "@/assets/prototype-front.jpg.asset.json";
+import prototypeRear from "@/assets/prototype-rear.jpg.asset.json";
+import prototypeSide from "@/assets/prototype-side.jpg.asset.json";
+import vidiProductDemo from "@/assets/vidi-product-demo.mp4.asset.json";
+import vidiProductDemoPoster from "@/assets/vidi-product-demo-poster.jpg.asset.json";
 import visionLossStat from "@/assets/vision-loss-stat.png.asset.json";
 
 export const site = {
@@ -45,10 +50,10 @@ export const presentationMedia: Record<string, PresentationMedia> = {
     caption: "Vision loss worldwide, 2020 · 1.1 billion people",
   },
   prototype: {
-    src: smartGlassesShowcase.url,
+    src: prototypeFront.url,
     kind: "image",
-    alt: "Five views of the white smart glasses prototype show the camera above the nose bridge and two stacked sensors on each front corner.",
-    caption: "Smart glasses · Front, side, top and back views",
+    alt: "Front view of the assembled prototype glasses: two round ultrasonic sensors mounted at the outer corners of the 3D-printed frame, a small camera module on the nose bridge, and wiring trailing off the table.",
+    caption: "Assembled prototype · Front view",
   },
   detail: { src: glassesAvoidBranch.url, kind: "video", alt: "Animated diagram titled 'The cane's blind spot': a stick figure wearing gold glasses walks with a traditional white cane toward a tree whose low branch sits at head height, above the cane's reach; audio waves appear behind the head, then a blue check mark badge, while the caption reads 'but our glasses warn: Branch ahead at head height.'", caption: "Glasses warning · “Branch ahead at head height.”", poster: glassesAvoidBranchPoster.url },
   walk: { src: "", kind: "video", alt: "Two-zone distance sensor bench test", caption: "Distance sensing · Bench test" },
@@ -59,6 +64,13 @@ export const presentationMedia: Record<string, PresentationMedia> = {
     kind: "image",
     alt: "Two HC-SR04 sensors connect to the ESP32. The Raspberry Pi 5 requests a pair of distance readings from the ESP32 over USB serial at 115,200 baud.",
     caption: "System architecture · Sensors → ESP32 → Raspberry Pi 5",
+  },
+  demo: {
+    src: vidiProductDemo.url,
+    kind: "video",
+    alt: "VIDI product demo video: the team demonstrates the smart glasses prototype at HackUMass XIV.",
+    caption: "Product demo · HackUMass XIV",
+    poster: vidiProductDemoPoster.url,
   },
 };
 
@@ -81,8 +93,8 @@ export const teamMembers: TeamMember[] = [
 ];
 
 export const presentation = {
-  navigation: [{ label: "Problem", href: "#problem" }, { label: "Solution", href: "#prototype" }, { label: "Engineering", href: "#engineering" }, { label: "How it works", href: "#how-it-works" }, { label: "What’s next", href: "#next-steps" }, { label: "Team", href: "#team" }],
-  hero: { title: "VIDI", meaning: "Reimagining how people who are blind or have low vision interact with the world", caption: "Caesar and the glasses · Concept image", kicker: "A new perspective on independence", scroll: "A closer look" },
+  navigation: [{ label: "Demo", href: "#demo" }, { label: "Problem", href: "#problem" }, { label: "Solution", href: "#prototype" }, { label: "Engineering", href: "#engineering" }, { label: "How it works", href: "#how-it-works" }, { label: "Software", href: "#software" }, { label: "What’s next", href: "#next-steps" }, { label: "Team", href: "#team" }],
+  hero: { title: "VIDI", meaning: "Reimagining how Visually Impaired People (VIP) interact with the world", caption: "Caesar and the glasses · Concept image", kicker: "A new perspective on independence", scroll: "A closer look" },
   problem: {
     title: "The problem people with vision loss face",
     captions: ["Limited technology", "Limited sensory information", "No warnings about overhead hazards"],
@@ -99,16 +111,34 @@ export const presentation = {
       kicker: "What VIDI does",
       title: "One frame. Two ways to sense the scene.",
       points: [
-        "Measure distance in the dark. Two ultrasonic sensors measure the distance to nearby obstacles in complete darkness and require minimal computation.",
-        "Turn visual information into speech. A camera captures the scene so VIDI can classify objects, recognize text, and speak useful information aloud.",
-        "Complement everyday mobility tools. VIDI is designed to work alongside a traditional white cane or guide dog, giving blind and low-vision users more information about their surroundings and helping with everyday tasks.",
+        "Conversational AI Assistance. VIDI allows users to ask questions about their surroundings and receive useful spoken responses through a hands-free audio interface, making environmental information more accessible.",
+        "Object and Text Recognition. Using a Raspberry Pi camera and AI-powered visual processing, VIDI is designed to identify everyday objects, interpret scenes, and read signs or printed text aloud.",
+        "Ultrasonic Obstacle Detection. Two ultrasonic sensors independently measure distances to nearby objects on the left and right sides of the glasses, providing additional proximity awareness even in low-light conditions.",
       ],
-      status: "We bench-tested the sensors and confirmed that the Pi detects the camera.",
+      status: "Both ultrasonic sensors have been successfully bench-tested, and the Raspberry Pi 5 recognizes the camera. Full system integration and real-world performance still require validation.",
     },
     bottomNote: {
       kicker: "Features",
       line: "Object Detection & Recognition | Conversational AI | Scene Description | Text Recognition",
     } },
+  software: {
+    title: "Software",
+    subtitle: "Python connects the whole system.",
+    modules: [
+      { kicker: "Python", title: "The central coordinator", body: "Python runs the main application on the Raspberry Pi 5: it coordinates camera capture, receives sensor readings from the ESP32, sends images or audio to Gemini, and passes responses to the speech engine. Each feature is a separate module, so we can swap a camera, AI model, or speech engine without rebuilding the app — and the camera keeps running while an AI response is being generated." },
+      { kicker: "OpenCV & NumPy", title: "Image preparation", body: "NumPy represents each camera frame as an array of pixel values, and OpenCV resizes, converts, and encodes frames as JPEGs before they are sent to Gemini. In our experimental chess workflow, OpenCV also detects the printed markers around the board — physical chess recognition still needs validation." },
+      { kicker: "Gemini, sherpa-onnx & Piper", title: "Understanding, activation, and speech", body: "Gemini provides cloud-based visual and audio understanding — describing images, identifying objects, transcribing text, and recognizing short spoken commands (internet required). sherpa-onnx listens locally on the Pi for the wake word “Hey VIDI,” and Piper turns responses into speech locally, played through the Bluetooth headphones. Idle microphone audio is never streamed to the cloud." },
+      { kicker: "Git, GitHub & VS Code", title: "Development and teamwork", body: "We developed on a Mac in VS Code, tracked changes with Git, and collaborated through a shared GitHub repository — pushing updates from the Mac and pulling them onto the Raspberry Pi to test on real hardware." },
+    ],
+    flow: {
+      kicker: "Example: “Read the text in front of me.”",
+      steps: ["sherpa-onnx detects “Hey VIDI.”", "After the cue, the wearer speaks the command.", "Gemini recognizes the spoken command.", "Python selects the reading action and captures a fresh image.", "Gemini transcribes the visible printed text.", "Piper reads the result through the headphones."],
+    },
+  },
+  demo: {
+    title: "See VIDI in action",
+    subtitle: "Our product demo from HackUMass XIV — the prototype, worn and working.",
+  },
   hardware: { title: "Sense. Process. Speak.", paths: [{ label: "Distance", steps: ["Ultrasonic sensors", "ESP32", "Left and right distance readings"] }, { label: "Vision & voice", steps: ["IMX708 camera", "Raspberry Pi 5", "Gemini online", "Bluetooth headset"] }], status: "We bench-tested the sensors and confirmed that the Pi detects the camera.", note: "One camera. Two distance sensors. Gemini requires an internet connection.", sideBox: { kicker: "Where it stands", title: "One camera. Two distance sensors.", points: ["Two HC-SR04 sensors feed the ESP32, which times the echoes and calculates distance.", "The Raspberry Pi 5 requests a pair of independent distance readings over USB serial.", "The ultrasonic sensors have been bench-tested, and the Pi detects the camera."], status: "Gemini requires an internet connection." } },
   engineering: {
     title: "Engineering and design",
@@ -118,6 +148,16 @@ export const presentation = {
       title: "Modular, 3D-printed, and serviceable",
       body: "VIDI uses a modular, 3D-printed glasses frame that integrates multiple sensing and processing components. Reinforced, ergonomic temple arms carry curved over-ear supports, removable electronics mounts, and adjustable ultrasonic sensor holders — so any component can be replaced or modified without redesigning the entire frame.",
       tags: ["3D-printed frame", "Removable mounts", "Adjustable sensor holders", "Over-ear supports"],
+    },
+    photos: {
+      kicker: "Prototype photography",
+      note: "Bench photographs of the assembled prototype — not studio product shots.",
+      items: [
+        { label: "01 · Rear", src: prototypeRear.url, alt: "Rear view of the assembled prototype glasses seen from the wearer's side: the 3D-printed frame, the camera module on the bridge, a Raspberry Pi in a red and white case on one temple, and perfboard wiring with an ultrasonic sensor board on the other.", caption: "Frame, bridge camera, Pi case and wiring, seen from the wearer's side." },
+        { label: "02 · Side", src: prototypeSide.url, alt: "Three-quarter side view of the assembled prototype showing the Raspberry Pi case mounted on the temple, connected cables, and the sensor boards on a workshop table, with people working at laptops behind.", caption: "Raspberry Pi enclosure mounted on the temple, with sensor boards and cables." },
+        { label: "03 · Electronics", src: prototypeElectronics.url, alt: "Side view of the prototype's electronics: a green perfboard carrying a microcontroller board, multicolored jumper wires, and a blue sensor board mounted along the temple.", caption: "Perfboard, microcontroller, jumper wires and sensor board along the temple." },
+        { label: "04 · Front", src: prototypeFront.url, alt: "Front view of the assembled prototype: two round dual-transducer ultrasonic sensors mounted at the outer corners of the 3D-printed frame, a small camera module on the nose bridge, and wiring trailing off the table.", caption: "Camera on the nose bridge between the two ultrasonic sensors." },
+      ],
     },
     architecture: {
       kicker: "Hardware architecture",
