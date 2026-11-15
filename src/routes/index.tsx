@@ -122,12 +122,16 @@ function Index() {
           <ol>{copy.software.flow.steps.map((step, i) => <li key={step}><span className="path-index">0{i + 1}</span><span>{step}</span></li>)}</ol>
         </div>
       </section>
+      <section id="demo" className="demo-section section-shell" aria-labelledby="demo-title">
+        <div data-reveal><Chapter n="VI">Demo</Chapter><h2 id="demo-title">{copy.demo.title}</h2><p className="section-subtitle">{copy.demo.subtitle}</p></div>
+        <div className="demo-player" data-reveal><PresentationMedia slot="demo" /></div>
+      </section>
       <section id="next-steps" className="next-section section-shell" aria-labelledby="next-title">
-        <div data-reveal><Chapter n="VI">What’s next</Chapter><h2 id="next-title">{copy.next.title}</h2><p className="section-subtitle">{copy.next.subtitle}</p></div>
+        <div data-reveal><Chapter n="VII">What’s next</Chapter><h2 id="next-title">{copy.next.title}</h2><p className="section-subtitle">{copy.next.subtitle}</p></div>
         <div className="next-timeline">{copy.next.cards.map((card) => <article className="next-card" data-reveal key={card.label}><p className="next-card-label">{card.label}</p><h3>{card.title}</h3><p className="next-card-text">{card.text}</p></article>)}</div>
       </section>
       <section id="team" className="team-section section-shell" aria-labelledby="team-title">
-        <div data-reveal><Chapter n="VII">Meet the team</Chapter><h2 id="team-title">{copy.team.title}</h2><p className="section-subtitle">{copy.team.subtitle}</p></div>
+        <div data-reveal><Chapter n="VIII">Meet the team</Chapter><h2 id="team-title">{copy.team.title}</h2><p className="section-subtitle">{copy.team.subtitle}</p></div>
         <p className="control-status" data-reveal>{copy.team.status}</p>
         <ul className="team-cards">
           {copy.team.members.map((member) => <li className="team-card" key={member.name} data-reveal>

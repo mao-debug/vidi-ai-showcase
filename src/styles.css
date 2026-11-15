@@ -570,6 +570,17 @@ h2 { font-size: 68px; max-width: 1000px; }
  .software-card h3 { font-size: 24px; }
 }
 
+/* Demo: one wide glass-framed video player. */
+.demo-section { width: 100%; padding: 82px max(40px, calc((100% - 1200px) / 2)); margin: 0; border: 0; background: linear-gradient(160deg, var(--glacier), var(--pearl) 55%, var(--ivory)); }
+.demo-section .section-subtitle { margin-top: 0; font-size: 23px; }
+.demo-player { margin-top: 44px; padding: 14px; border: 1px solid var(--glass-edge); border-radius: 12px; background: var(--glass-surface); backdrop-filter: blur(24px) saturate(150%); box-shadow: var(--glass-shadow); }
+.demo-player .actual-media { display: block; width: 100%; height: auto; aspect-ratio: 16 / 9; border-radius: 8px; background: #000; }
+.demo-player .media-caption { padding: 12px 6px 2px; }
+@media (max-width: 760px) {
+ .demo-section { padding: 64px 20px; }
+ .demo-player { margin-top: 32px; padding: 10px; }
+}
+
 @media (max-width: 760px) {
  .glass-header { top: max(10px, env(safe-area-inset-top)); min-height: 56px; padding: 5px 14px; border-radius: 22px; flex-wrap: nowrap; }
  .glass-header .desktop-sections { display: none; }

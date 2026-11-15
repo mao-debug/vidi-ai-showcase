@@ -18,6 +18,8 @@ import prototypeElectronics from "@/assets/prototype-electronics.jpg.asset.json"
 import prototypeFront from "@/assets/prototype-front.jpg.asset.json";
 import prototypeRear from "@/assets/prototype-rear.jpg.asset.json";
 import prototypeSide from "@/assets/prototype-side.jpg.asset.json";
+import vidiProductDemo from "@/assets/vidi-product-demo.mp4.asset.json";
+import vidiProductDemoPoster from "@/assets/vidi-product-demo-poster.jpg.asset.json";
 import visionLossStat from "@/assets/vision-loss-stat.png.asset.json";
 
 export const site = {
@@ -63,6 +65,13 @@ export const presentationMedia: Record<string, PresentationMedia> = {
     alt: "Two HC-SR04 sensors connect to the ESP32. The Raspberry Pi 5 requests a pair of distance readings from the ESP32 over USB serial at 115,200 baud.",
     caption: "System architecture · Sensors → ESP32 → Raspberry Pi 5",
   },
+  demo: {
+    src: vidiProductDemo.url,
+    kind: "video",
+    alt: "VIDI product demo video: the team demonstrates the smart glasses prototype at HackUMass XIV.",
+    caption: "Product demo · HackUMass XIV",
+    poster: vidiProductDemoPoster.url,
+  },
 };
 
 // Editable team roster: one headshot slot and one LinkedIn link per member.
@@ -84,7 +93,7 @@ export const teamMembers: TeamMember[] = [
 ];
 
 export const presentation = {
-  navigation: [{ label: "Problem", href: "#problem" }, { label: "Solution", href: "#prototype" }, { label: "Engineering", href: "#engineering" }, { label: "How it works", href: "#how-it-works" }, { label: "Software", href: "#software" }, { label: "What’s next", href: "#next-steps" }, { label: "Team", href: "#team" }],
+  navigation: [{ label: "Problem", href: "#problem" }, { label: "Solution", href: "#prototype" }, { label: "Engineering", href: "#engineering" }, { label: "How it works", href: "#how-it-works" }, { label: "Software", href: "#software" }, { label: "Demo", href: "#demo" }, { label: "What’s next", href: "#next-steps" }, { label: "Team", href: "#team" }],
   hero: { title: "VIDI", meaning: "Reimagining how Visually Impaired People (VIP) interact with the world", caption: "Caesar and the glasses · Concept image", kicker: "A new perspective on independence", scroll: "A closer look" },
   problem: {
     title: "The problem people with vision loss face",
@@ -125,6 +134,10 @@ export const presentation = {
       kicker: "Example: “Read the text in front of me.”",
       steps: ["sherpa-onnx detects “Hey VIDI.”", "After the cue, the wearer speaks the command.", "Gemini recognizes the spoken command.", "Python selects the reading action and captures a fresh image.", "Gemini transcribes the visible printed text.", "Piper reads the result through the headphones."],
     },
+  },
+  demo: {
+    title: "See VIDI in action",
+    subtitle: "Our product demo from HackUMass XIV — the prototype, worn and working.",
   },
   hardware: { title: "Sense. Process. Speak.", paths: [{ label: "Distance", steps: ["Ultrasonic sensors", "ESP32", "Left and right distance readings"] }, { label: "Vision & voice", steps: ["IMX708 camera", "Raspberry Pi 5", "Gemini online", "Bluetooth headset"] }], status: "We bench-tested the sensors and confirmed that the Pi detects the camera.", note: "One camera. Two distance sensors. Gemini requires an internet connection.", sideBox: { kicker: "Where it stands", title: "One camera. Two distance sensors.", points: ["Two HC-SR04 sensors feed the ESP32, which times the echoes and calculates distance.", "The Raspberry Pi 5 requests a pair of independent distance readings over USB serial.", "The ultrasonic sensors have been bench-tested, and the Pi detects the camera."], status: "Gemini requires an internet connection." } },
   engineering: {
