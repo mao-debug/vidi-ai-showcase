@@ -118,7 +118,6 @@ function Index() {
       </section>
       <section id="team" className="team-section section-shell" aria-labelledby="team-title">
         <div data-reveal><Chapter n="VI">Meet the team</Chapter><h2 id="team-title">{copy.team.title}</h2><p className="section-subtitle">{copy.team.subtitle}</p></div>
-        <p className="control-status" data-reveal>{copy.team.status}</p>
         <ul className="team-cards">
           {copy.team.members.map((member) => <li className="team-card" key={member.name} data-reveal>
             <TeamHeadshot member={member} />

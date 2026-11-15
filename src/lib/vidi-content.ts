@@ -170,7 +170,7 @@ export const presentation = {
       { label: "03 · LATER", title: "Smaller and lighter", text: "Develop a custom circuit board to replace the Pi and ESP32 and build a weatherproof frame." },
     ],
   },
-  team: { title: "Meet the team", subtitle: "The five people behind VIDI.", status: "Headshots, majors, and LinkedIn links in place", members: teamMembers },
+  team: { title: "Meet the team", subtitle: "The five people behind VIDI.", members: teamMembers },
 };
 
 export const problem = {
