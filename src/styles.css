@@ -581,3 +581,7 @@ h2 { font-size: 68px; max-width: 1000px; }
 @media (max-width: 380px) {
  .sensor-diagram { padding-inline: 14px; }
 }
+
+/* Real prototype photo: keep its own aspect ratio so no empty band appears under it. */
+.prototype-images .prototype-main { align-self: start; }
+.prototype-images .prototype-main .actual-media { height: auto; aspect-ratio: auto; }
