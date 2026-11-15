@@ -1,16 +1,26 @@
 import { describe, expect, it } from "vitest";
-import { ultrasonicExplanation as copy, sensorUpdateHz, sensorUpdateIntervalMs } from "@/lib/vidi-content";
+import { ultrasonicExplanation as copy } from "@/lib/vidi-content";
 
-describe("Presentation sensor rules", () => {
-  it("alternates sensor firings at 0, 40, 80 and 120 ms", () => {
-    expect(copy.timing.slots).toEqual([0, 40, 80, 120]);
-    expect(copy.timing.firingIntervalMs).toBe(40);
+describe("Phase 6 ultrasonic presentation", () => {
+  it("shows the request, sequential measurements, and response", () => {
+    expect(copy.timing.steps.map(step => step.title)).toEqual([
+      "Request a pair", "Measure left", "Measure right", "Return both readings",
+    ]);
+    expect(copy.timing.triggerGapMs).toBe(100);
+    expect(copy.timing.echoDeadlineMs).toBe(30);
   });
-  it("updates each sensor every 80 ms", () => { expect(sensorUpdateIntervalMs(copy.timing.firingIntervalMs)).toBe(80); });
-  it("updates each sensor at 12.5 Hz", () => { expect(sensorUpdateHz(copy.timing.firingIntervalMs)).toBe(12.5); });
-  it("uses 115200 baud for USB serial", () => { expect(copy.transport.baud).toBe(115200); });
-  it("specifies a 6.4 W peak system draw", () => { expect(copy.power.peakWatts).toBe(6.4); });
-  it("estimates 5 hours battery life at peak system draw", () => { expect(copy.power.estimatedRuntimeHours).toBe(5); });
-  it("does not publish an unconfirmed battery capacity", () => { expect(copy.power.capacityWh).toBeNull(); });
-  it("does not claim a measured runtime", () => { expect(copy.power.measuredRuntimeHours).toBeNull(); });
+
+  it("shows a Phase 6 sample response at 115200 baud", () => {
+    expect(copy.transport.baud).toBe(115200);
+    expect(copy.transport.packet).toEqual({
+      v: 1, type: "sample", id: "0123456789abcdef", boot: "1234abcd", seq: 0,
+      left: { status: "ok", distance_mm: 1200, age_ms: 122 },
+      right: { status: "no_echo", distance_mm: null, age_ms: 0 },
+    });
+  });
+
+  it("does not publish an unconfirmed battery capacity or runtime", () => {
+    expect(copy.power.capacityWh).toBeNull();
+    expect(copy.power.measuredRuntimeHours).toBeNull();
+  });
 });

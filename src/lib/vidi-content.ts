@@ -57,7 +57,7 @@ export const presentationMedia: Record<string, PresentationMedia> = {
   architecture: {
     src: architectureDiagram.url,
     kind: "image",
-    alt: "The two HC-SR04 sensors feed the ESP32, which handles timing, filtering, and distance measurements. The ESP32 sends JSON over USB serial at 115,200 baud to the Raspberry Pi 5, which handles AI processing, sensor fusion, and speech output.",
+    alt: "Two HC-SR04 sensors connect to the ESP32. The Raspberry Pi 5 requests a pair of distance readings from the ESP32 over USB serial at 115,200 baud.",
     caption: "System architecture · Sensors → ESP32 → Raspberry Pi 5",
   },
 };
@@ -109,7 +109,7 @@ export const presentation = {
       kicker: "Features",
       line: "Object Detection & Recognition | Conversational AI | Scene Description | Text Recognition",
     } },
-  hardware: { title: "Sense. Process. Speak.", paths: [{ label: "Distance", steps: ["Ultrasonic sensors", "ESP32", "Left and right distance readings"] }, { label: "Vision & voice", steps: ["IMX708 camera", "Raspberry Pi 5", "Gemini online", "Bluetooth headset"] }], status: "We bench-tested the sensors and confirmed that the Pi detects the camera.", note: "One camera. Two distance sensors. Gemini requires an internet connection.", sideBox: { kicker: "Where it stands", title: "One camera. Two distance sensors.", points: ["Two HC-SR04 sensors feed the ESP32, which handles timing, filtering, and measurements.", "The ESP32 sends JSON readings over USB to the Raspberry Pi 5 for AI, sensor fusion, and speech output.", "The ultrasonic sensors have been bench-tested, and the Pi detects the camera."], status: "Gemini requires an internet connection." } },
+  hardware: { title: "Sense. Process. Speak.", paths: [{ label: "Distance", steps: ["Ultrasonic sensors", "ESP32", "Left and right distance readings"] }, { label: "Vision & voice", steps: ["IMX708 camera", "Raspberry Pi 5", "Gemini online", "Bluetooth headset"] }], status: "We bench-tested the sensors and confirmed that the Pi detects the camera.", note: "One camera. Two distance sensors. Gemini requires an internet connection.", sideBox: { kicker: "Where it stands", title: "One camera. Two distance sensors.", points: ["Two HC-SR04 sensors feed the ESP32, which times the echoes and calculates distance.", "The Raspberry Pi 5 requests a pair of independent distance readings over USB serial.", "The ultrasonic sensors have been bench-tested, and the Pi detects the camera."], status: "Gemini requires an internet connection." } },
   engineering: {
     title: "Engineering and design",
     subtitle: "A modular frame built to be rebuilt.",
@@ -256,32 +256,31 @@ export const ultrasonicExplanation = {
     formula: "Distance = speed of sound × round-trip time ÷ 2",
   },
   timing: {
-    title: "Time-division multiplexing and fusion",
-    firingIntervalMs: 40,
-    slots: [0, 40, 80, 120],
-    lanes: ["Left sensor", "Right sensor"],
-    processing: ["Range and velocity tracking", "Geometric localization", "Hazard classification"],
-    processingDetails: [
-      "A three-sample filter rejects spikes. An alpha–beta tracker predicts the next range, then corrects its range and velocity estimates using the difference between the prediction and the reading.",
-      "The ESP32 projects both tracks to the same time. It uses a 14 cm sensor baseline and circle intersection to estimate bearing. If the ranges differ by more than 18 cm, it reports the nearer side.",
-      "The firmware estimates time to contact as range divided by closing speed when closing faster than 10 cm/s. Distance sets the hazard level, and a short time to contact can raise it for obstacles within 3 m.",
+    title: "Request-driven ultrasonic ranging",
+    triggerGapMs: 100,
+    echoDeadlineMs: 30,
+    steps: [
+      { title: "Request a pair", signal: "Pi → ESP32", detail: "The Pi sends R1 with a unique request ID. The ESP32 starts a fresh pair when the trigger gap allows." },
+      { title: "Measure left", signal: "Left TRIG", detail: "The ESP32 captures the first complete left ECHO pulse or records why a usable reading is unavailable." },
+      { title: "Measure right", signal: "Right TRIG", detail: "After the minimum trigger gap, the ESP32 measures the right channel. Sequential firing reduces acoustic crosstalk." },
+      { title: "Return both readings", signal: "ESP32 → Pi", detail: "Once the right attempt finishes, the ESP32 sends a single reply with each channel’s status, distance, and measurement age." },
     ],
   },
   transport: {
     title: "From the ESP32 to the Raspberry Pi",
     nodes: ["Left and right sensors", "ESP32", "USB serial", "Raspberry Pi 5"],
     baud: 115200,
-    note: "The ESP32 processes ultrasonic readings and sends usable obstacle estimates to the Pi.",
-    packetLabel: "Example obstacle estimate · abbreviated ESP32 packet",
-    packet: { l: 120, r: 122, brg: -8.2, haz: "caution" },
+    note: "The Pi identifies the firmware with H1 and requests a fresh measurement pair with R1. Each sample reply is one line of JSON. A channel with no usable reading returns a status and a null distance.",
+    packetLabel: "Example reply · left echo received, right echo timed out",
+    packet: {
+      v: 1, type: "sample", id: "0123456789abcdef", boot: "1234abcd", seq: 0,
+      left: { status: "ok", distance_mm: 1200, age_ms: 122 },
+      right: { status: "no_echo", distance_mm: null, age_ms: 0 },
+    },
   },
   power: {
     title: "Power", source: "Powered by a portable battery pack", peakWatts: 6.4,
     capacityWh: null as number | null,
-    estimatedRuntimeHours: 5,
     measuredRuntimeHours: null as number | null,
   },
 };
-
-export function sensorUpdateIntervalMs(firingIntervalMs: number) { return firingIntervalMs * 2; }
-export function sensorUpdateHz(firingIntervalMs: number) { return 1000 / sensorUpdateIntervalMs(firingIntervalMs); }
