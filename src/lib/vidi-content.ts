@@ -259,8 +259,8 @@ export const ultrasonicExplanation = {
     nodes: ["Left and right sensors", "ESP32", "USB serial", "Raspberry Pi 5"],
     baud: 115200,
     note: "The ESP32 processes ultrasonic readings and sends usable obstacle estimates to the Pi.",
-    packetLabel: "Example obstacle estimate · illustrative values",
-    packet: { left_distance_cm: 120, right_distance_cm: 135, estimated_bearing_deg: -8, hazard_level: "caution" },
+    packetLabel: "Example obstacle estimate · abbreviated ESP32 packet",
+    packet: { l: 120, r: 122, brg: -8.2, haz: "caution" },
   },
   power: {
     title: "Power", source: "Powered by a portable battery pack", peakWatts: 6.4,
