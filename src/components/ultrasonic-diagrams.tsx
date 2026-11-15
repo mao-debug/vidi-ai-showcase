@@ -46,24 +46,6 @@ function PairTiming() {
       <button type="button" onClick={() => setStep(current => (current + 1) % steps.length)}>Step</button>
       <p className="sensor-note" aria-live="polite">{steps[step]?.detail ?? ""}</p>
     </div>
-    <figure className="pair-timing" aria-labelledby="pair-timing-caption">
-      <figcaption id="pair-timing-caption">Time-division multiplexing</figcaption>
-      <div className="pair-timing-axis" aria-hidden="true">
-        <span>0 ms</span><span style={{ left: `${triggerGapMs / (triggerGapMs + echoDeadlineMs) * 100}%` }}>{triggerGapMs} ms</span>
-      </div>
-      {["Left", "Right"].map((channel, index) => {
-        const start = index * triggerGapMs;
-        return <div className="pair-timing-lane" key={channel} aria-hidden="true">
-          <span>{channel}</span>
-          <svg viewBox={`-2 0 ${triggerGapMs + echoDeadlineMs + 4} 24`} preserveAspectRatio="none">
-            <path d={`M0 20H${triggerGapMs + echoDeadlineMs}`} className="pair-timing-baseline" />
-            <rect x={start} y="4" width={echoDeadlineMs} height="16" className={step === index + 1 ? "pair-timing-active" : "pair-timing-window"} />
-            <path d={`M${start} 20V4`} className="pair-timing-edge" />
-          </svg>
-        </div>;
-      })}
-      <p>Earliest trigger timing for one request. The right sensor starts at least {triggerGapMs} ms after the left. Shaded bars show the {echoDeadlineMs} ms maximum echo windows.</p>
-    </figure>
   </>;
 }
 
