@@ -100,7 +100,15 @@ export const presentation = {
       line: "Object Recognition | Conversational AI | Navigation | text Recognition",
     } },
   hardware: { title: "Sense. Process. Speak", paths: [{ label: "Distance", steps: ["Ultrasonic sensors", "ESP32", "Left / right distance readings"] }, { label: "Vision & voice", steps: ["IMX708 camera", "Raspberry Pi 5", "Gemini online", "Bluetooth headset"] }], status: "Sensors bench-tested. The Pi detects the camera.", note: "One camera. Two distance sensors. Gemini requires internet.", sideBox: { kicker: "Where it stands", title: "One camera. Two distance sensors.", points: ["Two HC-SR04 sensors feed the ESP32, which handles timing, filtering and measurements.", "The ESP32 sends JSON readings over USB to the Raspberry Pi 5 for AI, sensor fusion and speech output.", "The ultrasonic sensors have been bench-tested, and the Pi detects the camera."], status: "Gemini requires internet." } },
-  next: { title: "How does the wearer\nstay in control?", subtitle: "Start. Redirect. Stop.", cueStatus: "Future control examples", cues: ["“I’m about to walk.”", "“I’m about to play.”", "“Stop.”"], future: "Future ideas: chess, banknote identification, clothing choices, and possible eye tracking.", access: "Eye tracking depends on individual access needs.", milestone: "Next: test whether wearers can reliably start, redirect, and stop assistance." },
+  next: {
+    title: "From prototype to everyday wear.",
+    subtitle: "We built VIDI in a weekend. Here’s where it goes from here.",
+    cards: [
+      { label: "01 · TODAY", title: "A working prototype", text: "The ultrasonic sensors are bench-tested, the Pi detects the camera, and Gemini returns spoken answers. All of it fits in a 3D-printed frame." },
+      { label: "02 · NEXT", title: "Real-world testing", text: "Put VIDI on blind and low-vision users, tune the warning distances, and cut false alarms. Their feedback decides what we build next." },
+      { label: "03 · LATER", title: "Smaller, lighter, longer-lasting", text: "A custom circuit board in place of the Pi and ESP32, all-day battery life, and a weatherproof frame people can wear anywhere." },
+    ],
+  },
   team: { title: "Meet the team.", subtitle: "The five people behind Vidi.", status: "Headshots, majors and LinkedIn links in place", members: teamMembers },
 };
 

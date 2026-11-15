@@ -440,3 +440,16 @@ h2 { font-size: 68px; max-width: 1000px; }
 .prototype-bottom-text .solution-line { margin: 0; font-size: 3.2cqw; white-space: nowrap; color: var(--muted-foreground); }
 @media (min-width: 761px) and (max-width: 1000px) { .prototype-images .prototype-bottom-text { height: 180px; } }
 @media (max-width: 760px) { .prototype-images .prototype-bottom-text { padding: 20px 18px; gap: 18px; height: 219.375px; }.prototype-bottom-text .solution-title { font-size: 20px; } }
+
+/* What's Next: three chronological milestones with shared presentation motion. */
+.next-section h2 { max-width: 1100px; }
+.next-section .section-subtitle { margin-top: 0; font-size: 23px; line-height: 1.5; }
+.next-timeline { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; margin-top: 48px; }
+.next-card { min-width: 0; padding: 32px 28px; border: 1px solid var(--glass-edge); border-radius: 30px; background: var(--glass-surface); backdrop-filter: blur(28px) saturate(170%); box-shadow: var(--glass-shadow); }
+.next-card:nth-child(2) { transition-delay: .15s; }
+.next-card:nth-child(3) { transition-delay: .3s; }
+.next-card-label { margin: 0 0 28px; font-size: 14px; color: var(--primary); }
+.next-card h3 { min-height: 80px; margin: 0 0 24px; font-size: 34px; line-height: 1.15; }
+.next-card-text { margin: 0; font-size: 19px; line-height: 1.6; color: var(--muted-foreground); }
+@media (max-width: 1000px) { .next-timeline { gap: 16px; }.next-card { padding: 26px 20px; }.next-card h3 { font-size: 29px; min-height: 105px; }.next-card-text { font-size: 17px; } }
+@media (max-width: 760px) { .next-section .section-subtitle { font-size: 20px; }.next-timeline { grid-template-columns: 1fr; gap: 20px; margin-top: 32px; }.next-card { padding: 28px 24px; }.next-card h3 { min-height: 0; font-size: 32px; margin-bottom: 18px; }.next-card-label { margin-bottom: 22px; }.next-card-text { font-size: 18px; } }
