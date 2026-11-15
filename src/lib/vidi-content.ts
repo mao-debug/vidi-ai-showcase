@@ -261,7 +261,6 @@ export const ultrasonicExplanation = {
     slots: [0, 40, 80, 120],
     lanes: ["Left sensor", "Right sensor"],
     processing: ["Range and velocity tracking", "Geometric localization", "Hazard classification"],
-    processingMetrics: ["Median filter → α–β tracker", "Two ranges · 14 cm baseline", "Time to contact = range ÷ closing speed"],
     processingDetails: [
       "A three-sample filter rejects spikes. An alpha–beta tracker predicts the next range, then corrects its range and velocity estimates using the difference between the prediction and the reading.",
       "The ESP32 projects both tracks to the same time. It uses a 14 cm sensor baseline and circle intersection to estimate bearing. If the ranges differ by more than 18 cm, it reports the nearer side.",
