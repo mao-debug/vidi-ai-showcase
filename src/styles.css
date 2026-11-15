@@ -433,7 +433,8 @@ h2 { font-size: 68px; max-width: 1000px; }
 
 /* Solution section: photo box hugs the photo; the clip sits bottom-right beside a text box. */
 .prototype-main .actual-media { height: auto; min-height: 0; }
-.prototype-images .prototype-bottom-text { padding: 22px 26px; gap: 12px; justify-content: center; }
+.prototype-images .prototype-bottom-text { padding: 22px 26px; gap: 12px; justify-content: center; height: 210px; min-width: 0; }
 .prototype-bottom-text .solution-title { font-size: 23px; }
-.prototype-bottom-text .solution-line { margin: 0; font-size: 16px; color: var(--muted-foreground); }
-@media (max-width: 760px) { .prototype-images .prototype-bottom-text { padding: 20px 18px; gap: 10px; }.prototype-bottom-text .solution-title { font-size: 20px; }.prototype-bottom-text .solution-line { font-size: 15px; } }
+.prototype-bottom-text .solution-line { margin: 0; font-size: 14px; white-space: nowrap; color: var(--muted-foreground); }
+@media (min-width: 761px) and (max-width: 1000px) { .prototype-images .prototype-bottom-text { height: 180px; }.prototype-bottom-text .solution-line { font-size: 10px; } }
+@media (max-width: 760px) { .prototype-images .prototype-bottom-text { padding: 20px 18px; gap: 10px; height: 219.375px; }.prototype-bottom-text .solution-title { font-size: 20px; }.prototype-bottom-text .solution-line { font-size: 7px; } }
