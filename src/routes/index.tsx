@@ -48,26 +48,30 @@ function Index() {
               <img src="/vidi-follow-along.svg" width={104} height={104} alt="" />
               <span><strong>Follow along</strong><br />{site.domain}</span>
             </a>
-            <a href="#problem">{copy.hero.scroll}<ArrowDown size={17} aria-hidden="true" /></a>
+            <a href="#demo">{copy.hero.scroll}<ArrowDown size={17} aria-hidden="true" /></a>
           </div>
           <div className="lens-dissolve" aria-hidden="true" />
         </div>
       </section>
+      <section id="demo" className="demo-section section-shell" aria-labelledby="demo-title">
+        <div data-reveal><Chapter n="I">Demo</Chapter><h2 id="demo-title">{copy.demo.title}</h2><p className="section-subtitle">{copy.demo.subtitle}</p></div>
+        <div className="demo-player" data-reveal><PresentationMedia slot="demo" /></div>
+      </section>
       <section id="problem" className="section-shell problem-section" aria-labelledby="problem-title">
         <div className="problem-split">
           <div className="problem-text">
-            <div data-reveal><Chapter n="I">The problem</Chapter><h2 id="problem-title">{copy.problem.title}</h2></div>
+            <div data-reveal><Chapter n="II">The problem</Chapter><h2 id="problem-title">{copy.problem.title}</h2></div>
             <div className="problem-captions">{copy.problem.captions.map((caption, i) => <p key={caption} data-reveal><span>0{i + 1}</span><span className="problem-caption-body"><strong>{caption}</strong><small>{copy.problem.details[i]}</small></span></p>)}</div>
           </div>
           <div className="problem-visual" data-reveal><PresentationMedia slot="problem" /><div className="problem-graph" data-reveal><PresentationMedia slot="problemGraph" /></div></div>
         </div>
       </section>
       <section id="prototype" className="prototype-section section-shell" aria-labelledby="prototype-title">
-        <div className="section-heading" data-reveal><Chapter n="II">Our solution</Chapter><h2 id="prototype-title">{copy.prototype.title}</h2><p className="section-subtitle">{copy.prototype.subtitle}</p></div>
+        <div className="section-heading" data-reveal><Chapter n="III">Our solution</Chapter><h2 id="prototype-title">{copy.prototype.title}</h2><p className="section-subtitle">{copy.prototype.subtitle}</p></div>
         <div className="prototype-images"><div className="prototype-row prototype-row-top"><div className="prototype-main" data-reveal><PresentationMedia slot="prototype" /></div><div className="prototype-detail" data-reveal><div className="solution-box"><p className="solution-kicker">{copy.prototype.solution.kicker}</p><h3 className="solution-title">{copy.prototype.solution.title}</h3><ul className="solution-points">{copy.prototype.solution.points.map((point, i) => <li key={point}><span>0{i + 1}</span>{point}</li>)}</ul><p className="solution-status">{copy.prototype.solution.status}</p></div></div></div><div className="prototype-row prototype-row-bottom"><div className="prototype-bottom-text solution-box" data-reveal><p className="solution-kicker">{copy.prototype.bottomNote.kicker}</p><p className="solution-line">{copy.prototype.bottomNote.line}</p></div><div className="prototype-bottom-media" data-reveal><PresentationMedia slot="detail" /></div></div></div>
       </section>
       <section id="engineering" className="engineering-section section-shell" aria-labelledby="engineering-title">
-        <div data-reveal><Chapter n="III">Engineering and design</Chapter><h2 id="engineering-title">{copy.engineering.title}</h2><p className="section-subtitle">{copy.engineering.subtitle}</p></div>
+        <div data-reveal><Chapter n="IV">Engineering and design</Chapter><h2 id="engineering-title">{copy.engineering.title}</h2><p className="section-subtitle">{copy.engineering.subtitle}</p></div>
         <div className="engineering-grid">
           <div className="engineering-mechanical" data-reveal>
             <p className="solution-kicker">{copy.engineering.mechanical.kicker}</p>
@@ -108,12 +112,12 @@ function Index() {
         </div>
       </section>
       <section id="how-it-works" className="hardware-section section-shell" aria-labelledby="hardware-title">
-        <div data-reveal><Chapter n="IV">How it works</Chapter><h2 id="hardware-title">{copy.hardware.title}</h2></div>
+        <div data-reveal><Chapter n="V">How it works</Chapter><h2 id="hardware-title">{copy.hardware.title}</h2></div>
         <UltrasonicDiagrams />
         <div className="hardware-paths">{copy.hardware.paths.slice(1).map((path) => <div className="hardware-path" key={path.label} data-reveal><div className="path-heading"><Eye strokeWidth={1.3} aria-hidden="true" /><h3>{path.label}</h3></div><ol>{path.steps.map((step, j) => <li key={step}><span className="path-index">0{j + 1}</span><span>{step}</span></li>)}</ol></div>)}</div>
       </section>
       <section id="software" className="software-section section-shell" aria-labelledby="software-title">
-        <div data-reveal><Chapter n="V">Software</Chapter><h2 id="software-title">{copy.software.title}</h2><p className="section-subtitle">{copy.software.subtitle}</p></div>
+        <div data-reveal><Chapter n="VI">Software</Chapter><h2 id="software-title">{copy.software.title}</h2><p className="section-subtitle">{copy.software.subtitle}</p></div>
         <div className="software-grid">
           {copy.software.modules.map((mod) => <article className="software-card" data-reveal key={mod.kicker}><p className="solution-kicker">{mod.kicker}</p><h3>{mod.title}</h3><p className="software-body">{mod.body}</p></article>)}
         </div>
@@ -121,10 +125,6 @@ function Index() {
           <p className="solution-kicker">{copy.software.flow.kicker}</p>
           <ol>{copy.software.flow.steps.map((step, i) => <li key={step}><span className="path-index">0{i + 1}</span><span>{step}</span></li>)}</ol>
         </div>
-      </section>
-      <section id="demo" className="demo-section section-shell" aria-labelledby="demo-title">
-        <div data-reveal><Chapter n="VI">Demo</Chapter><h2 id="demo-title">{copy.demo.title}</h2><p className="section-subtitle">{copy.demo.subtitle}</p></div>
-        <div className="demo-player" data-reveal><PresentationMedia slot="demo" /></div>
       </section>
       <section id="next-steps" className="next-section section-shell" aria-labelledby="next-title">
         <div data-reveal><Chapter n="VII">What’s next</Chapter><h2 id="next-title">{copy.next.title}</h2><p className="section-subtitle">{copy.next.subtitle}</p></div>
