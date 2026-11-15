@@ -29,7 +29,14 @@ function Index() {
         <div className="hero-stage">
           <img className="caesar-image" src={caesarImage} width={1536} height={1024} alt="Cinematic concept artwork of Julius Caesar in a charcoal cloak, turning toward cool light and holding modern glasses below his chin by one temple. Concept eyewear, not the Vidi prototype." fetchPriority="high" />
           <div className="hero-copy"><h1 id="hero-title">{copy.hero.title}</h1><p className="hero-meaning"><em>{copy.hero.meaning}</em></p></div>
-          <div className="hero-footer"><span>{copy.hero.caption}</span><a href="#problem">{copy.hero.scroll}<ArrowDown size={17} aria-hidden="true" /></a></div>
+          <div className="hero-footer">
+            <span>{copy.hero.caption}</span>
+            <a className="hero-qr" href={`https://${site.domain}/`}>
+              <img src="/vidi-follow-along.svg" width={104} height={104} alt="" />
+              <span><strong>Follow along</strong><br />{site.domain}</span>
+            </a>
+            <a href="#problem">{copy.hero.scroll}<ArrowDown size={17} aria-hidden="true" /></a>
+          </div>
           <div className="lens-dissolve" aria-hidden="true" />
         </div>
       </section>

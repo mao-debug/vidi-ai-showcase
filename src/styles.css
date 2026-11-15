@@ -221,6 +221,10 @@ h3 { font-family: var(--font-display); font-size: 38px; font-weight: 400; line-h
 .hero-reference { color: var(--cinema-muted); margin-top: 32px; }
 .hero-reference em { font-size: 17px; }
 .hero-footer > span, .hero-footer a { border-radius: 999px; color: var(--foreground); backdrop-filter: blur(24px) saturate(150%); border: 1px solid var(--glass-edge); box-shadow: var(--glass-shadow); padding: 10px 16px; }
+.hero-footer .hero-qr { margin-left: auto; border-radius: 12px; padding: 8px 14px 8px 8px; gap: 12px; }
+.hero-qr img { display: block; flex: none; border-radius: 4px; }
+.hero-qr strong { font-weight: 600; }
+@media (max-width: 767px), (pointer: coarse) and (hover: none) { .hero-footer .hero-qr { display: none; } }
 .lens-dissolve { background: var(--problem-field); opacity: 1; inset: -1px; clip-path: ellipse(var(--lens-opening, 0%) var(--lens-opening, 0%) at 50% 50%); box-shadow: var(--lens-rim); }
 .problem-section, .prototype-section, .demo-section, .hardware-section, .next-section { width: 100%; padding-inline: max(40px, calc((100% - 1200px) / 2)); margin: 0; border: 0; }
 .problem-section { background: var(--problem-field); }
