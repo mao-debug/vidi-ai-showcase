@@ -72,5 +72,5 @@
 - [x] Rename "IV - How it works" to "III - How It Works".
 
 # What's Next timeline
-- [ ] Replace the future-control content with the supplied heading, subheading, and Today / Next / Later cards.
-- [ ] Verify all three cards and readable desktop/mobile layouts.
+- [x] Replace the future-control content with the supplied heading, subheading, and Today / Next / Later cards.
+- [x] Verify all three cards and readable desktop/mobile layouts.
