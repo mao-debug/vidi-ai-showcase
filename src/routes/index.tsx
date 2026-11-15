@@ -23,7 +23,20 @@ function Index() {
   return <div className="presentation" id="top">
     <a href="#problem" className="skip-link">Skip to presentation</a>
     <div className="reading-progress" aria-hidden="true" />
-    <header className="glass-header"><a href="#top" className="nav-brand" aria-label="Vidi, beginning">VIDI</a><nav aria-label="Presentation sections">{copy.navigation.map(item => <a key={item.href} href={item.href}>{item.label}</a>)}</nav><span className="nav-domain">{site.domain}<ArrowUpRight size={13} aria-hidden="true" /></span></header>
+    <header className="glass-header">
+      <a href="#top" className="nav-brand" aria-label="Vidi, beginning">VIDI</a>
+      <nav className="desktop-sections" aria-label="Presentation sections">{copy.navigation.map(item => <a key={item.href} href={item.href}>{item.label}</a>)}</nav>
+      <details className="mobile-sections">
+        <summary>Sections</summary>
+        <nav aria-label="Presentation sections">{copy.navigation.map(item => <a key={item.href} href={item.href} onClick={event => {
+          if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+          const menu = event.currentTarget.closest("details");
+          menu?.querySelector("summary")?.focus();
+          if (menu) menu.open = false;
+        }}>{item.label}</a>)}</nav>
+      </details>
+      <span className="nav-domain">{site.domain}<ArrowUpRight size={13} aria-hidden="true" /></span>
+    </header>
     <main>
       <section className="hero-journey" aria-labelledby="hero-title">
         <div className="hero-stage">

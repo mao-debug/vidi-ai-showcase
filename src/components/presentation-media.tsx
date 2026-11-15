@@ -28,7 +28,7 @@ export function PresentationMedia({ slot }: { slot: string }) {
         media.kind === "image" ? (
           <img src={media.src} alt={media.alt} loading="lazy" className="actual-media" />
         ) : (
-          <video controls preload="metadata" poster={media.poster} aria-label={media.alt} className="actual-media">
+          <video controls playsInline preload="metadata" poster={media.poster} aria-label={media.alt} className="actual-media">
             <source src={media.src} />
             {media.captionsSrc && <track kind="captions" src={media.captionsSrc} srcLang="en" label="English" default />}
           </video>

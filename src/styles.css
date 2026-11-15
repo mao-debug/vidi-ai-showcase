@@ -214,6 +214,7 @@ h3 { font-family: var(--font-display); font-size: 38px; font-weight: 400; line-h
 .glass-header { left: 50%; right: auto; transform: translateX(-50%); width: min(920px, calc(100% - 48px)); border-radius: 999px; backdrop-filter: blur(26px) saturate(155%); height: 62px; }
 .glass-header nav a { color: var(--foreground); padding-block: 12px; }
 .glass-header nav a:hover { color: var(--primary); }
+.mobile-sections { display: none; }
 .hero-stage { background: var(--cinema); }
 .hero-copy { color: var(--cinema-text); left: 7%; top: 33%; width: 31%; }
 .hero-copy h1 { font-size: 126px; line-height: 1; margin-bottom: 16px; }
@@ -562,4 +563,38 @@ h2 { font-size: 68px; max-width: 1000px; }
  .engineering-parts { grid-template-columns: 1fr; }
  .engineering-mechanical h3, .engineering-evolution h3 { font-size: 26px; }
  .engineering-body { font-size: 16px; }
+}
+
+@media (max-width: 760px) {
+ .glass-header { top: max(10px, env(safe-area-inset-top)); min-height: 56px; padding: 5px 14px; border-radius: 22px; flex-wrap: nowrap; }
+ .glass-header .desktop-sections { display: none; }
+ .mobile-sections { display: block; }
+ .mobile-sections summary { min-height: 44px; padding: 10px 8px; cursor: pointer; font-size: 15px; }
+ .mobile-sections summary::marker { color: var(--primary); }
+ .glass-header .mobile-sections nav { position: absolute; top: calc(100% + 6px); right: 0; width: min(320px, 100%); display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 8px; padding: 8px; background: var(--background); border: 1px solid var(--glass-edge); border-radius: 16px; box-shadow: var(--glass-shadow); }
+ .glass-header .mobile-sections nav a { display: flex; align-items: center; min-height: 44px; padding: 8px 10px; font-size: 14px; }
+ .presentation section[id] { scroll-margin-top: calc(82px + env(safe-area-inset-top)); }
+
+ .hero-stage { display: grid; height: auto; min-height: 0; max-height: none; padding-top: calc(74px + env(safe-area-inset-top)); }
+ .caesar-image { position: static; height: clamp(190px, 64vw, 390px); object-position: 64% 45%; will-change: auto; }
+ .hero-copy { position: static; max-width: none; padding: 16px 20px 12px; border: 0; background: transparent; }
+ .hero-copy h1 { font-size: clamp(56px, 14vw, 76px); }
+ .hero-meaning { font-size: clamp(18px, 5vw, 24px); }
+ .hero-footer { position: static; padding: 0 20px 18px; align-items: center; }
+ .hero-footer a { min-height: 44px; }
+ .hero-footer > span { max-width: none; padding: 0; color: var(--cinema-muted); border: 0; background: transparent; box-shadow: none; backdrop-filter: none; }
+
+ .prototype-images .prototype-bottom-text { height: auto; }
+ .prototype-bottom-text .solution-line { font-size: clamp(18px, 5vw, 24px); white-space: normal; }
+ .team-cards { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); }
+ .team-card { width: auto; min-width: 0; }
+ .team-link { min-height: 44px; }
+ .sensor-processing summary { min-height: 44px; }
+ .multiplex-controls span { flex: 1 1 145px; }
+}
+
+@media (max-width: 380px) {
+ .sensor-diagram { padding-inline: 14px; }
+ .echo-scene { grid-template-columns: 48px minmax(0, 1fr) 54px; gap: 8px; }
+ .echo-sensor, .echo-obstacle, .pulse-lane { font-size: 12px; }
 }
