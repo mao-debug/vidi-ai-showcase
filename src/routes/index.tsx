@@ -46,13 +46,8 @@ function Index() {
         <div className="section-heading" data-reveal><Chapter n="II">Our Solution</Chapter><h2 id="prototype-title">{copy.prototype.title}</h2><p className="section-subtitle">{copy.prototype.subtitle}</p></div>
         <div className="prototype-images"><div className="prototype-main" data-reveal><PresentationMedia slot="prototype" /></div><div className="prototype-detail" data-reveal><div className="solution-box"><p className="solution-kicker">{copy.prototype.solution.kicker}</p><h3 className="solution-title">{copy.prototype.solution.title}</h3><ul className="solution-points">{copy.prototype.solution.points.map((point, i) => <li key={point}><span>0{i + 1}</span>{point}</li>)}</ul><p className="solution-status">{copy.prototype.solution.status}</p></div></div><div className="prototype-bottom-text solution-box" data-reveal><p className="solution-kicker">{copy.prototype.bottomNote.kicker}</p><p className="solution-line">{copy.prototype.bottomNote.line}</p></div><div className="prototype-bottom-media" data-reveal><PresentationMedia slot="detail" /></div></div>
       </section>
-      <section id="how-it-works" className="hardware-section section-shell" aria-labelledby="hardware-title">
-        <div data-reveal><Chapter n="III">How It Works</Chapter><h2 id="hardware-title">{copy.hardware.title}</h2></div>
-        <UltrasonicDiagrams />
-        <div className="hardware-paths">{copy.hardware.paths.slice(1).map((path) => <div className="hardware-path" key={path.label} data-reveal><div className="path-heading"><Eye strokeWidth={1.3} aria-hidden="true" /><h3>{path.label}</h3></div><ol>{path.steps.map((step, j) => <li key={step}><span className="path-index">0{j + 1}</span><span>{step}</span></li>)}</ol></div>)}</div>
-      </section>
       <section id="engineering" className="engineering-section section-shell" aria-labelledby="engineering-title">
-        <div data-reveal><Chapter n="IV">Engineering & Design</Chapter><h2 id="engineering-title">{copy.engineering.title}</h2><p className="section-subtitle">{copy.engineering.subtitle}</p></div>
+        <div data-reveal><Chapter n="III">Engineering & Design</Chapter><h2 id="engineering-title">{copy.engineering.title}</h2><p className="section-subtitle">{copy.engineering.subtitle}</p></div>
         <div className="engineering-grid">
           <div className="engineering-mechanical" data-reveal>
             <p className="solution-kicker">{copy.engineering.mechanical.kicker}</p>
@@ -89,6 +84,11 @@ function Index() {
             <p className="engineering-status">{copy.engineering.innovation.status}</p>
           </div>
         </div>
+      </section>
+      <section id="how-it-works" className="hardware-section section-shell" aria-labelledby="hardware-title">
+        <div data-reveal><Chapter n="IV">How It Works</Chapter><h2 id="hardware-title">{copy.hardware.title}</h2></div>
+        <UltrasonicDiagrams />
+        <div className="hardware-paths">{copy.hardware.paths.slice(1).map((path) => <div className="hardware-path" key={path.label} data-reveal><div className="path-heading"><Eye strokeWidth={1.3} aria-hidden="true" /><h3>{path.label}</h3></div><ol>{path.steps.map((step, j) => <li key={step}><span className="path-index">0{j + 1}</span><span>{step}</span></li>)}</ol></div>)}</div>
       </section>
       <section id="next-steps" className="next-section section-shell" aria-labelledby="next-title">
         <div data-reveal><Chapter n="V">What’s Next</Chapter><h2 id="next-title">{copy.next.title}</h2><p className="section-subtitle">{copy.next.subtitle}</p></div>
