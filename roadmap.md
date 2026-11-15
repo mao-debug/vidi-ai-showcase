@@ -78,4 +78,4 @@
 # Sensor explanation update
 - [x] Update traditional white cane wording, solution points, and feature labels.
 - [x] Add echo, ESP32 timing/processing, USB packet, and Power visuals above the unchanged Vision & voice path.
-- [ ] Verify timing and power rules, desktop/mobile layout, and reduced motion; keep unpublished.
+- [x] Verify timing and power rules, desktop/mobile layout, and reduced motion; keep unpublished.
