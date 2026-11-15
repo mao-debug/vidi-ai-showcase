@@ -10,12 +10,7 @@ describe("Phase 6 ultrasonic presentation", () => {
     expect(copy.timing.echoDeadlineMs).toBe(30);
   });
 
-  it("shows a Phase 6 sample response at 115200 baud", () => {
+  it("shows USB serial at 115200 baud", () => {
     expect(copy.transport.baud).toBe(115200);
-    expect(copy.transport.packet).toEqual({
-      v: 1, type: "sample", id: "0123456789abcdef", boot: "1234abcd", seq: 0,
-      left: { status: "ok", distance_mm: 1200, age_ms: 122 },
-      right: { status: "no_echo", distance_mm: null, age_ms: 0 },
-    });
   });
 });

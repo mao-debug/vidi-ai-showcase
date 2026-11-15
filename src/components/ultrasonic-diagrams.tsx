@@ -33,7 +33,8 @@ function PairTiming() {
   const { steps, triggerGapMs, echoDeadlineMs } = copy.timing;
 
   return <>
-    <p className="sensor-note">The Pi requests a fresh pair. The ESP32 triggers left, then right, with at least {triggerGapMs} ms between trigger attempts and a {echoDeadlineMs} ms echo deadline per channel.</p>
+    <p className="sensor-note">The ESP32 controls both ultrasonic sensors. When the Pi requests a fresh pair, the ESP32 fires the left sensor, then the right, leaving at least {triggerGapMs} ms between trigger attempts to reduce interference.</p>
+    <p className="sensor-note">The ESP32 times each echo and converts it to distance. It gives each sensor {echoDeadlineMs} ms to complete an echo, then reports each side’s result and how recently it was measured.</p>
     <ol className="pair-sequence" aria-label="Measurement sequence">
       {steps.map((item, index) => <li key={item.title}>
         <button type="button" aria-current={index === step ? "step" : undefined} onClick={() => setStep(index)}>
@@ -63,7 +64,7 @@ export function UltrasonicDiagrams() {
       <h3 id="transport-title">{copy.transport.title}</h3>
       <div className="serial-flow">{copy.transport.nodes.map((node, i) => { const Icon = NodeIcons[i]; return <div className="serial-node" key={node}>{Icon && <Icon size={32} strokeWidth={1.5} aria-hidden="true" />}<strong>{node}</strong>{i < 3 && <ArrowRight className="serial-arrow" aria-hidden="true" />}</div>; })}</div>
       <p className="serial-label">JSON over USB serial · {copy.transport.baud.toLocaleString("en-US")} baud.</p>
-      <div className="serial-details"><div><p className="sensor-note">{copy.transport.note}</p><p className="packet-caption">{copy.transport.packetLabel}</p></div><pre className="sensor-packet"><code>{JSON.stringify(copy.transport.packet, null, 2)}</code></pre></div>
+      <p className="sensor-note">{copy.transport.note}</p>
     </article>
   </div>;
 }

@@ -256,7 +256,7 @@ export const ultrasonicExplanation = {
     formula: "Distance = speed of sound × round-trip time ÷ 2",
   },
   timing: {
-    title: "Request-driven ultrasonic ranging",
+    title: "How the ESP32 controls ranging",
     triggerGapMs: 100,
     echoDeadlineMs: 30,
     steps: [
@@ -271,11 +271,5 @@ export const ultrasonicExplanation = {
     nodes: ["Left and right sensors", "ESP32", "USB serial", "Raspberry Pi 5"],
     baud: 115200,
     note: "The Pi identifies the firmware with H1 and requests a fresh measurement pair with R1. Each sample reply is one line of JSON. A channel with no usable reading returns a status and a null distance.",
-    packetLabel: "Example reply · left echo received, right echo timed out",
-    packet: {
-      v: 1, type: "sample", id: "0123456789abcdef", boot: "1234abcd", seq: 0,
-      left: { status: "ok", distance_mm: 1200, age_ms: 122 },
-      right: { status: "no_echo", distance_mm: null, age_ms: 0 },
-    },
   },
 };

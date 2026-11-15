@@ -498,16 +498,13 @@ h2 { font-size: 68px; max-width: 1000px; }
 .serial-node > svg:not(.serial-arrow) { flex-shrink: 0; }
 .serial-node strong { font-size: 20px; color: var(--foreground); font-weight: 400; line-height: 1.35; }
 .serial-arrow { position: absolute; right: -32px; }
-.serial-details { display: grid; grid-template-columns: 1fr 1fr; gap: 36px; align-items: center; }
-.packet-caption { font-size: 14px; color: var(--primary); margin: 18px 0 0; }
-.sensor-packet { min-width: 0; margin: 0; padding: 20px 24px; border-left: 3px solid var(--primary); background: var(--glass-surface); color: var(--foreground); font-size: 18px; line-height: 1.65; white-space: pre-wrap; overflow-wrap: anywhere; }
 .prototype-detail .solution-points li { line-height: 1.5; }
 .prototype-bottom-text .solution-line { font-size: 2.4cqw; }
 @media (max-width: 760px) {
  .sensor-diagram { padding: 24px 20px; }.sensor-diagram h3 { font-size: 30px; }.ultrasonic-explanation { margin-top: 32px; gap: 24px; }
  .sensor-note { font-size: 17px; }
  .serial-label { font-size: 18px; }
- .serial-flow { grid-template-columns: 1fr; gap: 20px; }.serial-node { gap: 18px; }.serial-arrow { transform: rotate(90deg); right: auto; left: 4px; bottom: -23px; }.serial-details { grid-template-columns: 1fr; gap: 22px; }.sensor-packet { font-size: 14px; padding: 16px; }
+ .serial-flow { grid-template-columns: 1fr; gap: 20px; }.serial-node { gap: 18px; }.serial-arrow { transform: rotate(90deg); right: auto; left: 4px; bottom: -23px; }
 }
 
 /* Engineering & Design: mechanical frame, component roles, evolution timeline, limitations. */
