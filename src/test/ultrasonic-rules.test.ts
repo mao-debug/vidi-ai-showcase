@@ -10,6 +10,7 @@ describe("Presentation sensor rules", () => {
   it("updates each sensor at 12.5 Hz", () => { expect(sensorUpdateHz(copy.timing.firingIntervalMs)).toBe(12.5); });
   it("uses 115200 baud for USB serial", () => { expect(copy.transport.baud).toBe(115200); });
   it("specifies a 6.4 W peak system draw", () => { expect(copy.power.peakWatts).toBe(6.4); });
+  it("estimates 5 hours battery life at peak system draw", () => { expect(copy.power.estimatedRuntimeHours).toBe(5); });
   it("does not publish an unconfirmed battery capacity", () => { expect(copy.power.capacityWh).toBeNull(); });
-  it("does not publish an unconfirmed runtime", () => { expect(copy.power.measuredRuntimeHours).toBeNull(); });
+  it("does not claim a measured runtime", () => { expect(copy.power.measuredRuntimeHours).toBeNull(); });
 });

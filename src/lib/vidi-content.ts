@@ -81,7 +81,7 @@ export const teamMembers: TeamMember[] = [
 ];
 
 export const presentation = {
-  navigation: [{ label: "Problem", href: "#problem" }, { label: "Solution", href: "#prototype" }, { label: "How It Works", href: "#how-it-works" }, { label: "Engineering", href: "#engineering" }, { label: "What’s next", href: "#next-steps" }, { label: "Team", href: "#team" }],
+  navigation: [{ label: "Problem", href: "#problem" }, { label: "Solution", href: "#prototype" }, { label: "Engineering", href: "#engineering" }, { label: "How It Works", href: "#how-it-works" }, { label: "What’s next", href: "#next-steps" }, { label: "Team", href: "#team" }],
   hero: { title: "VIDI", meaning: "Reimagining the way Blind and Visually imparied people interact with the world", caption: "Caesar & the glasses · Concept image", kicker: "A new perspective on independence", scroll: "A closer look" },
   problem: { title: "The Problem Visually Impaired People Face", captions: ["Outdated Technology", "Not Enough Sensory Information", "No Warnings of Overhead Hazards"], details: ["Technology has rapidly improved in all areas of life but Traditional white canes for the blind have not changed.", "Traditional white canes are good at detecting what is on the ground in front of someone but they lack in sensory information and navigation.", "Traditional traditional white canes have a blind spot and cannot detect any hazards that are above the cane so visually impaired people are still at risk of getting hit with things like branches or cabinets."], comparisonTitle: "Human assistance. Wearable possibility.", comparison: "Be My Eyes connects people with sighted volunteers. We’re exploring a wearable interface the wearer controls." },
   prototype: { title: "Meet Vidi.", subtitle: "Visual information, on your terms.",
@@ -244,7 +244,6 @@ export const ultrasonicExplanation = {
   echo: {
     title: "From echo to distance.",
     sensor: "Sensor", obstacle: "Obstacle", outbound: "Send pulse", returning: "Reflected sound",
-    timeline: ["Send pulse", "Wait for echo", "Measure round-trip time"],
     formula: "Distance = speed of sound × round-trip time ÷ 2",
     note: "The sound travels to the obstacle and back.",
   },
@@ -253,8 +252,7 @@ export const ultrasonicExplanation = {
     firingIntervalMs: 40,
     slots: [0, 40, 80, 120],
     lanes: ["Left sensor", "Right sensor"],
-    processing: ["Noise rejection and filtering", "Distance and motion tracking", "Geometric localization", "Predictive hazard detection"],
-    cues: ["Noise → signal", "Track motion", "Estimate position", "Time to contact"],
+    processing: ["Intelligent signal filtering", "Real time spatial awareness", "Predictive hazard detection"],
   },
   transport: {
     title: "From ESP32 to Raspberry Pi.",
@@ -267,6 +265,7 @@ export const ultrasonicExplanation = {
   power: {
     title: "Power", source: "Powered by a portable battery pack", peakWatts: 6.4,
     capacityWh: null as number | null,
+    estimatedRuntimeHours: 5,
     measuredRuntimeHours: null as number | null,
   },
 };
