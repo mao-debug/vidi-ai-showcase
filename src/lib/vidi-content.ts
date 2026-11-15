@@ -14,7 +14,10 @@ import headshotCard2 from "@/assets/team-headshot-card2.png.asset.json";
 import headshotCard3 from "@/assets/team-headshot-card3.png.asset.json";
 import headshotCard4 from "@/assets/team-headshot-card4.png.asset.json";
 import headshotCard5 from "@/assets/team-headshot-card5.png.asset.json";
-import smartGlassesShowcase from "@/assets/smart-glasses-multiview-showcase.png.asset.json";
+import prototypeElectronics from "@/assets/prototype-electronics.jpg.asset.json";
+import prototypeFront from "@/assets/prototype-front.jpg.asset.json";
+import prototypeRear from "@/assets/prototype-rear.jpg.asset.json";
+import prototypeSide from "@/assets/prototype-side.jpg.asset.json";
 import visionLossStat from "@/assets/vision-loss-stat.png.asset.json";
 
 export const site = {
@@ -45,10 +48,10 @@ export const presentationMedia: Record<string, PresentationMedia> = {
     caption: "Vision loss worldwide, 2020 · 1.1 billion people",
   },
   prototype: {
-    src: smartGlassesShowcase.url,
+    src: prototypeFront.url,
     kind: "image",
-    alt: "Five views of the white smart glasses prototype show the camera above the nose bridge and two stacked sensors on each front corner.",
-    caption: "Smart glasses · Front, side, top and back views",
+    alt: "Front view of the assembled prototype glasses: two round ultrasonic sensors mounted at the outer corners of the 3D-printed frame, a small camera module on the nose bridge, and wiring trailing off the table.",
+    caption: "Assembled prototype · Front view",
   },
   detail: { src: glassesAvoidBranch.url, kind: "video", alt: "Animated diagram titled 'The cane's blind spot': a stick figure wearing gold glasses walks with a traditional white cane toward a tree whose low branch sits at head height, above the cane's reach; audio waves appear behind the head, then a blue check mark badge, while the caption reads 'but our glasses warn: Branch ahead at head height.'", caption: "Glasses warning · “Branch ahead at head height.”", poster: glassesAvoidBranchPoster.url },
   walk: { src: "", kind: "video", alt: "Two-zone distance sensor bench test", caption: "Distance sensing · Bench test" },
@@ -118,6 +121,16 @@ export const presentation = {
       title: "Modular, 3D-printed, and serviceable",
       body: "VIDI uses a modular, 3D-printed glasses frame that integrates multiple sensing and processing components. Reinforced, ergonomic temple arms carry curved over-ear supports, removable electronics mounts, and adjustable ultrasonic sensor holders — so any component can be replaced or modified without redesigning the entire frame.",
       tags: ["3D-printed frame", "Removable mounts", "Adjustable sensor holders", "Over-ear supports"],
+    },
+    photos: {
+      kicker: "Prototype photography",
+      note: "Bench photographs of the assembled prototype — not studio product shots.",
+      items: [
+        { label: "01 · Rear", src: prototypeRear.url, alt: "Rear view of the assembled prototype glasses seen from the wearer's side: the 3D-printed frame, the camera module on the bridge, a Raspberry Pi in a red and white case on one temple, and perfboard wiring with an ultrasonic sensor board on the other.", caption: "Frame, bridge camera, Pi case and wiring, seen from the wearer's side." },
+        { label: "02 · Side", src: prototypeSide.url, alt: "Three-quarter side view of the assembled prototype showing the Raspberry Pi case mounted on the temple, connected cables, and the sensor boards on a workshop table, with people working at laptops behind.", caption: "Raspberry Pi enclosure mounted on the temple, with sensor boards and cables." },
+        { label: "03 · Electronics", src: prototypeElectronics.url, alt: "Side view of the prototype's electronics: a green perfboard carrying a microcontroller board, multicolored jumper wires, and a blue sensor board mounted along the temple.", caption: "Perfboard, microcontroller, jumper wires and sensor board along the temple." },
+        { label: "04 · Front", src: prototypeFront.url, alt: "Front view of the assembled prototype: two round dual-transducer ultrasonic sensors mounted at the outer corners of the 3D-printed frame, a small camera module on the nose bridge, and wiring trailing off the table.", caption: "Camera on the nose bridge between the two ultrasonic sensors." },
+      ],
     },
     architecture: {
       kicker: "Hardware architecture",
